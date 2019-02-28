@@ -40,7 +40,7 @@ static const float CORRECTION_FACTOR = 0.5; ///< Allegro uses hardware accelerat
 static const int LINE_JOIN_NONE = ALLEGRO_LINE_JOIN_NONE;	///< No line join. This is the default value of <EM>line_join</EM> if it is not indicated.
 static const int LINE_JOIN_BEVEL = ALLEGRO_LINE_JOIN_BEVEL; ///< Basic join between the lines. Simply draws a line between the two most separated line ends and fills the triangle that forms between. See the figure for a detailed graphic representation.
 static const int LINE_JOIN_ROUND = ALLEGRO_LINE_JOIN_ROUND; ///< Rounds the join between lines. Draws a filled circle with the center in the outermost intersection between the lines. See the figure for a detailed graphic representation.
-static const int LINE_JOIN_MITER = ALLEGRO_LINE_JOIN_MITER;	///< Makes an angle joint of the two lines. You may choose the miter lenght (<EM>miter_limit</EM> paramter) to set the length of the miter. See the figure for a detailed graphic representation (note that there's a number next to <STRONG>MITER</STRONG> word, this is the <EM>miter_limit</EM> of that drawing).
+static const int LINE_JOIN_MITER = ALLEGRO_LINE_JOIN_MITER;	///< Makes an angle joint of the two lines. You may choose the miter length (<EM>miter_limit</EM> parameter) to set the length of the miter. See the figure for a detailed graphic representation (note that there's a number next to <STRONG>MITER</STRONG> word, this is the <EM>miter_limit</EM> of that drawing).
 
 /** @}*/
 
@@ -64,8 +64,8 @@ static const int LINE_CAP_CLOSED = ALLEGRO_LINE_CAP_CLOSED; ///< Joins the end o
 */
 
 static const int TEXT_ALIGN_CENTER = ALLEGRO_ALIGN_CENTER;	///< The text is centered towards the drawing point.
-static const int TEXT_ALIGN_LEFT = ALLEGRO_ALIGN_LEFT;		///< The text is algined to the left border of the bounding box of the text.
-static const int TEXT_ALIGN_RIGHT = ALLEGRO_ALIGN_RIGHT;	///< The text is algined to the right border of the bounding box of the text.
+static const int TEXT_ALIGN_LEFT = ALLEGRO_ALIGN_LEFT;		///< The text is aligned to the left border of the bounding box of the text.
+static const int TEXT_ALIGN_RIGHT = ALLEGRO_ALIGN_RIGHT;	///< The text is aligned to the right border of the bounding box of the text.
 
 /** @}*/
 
@@ -84,10 +84,10 @@ static const Font DEFAULT_FONT(DEFAULT_FONT_PATH, DEFAULT_FONT_COLOR, DEFAULT_FO
 
 /** @}*/
 
-/// @brief Mid-level interface class that allows you to acces all the functionalities of the library.
+/// @brief Mid-level interface class that allows you to access all the functionalities of the library.
 /**	This is the main class of the library. It contains all the drawing methods, and encapsulates all the needed modules to operate the display and its features like 
 *	the Turtles. Look for <EM>primitives</EM> or <EM>turtle drawing</EM> in documentation for more detail about drawing functionalities. It also allows you to store
-*	some Fonts and acces them by the name you choose. 
+*	some Fonts and access them by the name you choose. 
 */
 class Window
 {
@@ -95,11 +95,11 @@ public:
 	//class constants
 	static const int DEFAULT_WIDTH = 640;					///< Default Window width if not specified in the constructor.
 	static const int DEFAULT_HEIGHT = 480;					///< Default Window height if not specified in the constructor.
-	static const int DEFAULT_LOG_SIZE = 256;				///< Default Window log size. If not specified, this is the maximum number of primitve operations that the Window will log and redraw if needed.
+	static const int DEFAULT_LOG_SIZE = 256;				///< Default Window log size. If not specified, this is the maximum number of primitive operations that the Window will log and redraw if needed.
 
 
 	/** @defgroup window_ctors How to create a Window
-	*	It's pretty stright forward. You simply declare and instantiate it with one of the constructors of the class and it's done, you can start drawing.
+	*	It's pretty straight forward. You simply declare and instantiate it with one of the constructors of the class and it's done, you can start drawing.
 	*	@{
 	*/
 
@@ -243,7 +243,7 @@ public:
 	*	Would generate this output:
 	*	@image html rounded_rectangle.png
 	*	@image latex rounded_rectangle.eps
-	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves arround the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
+	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves around the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
 	*	@image html border_radius.png
 	*	@image latex border_radius.eps
 	*	@param x1 X coordinate of the top left corner.
@@ -263,7 +263,7 @@ public:
 	*	Would generate this output:
 	*	@image html rounded_rectangle.png
 	*	@image latex rounded_rectangle.eps
-	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves arround the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
+	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves around the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
 	*	@image html border_radius.png
 	*	@image latex border_radius.eps
 	*	@param x1 X coordinate of the top left corner.
@@ -332,7 +332,7 @@ public:
 	*/
 	void filled_circle(float cx, float cy, float r, RGBColor color);
 
-	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
+	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
 	*	For example this code:
 	*	@include arc_1.cpp
 	*	Would generate this output:
@@ -348,7 +348,7 @@ public:
 	*/
 	void arc(float cx, float cy, float r, float start_theta, float delta_theta, RGBColor color, float thickness = 1.0);
 
-	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
+	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
 	*	For example this code:
 	*	@include elliptical_arc_1.cpp
 	*	Would generate this output:
@@ -365,16 +365,16 @@ public:
 	*/
 	void elliptical_arc(float cx, float cy, float rx, float ry, float start_theta, float delta_theta, RGBColor color, float thickness = 1.0);
 
-	/** Draws a pieslice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
+	/** Draws a pie slice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
 	*	You can think of it as a "closed arc", an arc which its outermost radii are drawn as well.
 	*	For example this code:
 	*	@include pieslice_1.cpp
 	*	Would generate this output:
-	*	@image html pieslice.png
-	*	@image latex pieslice.eps
-	*	@param cx X coordinate of the center of the piselcie.
-	*	@param cy Y coordinate of the center of the pieslice.
-	*	@param r Radius of the pieslice.
+	*	@image html pie slice.png
+	*	@image latex pie slice.eps
+	*	@param cx X coordinate of the center of the pie slice.
+	*	@param cy Y coordinate of the center of the pie slice.
+	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
 	*	@param delta_theta Angle increase.
 	*	@param color Color used to draw the figure.
@@ -382,16 +382,16 @@ public:
 	*/
 	void pieslice(float cx, float cy, float r, float start_theta, float delta_theta, RGBColor color, float thickness = 1.0);
 
-	/** Draws a filled pieslice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
+	/** Draws a filled pie slice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
 	*	You can think of it as a "filled arc".
 	*	For example this code:
 	*	@include filled_pieslice_1.cpp
 	*	Would generate this output:
 	*	@image html filled_pieslice.png
 	*	@image latex filled_pieslice.eps
-	*	@param cx X coordinate of the center of the pieslice.
-	*	@param cy Y coordinate of the center of the pieslice.
-	*	@param r Radius of the pieslice.
+	*	@param cx X coordinate of the center of the pie slice.
+	*	@param cy Y coordinate of the center of the pie slice.
+	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
 	*	@param delta_theta Angle increase.
 	*	@param color Color used to draw the figure.
@@ -404,7 +404,7 @@ public:
 	*	Would generate this output:
 	*	@image html spline.png
 	*	@image latex spline.eps
-	*	@param points An array of X and Y coordinates descriving the points of the spline.
+	*	@param points An array of X and Y coordinates describing the points of the spline.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
 	*/
@@ -416,7 +416,7 @@ public:
 	*	Would generate this output:
 	*	@image html ribbon.png
 	*	@image latex ribbon.eps
-	*	@param points An array of X and Y coordinates descriving the points of the ribbon.
+	*	@param points An array of X and Y coordinates describing the points of the ribbon.
 	*	@param num_points The number of points (pairs of X and Y coordinates) that <EM>points</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
@@ -428,7 +428,7 @@ public:
 	*	@{
 	*/
 	
-	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent diferent positions of the text box. 
+	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent different positions of the text box. 
 	*	When aligned left, the point passed will be the top left corner of the text box. When aligned right, it will be the top right corner, and when aligned to the center, the point will represent the exact center of the text box.
 	*	For example this code:
 	*	@include text_1.cpp
@@ -443,7 +443,7 @@ public:
 	*/
 	void text(Font & font, float x, float y, std::string text, int flags = 0);
 
-	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent diferent positions of the text box.
+	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent different positions of the text box.
 	*	When aligned left, the point passed will be the top left corner of the text box. When aligned right, it will be the top right corner, and when aligned to the center, the point will represent the exact center of the text box. 
 	*	For example this code:
 	*	@include text_2.cpp
@@ -467,7 +467,7 @@ public:
 	*	Would generate this output:
 	*	@image html polyline.png
 	*	@image latex polyline.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polyline.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polyline.
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
@@ -484,7 +484,7 @@ public:
 	*	Would generate this output:
 	*	@image html polygon.png
 	*	@image latex polygon.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polygon.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
@@ -500,7 +500,7 @@ public:
 	*	Would generate this output:
 	*	@image html filled_polygon.png
 	*	@image latex polygon.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polygon.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@pre <EM>vertex_count</EM> must be less or equal than the real <EM>vertices</EM> buffer length divided by 2.
@@ -514,7 +514,7 @@ public:
 	*	This code would generate this output:
 	*	@image html filled_polygon_with_holes.png
 	*	@image latex filled_polygon_with_holes.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polygon and also the vertices of the holes.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polygon and also the vertices of the holes.
 	*	@param vertex_counts The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@pre <EM>vertex_count</EM> must be a 0 terminated array, which the total sum of its elements must be less or equal than the real <EM>vertices</EM> buffer length divided by 2.
@@ -606,7 +606,7 @@ public:
 	*	Would generate this output:
 	*	@image html rounded_rectangle.png
 	*	@image latex rounded_rectangle.eps
-	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves arround the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
+	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves around the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
 	*	@image html border_radius.png
 	*	@image latex border_radius.eps
 	*	@param p1 coordinates of the top left corner.
@@ -624,7 +624,7 @@ public:
 	*	Would generate this output:
 	*	@image html rounded_rectangle.png
 	*	@image latex rounded_rectangle.eps
-	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves arround the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
+	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves around the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
 	*	@image html border_radius.png
 	*	@image latex border_radius.eps
 	*	@param p1 coordinates of the top left corner.
@@ -687,7 +687,7 @@ public:
 	*/
 	void filled_circle(Point2D c, float r, RGBColor color);
 	
-	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
+	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
 	*	For example this code:
 	*	@include arc_2.cpp
 	*	Would generate this output:
@@ -702,7 +702,7 @@ public:
 	*/
 	void arc(Point2D c, float r, float start_theta, float delta_theta, RGBColor color, float thickness = 1.0);
 	
-	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
+	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
 	*	For example this code:
 	*	@include elliptical_arc_2.cpp
 	*	Would generate this output:
@@ -718,15 +718,15 @@ public:
 	*/
 	void elliptical_arc(Point2D c, float rx, float ry, float start_theta, float delta_theta, RGBColor color, float thickness = 1.0);
 	
-	/** Draws a pieslice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
+	/** Draws a pie slice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
 	*	You can think of it as a "closed arc", an arc which its outermost radii are drawn as well.
 	*	For example this code:
 	*	@include pieslice_2.cpp
 	*	Would generate this output:
-	*	@image html pieslice.png
-	*	@image latex pieslice.eps
-	*	@param c coordinates of the center of the pieslice.
-	*	@param r Radius of the pieslice.
+	*	@image html pie slice.png
+	*	@image latex pie slice.eps
+	*	@param c coordinates of the center of the pie slice.
+	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
 	*	@param delta_theta Angle increase.
 	*	@param color Color used to draw the figure.
@@ -734,15 +734,15 @@ public:
 	*/
 	void pieslice(Point2D c, float r, float start_theta, float delta_theta, RGBColor color, float thickness = 1.0);
 	
-	/** Draws a filled pieslice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
+	/** Draws a filled pie slice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default).
 	*	You can think of it as a "filled arc".
 	*	For example this code:
 	*	@include filled_pieslice_2.cpp
 	*	Would generate this output:
 	*	@image html filled_pieslice.png
 	*	@image latex filled_pieslice.eps
-	*	@param c coordinates of the center of the pieslice.
-	*	@param r Radius of the pieslice.
+	*	@param c coordinates of the center of the pie slice.
+	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
 	*	@param delta_theta Angle increase.
 	*	@param color Color used to draw the figure.
@@ -755,7 +755,7 @@ public:
 	*	Would generate this output:
 	*	@image html spline.png
 	*	@image latex spline.eps
-	*	@param points An array of coordinates descriving the points of the spline.
+	*	@param points An array of coordinates describing the points of the spline.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
 	*/
@@ -767,7 +767,7 @@ public:
 	*	Would generate this output:
 	*	@image html ribbon.png
 	*	@image latex ribbon.eps
-	*	@param points An array of coordinates descriving the points of the ribbon.
+	*	@param points An array of coordinates describing the points of the ribbon.
 	*	@param num_points The number of points that <EM>points</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
@@ -779,7 +779,7 @@ public:
 	*	@{
 	*/
 	
-	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent diferent positions of the text box. 
+	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent different positions of the text box. 
 	*	When aligned left, the point passed will be the top left corner of the text box. When aligned right, it will be the top right corner, and when aligned to the center, the point will represent the exact center of the text box.
 	*	For example this code:
 	*	@include text_3.cpp
@@ -793,7 +793,7 @@ public:
 	*/
 	void text(Font & font, Point2D p, std::string text, int flags = 0);
 	
-	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent diferent positions of the text box.
+	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent different positions of the text box.
 	*	When aligned left, the point passed will be the top left corner of the text box. When aligned right, it will be the top right corner, and when aligned to the center, the point will represent the exact center of the text box.
 	*	For example this code:
 	*	@include text_4.cpp
@@ -816,7 +816,7 @@ public:
 	*	Would generate this output:
 	*	@image html polyline.png
 	*	@image latex polyline.eps
-	*	@param vertices An array of coordinates descriving the vertices of the polyline.
+	*	@param vertices An array of coordinates describing the vertices of the polyline.
 	*	@param vertex_count The number of vertices that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
@@ -833,7 +833,7 @@ public:
 	*	Would generate this output:
 	*	@image html polygon.png
 	*	@image latex polygon.eps
-	*	@param vertices An array of coordinates descriving the vertices of the polygon.
+	*	@param vertices An array of coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
@@ -849,7 +849,7 @@ public:
 	*	Would generate this output:
 	*	@image html filled_polygon.png
 	*	@image latex polygon.eps
-	*	@param vertices An array of coordinates descriving the vertices of the polygon.
+	*	@param vertices An array of coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@pre <EM>vertex_count</EM> must be less or equal than the real <EM>vertices</EM> buffer length.
@@ -863,7 +863,7 @@ public:
 	*	This code would generate this output:
 	*	@image html filled_polygon_with_holes.png
 	*	@image latex filled_polygon_with_holes.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polygon and also the vertices of the holes.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polygon and also the vertices of the holes.
 	*	@param vertex_counts The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@pre <EM>vertex_count</EM> must be a 0 terminated array, which the total sum of its elements must be less or equal than the real <EM>vertices</EM> buffer length.
@@ -959,7 +959,7 @@ public:
 	*	Would generate this output:
 	*	@image html rounded_rectangle.png
 	*	@image latex rounded_rectangle.eps
-	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves arround the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
+	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves around the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
 	*	@image html border_radius.png
 	*	@image latex border_radius.eps
 	*	@param x1 X coordinate of the top left corner.
@@ -977,7 +977,7 @@ public:
 	*	Would generate this output:
 	*	@image html rounded_rectangle.png
 	*	@image latex rounded_rectangle.eps
-	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves arround the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
+	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves around the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
 	*	@image html border_radius.png
 	*	@image latex border_radius.eps
 	*	@param x1 X coordinate of the top left corner.
@@ -1039,7 +1039,7 @@ public:
 	*/
 	void filled_circle(float cx, float cy, float r);
 	
-	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
+	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
 	*	For example this code:
 	*	@include arc_3.cpp
 	*	Would generate this output:
@@ -1053,7 +1053,7 @@ public:
 	*/
 	void arc(float cx, float cy, float r, float start_theta, float delta_theta);
 	
-	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
+	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
 	*	For example this code:
 	*	@include elliptical_arc_3.cpp
 	*	Would generate this output:
@@ -1068,31 +1068,31 @@ public:
 	*/
 	void elliptical_arc(float cx, float cy, float rx, float ry, float start_theta, float delta_theta);
 	
-	/** Draws a pieslice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
+	/** Draws a pie slice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
 	*	You can think of it as a "closed arc", an arc which its outermost radii are drawn as well.
 	*	For example this code:
 	*	@include pieslice_3.cpp
 	*	Would generate this output:
-	*	@image html pieslice.png
-	*	@image latex pieslice.eps
-	*	@param cx X coordinate of the center of the pieslice.
-	*	@param cy Y coordinate of the center of the pieslice.
-	*	@param r Radius of the pieslice.
+	*	@image html pie slice.png
+	*	@image latex pie slice.eps
+	*	@param cx X coordinate of the center of the pie slice.
+	*	@param cy Y coordinate of the center of the pie slice.
+	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
 	*	@param delta_theta Angle increase.
 	*/
 	void pieslice(float cx, float cy, float r, float start_theta, float delta_theta);
 	
-	/** Draws a filled pieslice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
+	/** Draws a filled pie slice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
 	*	You can think of it as a "filled arc".
 	*	For example this code:
 	*	@include filled_pieslice_3.cpp
 	*	Would generate this output:
 	*	@image html filled_pieslice.png
 	*	@image latex filled_pieslice.eps
-	*	@param cx X coordinate of the center of the pieslice.
-	*	@param cy Y coordinate of the center of the pieslice.
-	*	@param r Radius of the pieslice.
+	*	@param cx X coordinate of the center of the pie slice.
+	*	@param cy Y coordinate of the center of the pie slice.
+	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
 	*	@param delta_theta Angle increase.
 	*/
@@ -1104,7 +1104,7 @@ public:
 	*	Would generate this output:
 	*	@image html spline.png
 	*	@image latex spline.eps
-	*	@param points An array of X and Y coordinates descriving the points of the spline.
+	*	@param points An array of X and Y coordinates describing the points of the spline.
 	*/
 	void spline(float points[8]);
 	
@@ -1114,7 +1114,7 @@ public:
 	*	Would generate this output:
 	*	@image html ribbon.png
 	*	@image latex ribbon.eps
-	*	@param points An array of X and Y coordinates descriving the points of the ribbon.
+	*	@param points An array of X and Y coordinates describing the points of the ribbon.
 	*	@param num_points The number of points (pairs of X and Y coordinates) that <EM>points</EM> contains.
 	*	@pre <EM>num_points</EM> must be less or equal than the real <EM>points</EM> buffer length divided by 2.
 	*/
@@ -1124,7 +1124,7 @@ public:
 	*	@{
 	*/
 	
-	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent diferent positions of the text box. 
+	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent different positions of the text box. 
 	*	When aligned left, the point passed will be the top left corner of the text box. When aligned right, it will be the top right corner, and when aligned to the center, the point will represent the exact center of the text box. This call uses the active Font of the Window to put the text.
 	*	For example this code:
 	*	@include text_5.cpp
@@ -1146,7 +1146,7 @@ public:
 	*	Would generate this output:
 	*	@image html polyline.png
 	*	@image latex polyline.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polyline.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polyline.
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param join_style The way the lines join together. See @ref line_join for more details. Its value is <EM>LINE_JOIN_NONE</EM> by default.
 	*	@param cap_style The way the lines join together. See @ref line_cap for more details. Its value is <EM>LINE_CAP_NONE</EM> by default.
@@ -1161,7 +1161,7 @@ public:
 	*	Would generate this output:
 	*	@image html polygon.png
 	*	@image latex polygon.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polygon.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param join_style The way the lines join together. See @ref line_join for more details. Its value is <EM>LINE_JOIN_NONE</EM> by default.
 	*	@param miter_limit Size of the miter. See @ref line_join for more details. Its value is <EM>0</EM> by default.
@@ -1175,7 +1175,7 @@ public:
 	*	Would generate this output:
 	*	@image html filled_polygon.png
 	*	@image latex polygon.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polygon.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@pre <EM>vertex_count</EM> must be less or equal than the real <EM>vertices</EM> buffer length divided by 2.
 	*/
@@ -1188,14 +1188,14 @@ public:
 	*	This code would generate this output:
 	*	@image html filled_polygon_with_holes.png
 	*	@image latex filled_polygon_with_holes.eps
-	*	@param vertices An array of X and Y coordinates descriving the vertices of the polygon and also the vertices of the holes.
+	*	@param vertices An array of X and Y coordinates describing the vertices of the polygon and also the vertices of the holes.
 	*	@param vertex_counts The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@pre <EM>vertex_count</EM> must be a 0 terminated array, which the total sum of its elements must be less or equal than the real <EM>vertices</EM> buffer length divided by 2.
 	*		To effectively draw this figure, points of the holes must be ordered in the reverse order of the filled polygon vertices.
 	*/
 	void filled_polygon_with_holes(const float *vertices, const int *vertex_counts);
 
-	//methods that use struct Point2D (to represent X and Y coordinatesand) and class settings to draw
+	//methods that use struct Point2D (to represent X and Y coordinates and) and class settings to draw
 	
 	/** Draws a pixel at the p position. It can be slow, so if you want to draw some figures consider using another primitive. This call uses the PaintBrush of the Window to draw, if needed.
 	*	For example this code:
@@ -1270,7 +1270,7 @@ public:
 	*	Would generate this output:
 	*	@image html rounded_rectangle.png
 	*	@image latex rounded_rectangle.eps
-	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves arround the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
+	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves around the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
 	*	@image html border_radius.png
 	*	@image latex border_radius.eps
 	*	@param p1 coordinates of the top left corner.
@@ -1286,7 +1286,7 @@ public:
 	*	Would generate this output:
 	*	@image html rounded_rectangle.png
 	*	@image latex rounded_rectangle.eps
-	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves arround the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
+	*	<strong>NOTE</strong>: When rounding the rectangle, an ellipse is used to draw the curves around the corners (see figure below). The <EM>rx</EM> and <EM>ry</EM> parameters are the radii of the ellipse.
 	*	@image html border_radius.png
 	*	@image latex border_radius.eps
 	*	@param p1 coordinates of the top left corner.
@@ -1342,7 +1342,7 @@ public:
 	*/
 	void filled_circle(Point2D c, float r);
 	
-	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
+	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
 	*	For example this code:
 	*	@include arc_4.cpp
 	*	Would generate this output:
@@ -1355,7 +1355,7 @@ public:
 	*/
 	void arc(Point2D c, float r, float start_theta, float delta_theta);
 	
-	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
+	/** Draws an arc given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
 	*	For example this code:
 	*	@include elliptical_arc_4.cpp
 	*	Would generate this output:
@@ -1369,29 +1369,29 @@ public:
 	*/
 	void elliptical_arc(Point2D c, float rx, float ry, float start_theta, float delta_theta);
 	
-	/** Draws a pieslice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
+	/** Draws a pie slice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
 	*	You can think of it as a "closed arc", an arc which its outermost radii are drawn as well.
 	*	For example this code:
 	*	@include pieslice_4.cpp
 	*	Would generate this output:
-	*	@image html pieslice.png
-	*	@image latex pieslice.eps
-	*	@param c coordinates of the center of the pieslice.
-	*	@param r Radius of the pieslice.
+	*	@image html pie slice.png
+	*	@image latex pie slice.eps
+	*	@param c coordinates of the center of the pie slice.
+	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
 	*	@param delta_theta Angle increase.
 	*/
 	void pieslice(Point2D c, float r, float start_theta, float delta_theta);
 	
-	/** Draws a filled pieslice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the anlge <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
+	/** Draws a filled pie slice given its center's coordinates, its radius and the angle it describes. The angle is represented as the start point of the angle <EM>start_theta</EM>, and the angle increase <EM>delta_theta</EM>. This angle can be expressed in radians or degrees depending on the Window configuration (degrees by default). This call uses the PaintBrush of the Window to draw, if needed.
 	*	You can think of it as a "filled arc".
 	*	For example this code:
 	*	@include filled_pieslice_4.cpp
 	*	Would generate this output:
 	*	@image html filled_pieslice.png
 	*	@image latex filled_pieslice.eps
-	*	@param c coordinates of the center of the pieslice.
-	*	@param r Radius of the pieslice
+	*	@param c coordinates of the center of the pie slice.
+	*	@param r Radius of the pie slice
 	*	@param start_theta Start point of the angle
 	*	@param delta_theta Angle increase
 	*/
@@ -1403,7 +1403,7 @@ public:
 	*	Would generate this output:
 	*	@image html spline.png
 	*	@image latex spline.eps
-	*	@param points An array of coordinates descriving the points of the spline.
+	*	@param points An array of coordinates describing the points of the spline.
 	*/
 	void spline(Point2D points[4]);
 	
@@ -1413,7 +1413,7 @@ public:
 	*	Would generate this output:
 	*	@image html ribbon.png
 	*	@image latex ribbon.eps
-	*	@param points An array of coordinates descriving the points of the ribbon.
+	*	@param points An array of coordinates describing the points of the ribbon.
 	*	@param num_points The number of points that <EM>points</EM> contains.
 	*	@pre <EM>num_points</EM> must be less or equal than the real <EM>points</EM> buffer length.
 	*/
@@ -1423,7 +1423,7 @@ public:
 	*	@{
 	*/
 	
-	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent diferent positions of the text box. 
+	/** Puts a text into the screen. By default, the text is aligned to the left. Depending on the alignment, the point passed will represent different positions of the text box. 
 	*	When aligned left, the point passed will be the top left corner of the text box. When aligned right, it will be the top right corner, and when aligned to the center, the point will represent the exact center of the text box. This call uses the active Font of the Window to put the text.
 	*	For example this code:
 	*	@include text_6.cpp
@@ -1444,7 +1444,7 @@ public:
 	*	Would generate this output:
 	*	@image html polyline.png
 	*	@image latex polyline.eps
-	*	@param vertices An array of coordinates descriving the vertices of the polyline.
+	*	@param vertices An array of coordinates describing the vertices of the polyline.
 	*	@param vertex_count The number of vertices that <EM>vertices</EM> contains.
 	*	@param join_style The way the lines join together. See @ref line_join for more details. Its value is <EM>LINE_JOIN_NONE</EM> by default.
 	*	@param cap_style The way the lines join together. See @ref line_cap for more details. Its value is <EM>LINE_CAP_NONE</EM> by default.
@@ -1459,7 +1459,7 @@ public:
 	*	Would generate this output:
 	*	@image html polygon.png
 	*	@image latex polygon.eps
-	*	@param vertices An array of coordinates descriving the vertices of the polygon.
+	*	@param vertices An array of coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices that <EM>vertices</EM> contains.
 	*	@param join_style The way the lines join together. See @ref line_join for more details. Its value is <EM>LINE_JOIN_NONE</EM> by default.
 	*	@param miter_limit Size of the miter. See @ref line_join for more details. Its value is <EM>0</EM> by default.
@@ -1473,7 +1473,7 @@ public:
 	*	Would generate this output:
 	*	@image html filled_polygon.png
 	*	@image latex polygon.eps
-	*	@param vertices An array of coordinates descriving the vertices of the polygon.
+	*	@param vertices An array of coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices that <EM>vertices</EM> contains.
 	*	@pre <EM>vertex_count</EM> must be less or equal than the real <EM>vertices</EM> buffer length.
 	*/
@@ -1486,7 +1486,7 @@ public:
 	*	This code would generate this output:
 	*	@image html filled_polygon_with_holes.png
 	*	@image latex filled_polygon_with_holes.eps
-	*	@param vertices An array of coordinates descriving the vertices of the polygon and also the vertices of the holes.
+	*	@param vertices An array of coordinates describing the vertices of the polygon and also the vertices of the holes.
 	*	@param vertex_counts The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@pre <EM>vertex_count</EM> must be a 0 terminated array, which the total sum of its elements must be less or equal than the real <EM>vertices</EM> buffer length.
 	*		To effectively draw this figure, points of the holes must be ordered in the reverse order of the filled polygon vertices.
@@ -1529,7 +1529,7 @@ public:
 		this->autoUpdate();
 	}
 
-	/** Causes the Window (and the thread using it) to sleep for the amount of time speceified by the user.
+	/** Causes the Window (and the thread using it) to sleep for the amount of time specified by the user.
 	*	@param time Floating point time in seconds.
 	*/
 	void rest(float time);
@@ -1546,7 +1546,7 @@ public:
 	*/
 	void enableAutoUpdate();
 	
-	/** Disables Auto Update functionality. When Auto Update is dissabled, the only way to refresh the screen is calling <EM>update()</EM> function.
+	/** Disables Auto Update functionality. When Auto Update is disabled, the only way to refresh the screen is calling <EM>update()</EM> function.
 	*/
 	void disableAutoUpdate();
 	
@@ -1554,7 +1554,7 @@ public:
 	*/
 	void enableLogging();
 	
-	/** Disables Logging functionality. When Logging is dissabled, no draw call made on this Window is logged, so if you clear the screen all your drawings will be erased.
+	/** Disables Logging functionality. When Logging is disabled, no draw call made on this Window is logged, so if you clear the screen all your drawings will be erased.
 	*/
 	void disableLogging();
 	
@@ -1651,7 +1651,7 @@ public:
 	//Image routines
 	
 	/** @defgroup window_images Image methods
-	*	A colection of methods that allows you to load and store bitmap drawings.
+	*	A collection of methods that allows you to load and store bitmap drawings.
 	*	@{
 	*/
 	
@@ -1702,7 +1702,7 @@ public:
 	*/
 	bool image(std::string file_path, Point2D p, int flags = 0);
 	
-	/** Draws a rotated Image to the screen. An image is drawn from its bottom left corner on the coordinates specified by the user, and rotated realtive to itself (not the Window).
+	/** Draws a rotated Image to the screen. An image is drawn from its bottom left corner on the coordinates specified by the user, and rotated relative to itself (not the Window).
 	*	@param image Image to be drawn.
 	*	@param cx X coordinate of the rotation point (relative to the image).
 	*	@param cy Y coordinate of the rotation point (relative to the image).
@@ -1724,7 +1724,7 @@ public:
 	*/
 	bool rotated_image(Image image, Point2D c, Point2D d, float angle, int flags = 0);
 	
-	/** Draws a rotated Image to the screen. An image is drawn from its bottom left corner on the coordinates specified by the user, and rotated realtive to itself (not the Window).
+	/** Draws a rotated Image to the screen. An image is drawn from its bottom left corner on the coordinates specified by the user, and rotated relative to itself (not the Window).
 	*	@param file_path Path of the image to be drawn.
 	*	@param cx X coordinate of the rotation point (relative to the image).
 	*	@param cy Y coordinate of the rotation point (relative to the image).
@@ -1768,7 +1768,7 @@ public:
 	*/
 	bool addTurtle(std::string turtle_name, PaintBrush pen);
 	
-	/** Adds a Turtle to the Window. With this function, the parameters that can be chosen are thename of the turtle, its pen and the starting point of the Turtle. The Font will be the active Font of the Window.
+	/** Adds a Turtle to the Window. With this function, the parameters that can be chosen are the name of the turtle, its pen and the starting point of the Turtle. The Font will be the active Font of the Window.
 	*	@param turtle_name Name of the Turtle.
 	*	@param pen PaintBrush that the Turtle will use to draw its lines.
 	*	@param start_point Point where the turtle will be spawned.
@@ -1780,7 +1780,7 @@ public:
 	*	@param turtle_name Name of the Turtle.
 	*	@param pen PaintBrush that the Turtle will use to draw its lines.
 	*	@param start_point Point where the turtle will be spawned.
-	*	@param font Font taht the Turtle will use to draw text.
+	*	@param font Font that the Turtle will use to draw text.
 	*	@return A boolean value, <EM>true</EM> if the Turtle has been successfully added, false otherwise.
 	*/
 	bool addTurtle(std::string turtle_name, PaintBrush pen, Point2D start_point, Font & font);
@@ -1883,11 +1883,11 @@ public:
 	*/
 	Point2D t_home();
 	
-	/** Sets the active Turtle's visiblility to "visible". The cursor of the Turtle will be shown, and updated automatically every time <EM>update()</EM> function is called.
+	/** Sets the active Turtle's visibility to "visible". The cursor of the Turtle will be shown, and updated automatically every time <EM>update()</EM> function is called.
 	*/
 	void t_show();
 	
-	/** Sets the active Turtle's visiblility to "not visible". The cursor of the Turtle will be hidden.
+	/** Sets the active Turtle's visibility to "not visible". The cursor of the Turtle will be hidden.
 	*/
 	void t_hide();
 	
@@ -1899,7 +1899,7 @@ public:
 	*/
 	void t_penDown();
 	
-	/** Switches the pen state of the active Turtle, so if it's lifted up it drops down the pen and viceversa.
+	/** Switches the pen state of the active Turtle, so if it's lifted up it drops down the pen and vice versa.
 	*/
 	void t_swapPen();
 	
@@ -2042,12 +2042,12 @@ public:
 	*/
 	Point2D t_home(std::string turtle_name);
 	
-	/** Sets the selected Turtle's visiblility to "visible". The cursor of the Turtle will be shown, and updated automatically every time <EM>update()</EM> function is called.
+	/** Sets the selected Turtle's visibility to "visible". The cursor of the Turtle will be shown, and updated automatically every time <EM>update()</EM> function is called.
 	*	@param turtle_name Name of the selected Turtle.
 	*/
 	void t_show(std::string turtle_name);
 	
-	/** Sets the selected Turtle's visiblility to "not visible". The cursor of the Turtle will be hidden.
+	/** Sets the selected Turtle's visibility to "not visible". The cursor of the Turtle will be hidden.
 	*	@param turtle_name Name of the selected Turtle.
 	*/
 	void t_hide(std::string turtle_name);
@@ -2062,7 +2062,7 @@ public:
 	*/
 	void t_penDown(std::string turtle_name);
 	
-	/** Switches the pen state of the selected Turtle, so if it's lifted up it drops down the pen and viceversa.
+	/** Switches the pen state of the selected Turtle, so if it's lifted up it drops down the pen and vice versa.
 	*	@param turtle_name Name of the selected Turtle.
 	*/
 	void t_swapPen(std::string turtle_name);
@@ -2118,12 +2118,12 @@ public:
 	
 	//Event handling 
 	
-	/** Waits for the next WindowEvent, without filters. Be careful, this method waits forever. If no event is triggered, the program will go on forever, without exiting this method. It's more recomendable to use @ref waitWindowEventTimed(float) to not to wait forever.
+	/** Waits for the next WindowEvent, without filters. Be careful, this method waits forever. If no event is triggered, the program will go on forever, without exiting this method. It's more recommendable to use @ref waitWindowEventTimed(float) to not to wait forever.
 	*	@return The first WindowEvent in the EventQueue of the Window.
 	*/
 	WindowEvent waitWindowEvent();
 	
-	/** Waits for the next WindowEvent with the type specified by the user. Be careful, this method waits forever. If no event is triggered, the program will go on forever, without exiting this method. It's more recomendable to use @ref waitWindowEventTimed(WindowEventType, float) to not to wait forever. The events with different type are skipped and removed from the queue.
+	/** Waits for the next WindowEvent with the type specified by the user. Be careful, this method waits forever. If no event is triggered, the program will go on forever, without exiting this method. It's more recommendable to use @ref waitWindowEventTimed(WindowEventType, float) to not to wait forever. The events with different type are skipped and removed from the queue.
 	*	@param ev_type Type of the target event.
 	*	@return The first WindowEvent in the EventQueue of the Window with the same type as @p ev_type.
 	*/
@@ -2142,38 +2142,38 @@ public:
 	*/
 	WindowEvent waitWindowEventTimed(WindowEventType ev_type, float seconds);
 	
-	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_MOUSE_BUTTON_UP or WINDOW_EVENT_MOUSE_BUTTON_DOWN on mouse left button, depending on @p on_release paramter. In other words, it waits until the left mouse button is pressed.
+	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_MOUSE_BUTTON_UP or WINDOW_EVENT_MOUSE_BUTTON_DOWN on mouse left button, depending on @p on_release parameter. In other words, it waits until the left mouse button is pressed.
 	*	@param on_release When true, the function waits for a "release" event, so it will wait for WINDOW_EVENT_MOUSE_BUTTON_UP, otherwise will wait for WINDOW_EVENT_MOUSE_BUTTON_DOWN. By default its value is @a false.
 	*	@return The point where the mouse was clicked/released.
 	*/
 	Point2D waitMouseLeftClick(bool on_release = false);
 	
-	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_MOUSE_BUTTON_UP or WINDOW_EVENT_MOUSE_BUTTON_DOWN on mouse right button, depending on @p on_release paramter. In other words, it waits until the left mouse button is pressed.
+	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_MOUSE_BUTTON_UP or WINDOW_EVENT_MOUSE_BUTTON_DOWN on mouse right button, depending on @p on_release parameter. In other words, it waits until the left mouse button is pressed.
 	*	@param on_release When true, the function waits for a "release" event, so it will wait for WINDOW_EVENT_MOUSE_BUTTON_UP, otherwise will wait for WINDOW_EVENT_MOUSE_BUTTON_DOWN. By default its value is @a false.
 	*	@return The point where the mouse was clicked/released.
 	*/
 	Point2D waitMouseRightClick(bool on_release =  false);
 	
-	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_MOUSE_BUTTON_UP or WINDOW_EVENT_MOUSE_BUTTON_DOWN on any mouse button, depending on @p on_release paramter. In other words, it waits until any mouse button is pressed.
+	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_MOUSE_BUTTON_UP or WINDOW_EVENT_MOUSE_BUTTON_DOWN on any mouse button, depending on @p on_release parameter. In other words, it waits until any mouse button is pressed.
 	*	@param on_release When true, the function waits for a "release" event, so it will wait for WINDOW_EVENT_MOUSE_BUTTON_UP, otherwise will wait for WINDOW_EVENT_MOUSE_BUTTON_DOWN. By default its value is @a false.
 	*	@return The point where the mouse was clicked/released.
 	*/
 	Point2D waitMouseAnyClick(bool on_release = false);
 	
-	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_MOUSE_BUTTON_UP or WINDOW_EVENT_MOUSE_BUTTON_DOWN on the selected mouse button by the user, depending on @p on_release paramter. In other words, it waits until the selected mouse button is pressed.
-	*	@param mouse_button Number of the target button to listen. It depends on every device, but usually the left buttin is 0 and right button is 1.
+	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_MOUSE_BUTTON_UP or WINDOW_EVENT_MOUSE_BUTTON_DOWN on the selected mouse button by the user, depending on @p on_release parameter. In other words, it waits until the selected mouse button is pressed.
+	*	@param mouse_button Number of the target button to listen. It depends on every device, but usually the left button is 0 and right button is 1.
 	*	@param on_release When true, the function waits for a "release" event, so it will wait for WINDOW_EVENT_MOUSE_BUTTON_UP, otherwise will wait for WINDOW_EVENT_MOUSE_BUTTON_DOWN. By default its value is @a false.
 	*	@return The point where the mouse was clicked/released.
 	*/
 	Point2D waitMouseClick(unsigned int mouse_button = 0, bool on_release = false);
 	
-	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_KEY_UP or WINDOW_EVENT_KEY_DOWN, depending on @p on_release paramter. In other words, it waits until any key is pressed.
+	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_KEY_UP or WINDOW_EVENT_KEY_DOWN, depending on @p on_release parameter. In other words, it waits until any key is pressed.
 	*	@param on_release When true, the function waits for a "release" event, so it will wait for WINDOW_EVENT_KEY_UP, otherwise will wait for WINDOW_EVENT_KEY_DOWN. By default its value is @a false.
 	*	@return The keycode of the pressed key.
 	*/
 	int waitAnyKeypress(bool on_release = false);
 	
-	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_KEY_UP or WINDOW_EVENT_KEY_DOWN, depending on @p on_release paramter and nly waits for the selected key, ignoring the other keypresses. In other words, it waits until the selected key is pressed.
+	/** Waits for the next WindowEvent with the WindowEventType WINDOW_EVENT_KEY_UP or WINDOW_EVENT_KEY_DOWN, depending on @p on_release parameter and only waits for the selected key, ignoring the other keypresses. In other words, it waits until the selected key is pressed.
 	*	@param key Keycode of the target key to listen. See Event for more details.
 	*	@param on_release When true, the function waits for a "release" event, so it will wait for WINDOW_EVENT_KEY_UP, otherwise will wait for WINDOW_EVENT_KEY_DOWN. By default its value is @a false.
 	*	@return The keycode of the pressed key.
@@ -2195,7 +2195,7 @@ public:
 	//Turtle object interaction (SHOULDN'T BE USED BY USER CODE)
 	
 	/** @defgroup window_turtle_interaction Window-Turtle interaction
-	*	This group of methods are intended to be used in a OOP object comunication and not by users. However, it's safe to call them from anywhere of your program (but not recomended!)
+	*	This group of methods are intended to be used in a OOP object communication and not by users. However, it's safe to call them from anywhere of your program (but not recommended!)
 	*	@{
 	*/
 	
@@ -2208,7 +2208,7 @@ public:
 	*	@param p2 coordinates of the second point.
 	*	@param color Color used to draw the line.
 	*	@param thickness Thickness of the line.
-	*	@param showing_cursor Indictes if the turtle using this function is visible or not.
+	*	@param showing_cursor Indicates if the turtle using this function is visible or not.
 	*/
 	void turtleLine(Point2D p1, Point2D p2, RGBColor color, float thickness, bool showing_cursor);
 	
@@ -2235,14 +2235,14 @@ private:
 
 	//private methods
 	
-	/** Initializes de Window.
+	/** Initializes the Window.
 	*	@param window_title Title for the new Window.
 	*	@param width Width of the Window.
 	*	@param height Height of the Window.
-	*	@param background_color Bakcground color of the Window.
+	*	@param background_color Background color of the Window.
 	*	@param drawing_color Drawing color of the Window.
 	*	@param line_width Thickness of the line when drawing.
-	*	@param in_radians If <em>true</em> all the angles of the window will be represented in radians, and all parameters involving angles must be in radians. The same aplies when <em>false</em>, but with degrees instead of radians.
+	*	@param in_radians If <em>true</em> all the angles of the window will be represented in radians, and all parameters involving angles must be in radians. The same applies when <em>false</em>, but with degrees instead of radians.
 	*	@param log_size Size of the drawing log.
 	*/
 	void init(std::string window_title, int width, int height, RGBColor background_color, RGBColor drawing_color, double line_width, bool in_radians, size_t log_size);
@@ -2277,7 +2277,7 @@ private:
 	*/
 	ALLEGRO_TRANSFORM getDefaultTransform();
 	
-	/** Converts the user coordinates to Allegro-frinedly coordinates.
+	/** Converts the user coordinates to Allegro-friendly coordinates.
 	*	@param t Transformation to convert from user to Allegro coordinates.
 	*	@param x X coordinate of the point to convert.
 	*	@param y Y coordinate of the point to convert.
@@ -2292,7 +2292,7 @@ private:
 	*/
 	void autoRefresh();
 	
-	/** Logs a Drawable action to de Draw Log.
+	/** Logs a Drawable action to the Draw Log.
 	*	@param operation Drawable object that encapsulates a drawing action.
 	*/
 	void log(Drawable* operation);
@@ -2301,11 +2301,11 @@ private:
 	*/
 	void redraw();
 	
-	/** Immersive function to add a Turtle to the Window's Turtle list (it isn't really a list, it's a map). 
+	/** Auxiliary function to add a Turtle to the Window's Turtle list (it isn't really a list, it's a map). 
 	*	@param turtle_name Name of the Turtle.
 	*	@param pen PaintBrush that the Turtle will use to draw its lines.
 	*	@param start_point Point where the turtle will be spawned.
-	*	@param font Font taht the Turtle will use to draw text.
+	*	@param font Font that the Turtle will use to draw text.
 	*	@return A boolean value, <EM>true</EM> if the Turtle has been successfully added, false otherwise.
 	*/
 	bool addTurtleP(std::string turtle_name, PaintBrush pen, Point2D start_point, Font & font);
@@ -2326,7 +2326,7 @@ private:
 	*/
 	void drawTurtleCursors();
 	
-	/** Immersive function to draw a rotated image.
+	/** Auxiliary function to draw a rotated image.
 	*	@param image Image to be drawn.
 	*	@param cx X coordinate of the rotation point (relative to the image).
 	*	@param cy Y coordinate of the rotation point (relative to the image).
@@ -2376,7 +2376,7 @@ private:
 	*/
 	float correctCoordinates(float x);
 	
-	/** Converts the user coordinates to Allegro-frinedly coordinates and can apply a correction to them if needed.
+	/** Converts the user coordinates to Allegro-friendly coordinates and can apply a correction to them if needed.
 	*	@param t Transformation to convert from user to Allegro coordinates.
 	*	@param x X coordinate of the point to convert.
 	*	@param y Y coordinate of the point to convert.
@@ -2384,7 +2384,7 @@ private:
 	*/
 	void transformCoordinates(const ALLEGRO_TRANSFORM * t, float * x, float * y, bool correct_coordinates);
 	
-	/** Converts the user coordinates in the array to Allegro-frinedly coordinates and can apply a correction to them if needed.
+	/** Converts the user coordinates in the array to Allegro-friendly coordinates and can apply a correction to them if needed.
 	*	@param t Transformation to convert from user to Allegro coordinates.
 	*	@param points Array of X and Y coordinates to be converted.
 	*	@param n_points @p points size.
@@ -2394,7 +2394,7 @@ private:
 	*/
 	float* getTransformedPoints(const ALLEGRO_TRANSFORM & t, const float * points, size_t n_points, bool correct_coordinates);
 
-	std::string _windowTitle;			 /**< Title shwon at the top of the window.*/
+	std::string _windowTitle;			 /**< Title shown at the top of the window.*/
 	ALLEGRO_DISPLAY * _display; 		/**< Pointer to the Allegro structure that contains the display and its configuration*/
 	ALLEGRO_EVENT_QUEUE * _eventQueue; 	/**< Pointer to the Allegro structure containing the event queue of the window.*/
 
@@ -2411,7 +2411,7 @@ private:
 	ALLEGRO_TRANSFORM _transform; 	/**< Transformation needed to convert between Window's representation of coordinates to Allegro's representation.*/
 
 	//class structures
-	std::deque<Drawable*> _drawLog; /**< A queue that stores the drawing operations efectued on the Window if Draw Log functionality is enabled.*/
+	std::deque<Drawable*> _drawLog; /**< A queue that stores the drawing operations effectuated on the Window if Draw Log functionality is enabled.*/
 	size_t _maxLogSize; 			/**< Max number of operations that Draw Log can save.*/
 
 	//relative drawing (Turtle graphics)
@@ -2426,7 +2426,7 @@ private:
 	bool _drawLogging;		/**< Indicates if Draw Log functionality is enabled or disabled.*/
 	bool _autoRefresh;		/**< Indicates if Auto Refresh functionality is enabled or disabled.*/
 	bool _turtleCursorMoved;/**< Indicates if any Turtle of the Map has moved.*/
-	bool _switchedIn;		/**< Indicates if user has activated the screen. This happens when user minimizes and then maximizes, or simply switches between windows with Alt + Tab or clicking it with the mouse, for exmaple. It indicates that the screen is fully visible again.*/
+	bool _switchedIn;		/**< Indicates if user has activated the screen. This happens when user minimizes and then maximizes, or simply switches between windows with Alt + Tab or clicking it with the mouse, for example. It indicates that the screen is fully visible again.*/
 };
 
 #endif

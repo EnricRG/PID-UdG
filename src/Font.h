@@ -19,7 +19,7 @@ static const int DEFAULT_FONT_FLAGS = 0;					///< Default flags for the default 
 /** When drawing text, inner libraries user formats that are less user friendly than others. This struct tries to simplify the usage of this fonts.
 */
 struct Font {
-	ALLEGRO_FONT* font;		/**< Pointer to the structur that holds the information of an Allegro font.*/
+	ALLEGRO_FONT* font;		/**< Pointer to the structure that holds the information of an Allegro font.*/
 	RGBColor color;			/**< Color of the font.*/
 	int size;				/**< Size of the font.*/
 	

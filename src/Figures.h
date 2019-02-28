@@ -11,7 +11,7 @@
 #include "CommonUtils.h"
 
 ///@brief Contains some structs that can store information about some geometric figures.
-/** This namespace contains a series of structs that store the information about some geometric figures usually used to draw objetcs on a Window. You can use them for any other purposes as well.*/
+/** This namespace contains a series of structs that store the information about some geometric figures usually used to draw objects on a Window. You can use them for any other purposes as well.*/
 namespace figures {
 
 	struct Line {
@@ -31,7 +31,7 @@ namespace figures {
 		*	@param x1 X coordinate of the first end point of the line.
 		*	@param y1 Y coordinate of the first end point of the line.
 		*	@param x2 X coordinate of the other end point of the line.
-		*	@param y2 Y coordinate of the ther end point of the line.
+		*	@param y2 Y coordinate of the other end point of the line.
 		*/
 		Line(float x1, float y1, float x2, float y2) { init(Point2D(x1, y1), Point2D(x2, y2)); }
 
@@ -303,7 +303,7 @@ namespace figures {
 		void init(Point2D center, float rx, float ry, Angle angle) { this->center = center; this->rx = rx; this->ry = ry; this->angle = angle; }
 	};
 
-	typedef Arc Pieslice; //A pieslice is basically an arc with two radii joining both ends with the centre of that arc, the attributes are the same
+	typedef Arc Pieslice; //A pie slice is basically an arc with two radii joining both ends with the center of that arc, the attributes are the same
 
 	//The following structs doesn't use Point2D for efficiency reasons.
 
@@ -401,7 +401,7 @@ namespace figures {
 	typedef Polygon Polyline; //The main difference is that a polygon joins the last point with the first, but the data stored is the same
 	typedef Polyline Ribbon; //basically the same thing
 	
-	struct Multipolygon { //multiple polygons stored as one figure (its intended use is for polygonWithHoles() funciton)
+	struct Multipolygon { //multiple polygons stored as one figure (its intended use is for polygonWithHoles() function)
 		float* vertices;	/**< Array of X and Y coordinates that defines the polygons' vertices.*/
 		int* vertex_counts;	/**< Number of vertices for each polygon */
 

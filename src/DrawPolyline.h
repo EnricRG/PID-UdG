@@ -17,14 +17,14 @@ public:
 	~DrawPolyline() {};
 
 	/** One of the parametric constructors of the class.
-	*	@param points An array of X and Y coordinates descriving the points of the polyline.
+	*	@param points An array of X and Y coordinates describing the points of the polyline.
 	*	@param num_points The number of vertices (pairs of X and Y coordinates) that @p points contains.
 	*	@param brush PaintBrush used to draw the polyline.
 	*/
 	DrawPolyline(const float * points, int num_points, PaintBrush brush);
 	
 	/** One of the parametric constructors of the class.
-	*	@param points An array of X and Y coordinates descriving the points of the polyline.
+	*	@param points An array of X and Y coordinates describing the points of the polyline.
 	*	@param num_points The number of vertices (pairs of X and Y coordinates) that @p points contains.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line.

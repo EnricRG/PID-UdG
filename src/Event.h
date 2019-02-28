@@ -316,7 +316,7 @@ union WindowEvent
 	*/
 	WindowEvent(const ALLEGRO_EVENT & ev) { copy(ev); }
 
-	/** Asignment operator taking as operand an Allegro Event.
+	/** Assignment operator taking as operand an Allegro Event.
 	*	@param ev Allegro Event.
 	*/
 	WindowEvent& operator=(const ALLEGRO_EVENT & ev) {

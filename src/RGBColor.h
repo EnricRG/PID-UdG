@@ -14,7 +14,7 @@ struct RGBColor {
 				  b, /**< Blue value of the color.*/
 				  a; /**< Alpha value of the color.*/
 
-	/** Defualt constructor. The resulting color is full opaque white.
+	/** Default constructor. The resulting color is full opaque white.
 	*/
 	RGBColor() { this->b = MAX_CHAR; this->g = MAX_CHAR; this->b = MAX_CHAR; a = MAX_CHAR; }
 	

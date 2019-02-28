@@ -17,7 +17,7 @@ public:
 	~DrawFilledPolygonWithHoles() {};
 
 	/** Parametric constructor of the class
-	*	@param points An array of X and Y coordinates descriving the vertices of the polygon.
+	*	@param points An array of X and Y coordinates describing the vertices of the polygon.
 	*	@param vertex_counts The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*/

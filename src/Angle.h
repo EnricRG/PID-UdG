@@ -16,7 +16,7 @@ static const int DEGS = RADS_TO_DEGS;			/**< The angle's unit are degrees.*/
 
 /// @brief Struct that stores an angle.
 /**
-*	This struct can sotre an angle in different units: degrees, radians or unspecified. If you use degrees or radians, conversions can be made between them.
+*	This struct can store an angle in different units: degrees, radians or unspecified. If you use degrees or radians, conversions can be made between them.
 */
 struct Angle {
 	float start, 			/**< Starting angle.*/
@@ -30,7 +30,7 @@ struct Angle {
 	/** Parametric constructor of Angle. Allows you to convert the angle's units when instantiated.
 	*	@param start Starting angle.
 	*	@param delta Difference between the starting point and end point of the angle.
-	*	@param conversion_type Type of converion.
+	*	@param conversion_type Type of conversion.
 	*/
 	Angle(float start, float delta, int conversion_type) {
 		this->start = start;
@@ -66,7 +66,7 @@ struct Angle {
 		}
 	}
 
-	/** Makes a reverse conversion of the angle. If it was set in degrees, will convert it to radians and viceversa.
+	/** Makes a reverse conversion of the angle. If it was set in degrees, will convert it to radians and vice versa.
 	*/
 	void reverseConversion() {
 		switch (units) {

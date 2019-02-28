@@ -17,13 +17,13 @@ public:
 	~DrawSpline() {};
 
 	/** One of the parametric constructors of the class.
-	*	@param points An array of X and Y coordinates descriving the points of the spline.
+	*	@param points An array of X and Y coordinates describing the points of the spline.
 	*	@param brush PaintBrush used to draw the spline.
 	*/
 	DrawSpline(float * points, PaintBrush brush);
 	
 	/** One of the parametric constructors of the class.
-	*	@param points An array of X and Y coordinates descriving the points of the spline.
+	*	@param points An array of X and Y coordinates describing the points of the spline.
 	*	@param color Color used to draw the figure.
 	*	@param thickness Thickness of the line.
 	*/

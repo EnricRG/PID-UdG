@@ -17,14 +17,14 @@ public:
 	~DrawPolygon() {};
 
 	/** One of the parametric constructors of the class.
-	*	@param points An array of X and Y coordinates descriving the vertices of the polygon.
+	*	@param points An array of X and Y coordinates describing the vertices of the polygon.
 	*	@param num_points The number of vertices (pairs of X and Y coordinates) that @p points contains.
 	*	@param brush PaintBrush used to draw the arc.
 	*/
 	DrawPolygon(const float * points, int num_points, PaintBrush brush);
 	
 	/** One of the parametric constructors of the class.
-	*	@param points An array of X and Y coordinates descriving the vertices of the polygon.
+	*	@param points An array of X and Y coordinates describing the vertices of the polygon.
 	*	@param num_points The number of vertices (pairs of X and Y coordinates) that @p points contains.
 	*	@param color Color used to draw the arc.
 	*	@param thickness Thickness of the arc.

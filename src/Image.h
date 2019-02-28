@@ -4,12 +4,12 @@
 #include <allegro5/allegro_image.h>
 #include <string>
 
-/// @brief Struct that hols the information of an Allegro bitmap to be represented on the Window.
+/// @brief Struct that holds the information of an Allegro bitmap to be represented on the Window.
 struct Image {
 	ALLEGRO_BITMAP* image; 	/**< Bitmap containing the information of the image.*/
 
-	//Image inicialization attributes
-	std::string imagePath;	/**< Path from where the image has been loaded. If the image has been copied from another image, the path will be de empty string.*/
+	//Image initialization attributes
+	std::string imagePath;	/**< Path from where the image has been loaded. If the image has been copied from another image, the path will be the empty string.*/
 
 	/** Default constructor. Because the path of the file containing the image is not specified, it creates an invalid image.*/
 	Image() { init(""); } //Invalid image
@@ -32,7 +32,7 @@ struct Image {
 	*/
 	Image(const Image & i) { copy(i); }
 	
-	/** Assignment operaotr. 
+	/** Assignment operator. 
 	*	@param i Reference image to be copied.
 	*/
 	Image& operator=(const Image & i) {
@@ -84,7 +84,7 @@ struct Image {
 		image = NULL;
 	}
 
-	/** Copies the information fo @p i into this Image, creating a clone.
+	/** Copies the information of @p i into this Image, creating a clone.
 	*	@param i Copied Image.
 	*/
 	void copy(const Image & i) {
