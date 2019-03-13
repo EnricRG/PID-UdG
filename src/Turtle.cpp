@@ -108,6 +108,20 @@ float Turtle::setHeading(float angle)
 	return aux;
 }
 
+RGBColor Turtle::setDrawingColor(RGBColor color)
+{
+	RGBColor aux = pen.color;
+	pen.color = color;
+	return aux;
+}
+
+float Turtle::setDrawingThickness(float thickness)
+{
+	float aux = pen.thickness;
+	pen.thickness = thickness;
+	return aux;
+}
+
 PaintBrush Turtle::setPen(PaintBrush pen)
 {
 	PaintBrush aux = this->pen;
@@ -173,6 +187,12 @@ void Turtle::setFont(Font f)
 	font = f;
 }
 
+void Turtle::changeCursorColor(RGBColor color)
+{
+	cursor = Image(createArrowCursor(color));
+	window->cursorUpdate();
+}
+
 void Turtle::drawCursor()
 {
 	Point2D rotation_point = Point2D(cursor.width() / 2, cursor.height() / 2);
@@ -191,16 +211,16 @@ void Turtle::init(std::string name, Point2D position, float direction, PaintBrus
 	this->font = font;
 	painting = true;
 	showPosition = false;
-	cursor = Image(initCursor(ARROW_CURSOR_PATH));
+	cursor = Image(initCursor(ARROW_CURSOR_PATH, BLACK));
 }
 
-ALLEGRO_BITMAP* Turtle::initCursor(const char * cursor_path)
+ALLEGRO_BITMAP* Turtle::initCursor(const char * cursor_path, RGBColor color)
 {
 	if (!al_init()) throw AllegroException("could not initialize Allegro system");
 
 	if(!al_init_image_addon()) throw AllegroException("could not initialize Allegro image system");
 	
-	return createArrowCursor();
+	return createArrowCursor(color);
 
 	//return al_load_bitmap(cursor_path);
 }
@@ -240,22 +260,22 @@ Point2D Turtle::move(float dist, float direction)
 	return next_pos;
 }
 
-ALLEGRO_BITMAP * Turtle::createArrowCursor()
+ALLEGRO_BITMAP * Turtle::createArrowCursor(RGBColor color)
 {
 	ALLEGRO_BITMAP *cursor = al_create_bitmap(32, 32), *aux = al_create_bitmap(10,10), *previous;
-	ALLEGRO_COLOR color = BLACK.toAllegroColor();
+	ALLEGRO_COLOR allegro_color = color.toAllegroColor();
 
 	previous = al_get_target_bitmap();
 	al_set_target_bitmap(aux);
 
-	al_draw_filled_rectangle(0, 0, 2, 2, color);
-	al_draw_filled_rectangle(1, 1, 4, 3, color);
-	al_draw_filled_rectangle(2, 2, 6, 4, color);
-	al_draw_filled_rectangle(3, 3, 8, 6, color);
-	al_draw_pixel(9, 5, color);
-	al_draw_filled_rectangle(2, 5, 6, 7, color);
-	al_draw_filled_rectangle(1, 6, 4, 8, color);
-	al_draw_filled_rectangle(0, 7, 2, 9, color);
+	al_draw_filled_rectangle(0, 0, 2, 2, allegro_color);
+	al_draw_filled_rectangle(1, 1, 4, 3, allegro_color);
+	al_draw_filled_rectangle(2, 2, 6, 4, allegro_color);
+	al_draw_filled_rectangle(3, 3, 8, 6, allegro_color);
+	al_draw_pixel(9, 5, allegro_color);
+	al_draw_filled_rectangle(2, 5, 6, 7, allegro_color);
+	al_draw_filled_rectangle(1, 6, 4, 8, allegro_color);
+	al_draw_filled_rectangle(0, 7, 2, 9, allegro_color);
 	
 	al_set_target_bitmap(cursor);
 	al_draw_bitmap(aux, 12, 11, 0);

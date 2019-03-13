@@ -2011,7 +2011,26 @@ public:
 	*/
 	float t_setHeading(float angle);
 	
-	//TODO: modificar llapis individualment.
+	/** Changes the color of the active Turtle given the new color.
+	*	@param color The new color.
+	*	@return The old color.
+	*/
+	RGBColor t_setDrawingColor(RGBColor color);
+
+	/** Changes the drawing color of the active Turtle given the new color.
+	*	@param r The red component of the new color.
+	*	@param g The green component of the new color.
+	*	@param b The blue component of the new color.
+	*	@param a The alpha component of the new color.
+	*	@return The old color.
+	*/
+	RGBColor t_setDrawingColor(int r, int g, int b, int a);
+
+	/** Changes the drawing thickness of the active Turtle given the new color.
+	*	@param color The new color.
+	*	@return The old color.
+	*/
+	float t_setDrawingThickness(float thickness);
 
 	/** Changes the pen of the active Turtle given the new PaintBrush.
 	*	@param pen The new PaintBrush.
@@ -2098,6 +2117,11 @@ public:
 	*/
 	void t_setFont(Font f);
 
+	/** Changes the color of the cursor of the active Turtle
+	*	@param color The new cursor color.
+	*/
+	void t_changeCursorColor(RGBColor color);
+
 	//General turtle interaction
 	
 	/** Returns the name of the selected Turtle. Using this method means that you don't know what you're doing.
@@ -2179,7 +2203,31 @@ public:
 	*	@return The old heading.
 	*/
 	float t_setHeading(std::string turtle_name, float angle);
-	
+
+	/** Changes the color of the active Turtle given the new color.
+	*	@param turtle_name Name of the selected Turtle.
+	*	@param color The new color.
+	*	@return The old color.
+	*/
+	RGBColor t_setDrawingColor(std::string turtle_name, RGBColor color);
+
+	/** Changes the drawing color of the active Turtle given the new color.
+	*	@param turtle_name Name of the selected Turtle.
+	*	@param r The red component of the new color.
+	*	@param g The green component of the new color.
+	*	@param b The blue component of the new color.
+	*	@param a The alpha component of the new color.
+	*	@return The old color.
+	*/
+	RGBColor t_setDrawingColor(std::string turtle_name, int r, int g, int b, int a);
+
+	/** Changes the drawing thickness of the active Turtle given the new color.
+	*	@param turtle_name Name of the selected Turtle.
+	*	@param color The new color.
+	*	@return The old color.
+	*/
+	float t_setDrawingThickness(std::string turtle_name, float thickness);
+
 	/** Changes the pen of the selected Turtle given the new PaintBrush.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param pen The new PaintBrush.
@@ -2279,6 +2327,12 @@ public:
 	*	@param f New Font.
 	*/
 	void t_setFont(std::string turtle_name, Font f);
+
+	/** Changes the color of the cursor of the selected Turtle
+	*	@param turtle_name Name of the selected Turtle.
+	*	@param color The new cursor color.
+	*/
+	void t_changeCursorColor(std::string turtle_name, RGBColor color);
 
 	/** @}*/
 	

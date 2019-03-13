@@ -314,7 +314,10 @@ int main(int argc, char **argv) {
 	
 	Window w;
 
-	w.quadrilateral(Point2D(50, 50), Point2D(100, 50), Point2D(100, 100), Point2D(50, 100), RED);
+	w.t_setPos(100, 100);
+	w.t_show();
+	w.waitAnyKeypress();
+	w.t_changeCursorColor(GREEN);
 
 	w.waitWindowCloseButton();
 

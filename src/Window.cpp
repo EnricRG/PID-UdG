@@ -1220,6 +1220,21 @@
 		return _activeTurtle->setHeading(a.delta);
 	}
 
+	RGBColor Window::t_setDrawingColor(RGBColor color)
+	{
+		return _activeTurtle->setDrawingColor(color);
+	}
+
+	RGBColor Window::t_setDrawingColor(int r, int g, int b, int a)
+	{
+		return t_setDrawingColor(RGBColor(r, g, b, a));
+	}
+
+	float Window::t_setDrawingThickness(float thickness)
+	{
+		return _activeTurtle->setDrawingThickness(thickness);
+	}
+
 	PaintBrush Window::t_setPen(PaintBrush pen)
 	{
 		return _activeTurtle->setPen(pen);
@@ -1295,6 +1310,11 @@
 		_activeTurtle->setFont(f);
 	}
 
+	void Window::t_changeCursorColor(RGBColor color)
+	{
+		_activeTurtle->changeCursorColor(color);
+	}
+
 	std::string Window::t_getName(std::string turtle_name) const
 	{
 		return peekTurtle(_turtles, turtle_name)->getName();
@@ -1356,6 +1376,21 @@
 	{
 		Angle a(0, angle, _angleConversionType);
 		return findTurtle(_turtles, turtle_name)->setHeading(a.delta);
+	}
+
+	RGBColor Window::t_setDrawingColor(std::string turtle_name, RGBColor color)
+	{
+		return findTurtle(_turtles, turtle_name)->setDrawingColor(color);
+	}
+
+	RGBColor Window::t_setDrawingColor(std::string turtle_name, int r, int g, int b, int a)
+	{
+		return t_setDrawingColor(turtle_name, RGBColor(r, g, b, a));
+	}
+
+	float Window::t_setDrawingThickness(std::string turtle_name, float thickness)
+	{
+		return findTurtle(_turtles, turtle_name)->setDrawingThickness(thickness);
 	}
 
 	PaintBrush Window::t_setPen(std::string turtle_name, PaintBrush pen)
@@ -1431,6 +1466,11 @@
 	void Window::t_setFont(std::string turtle_name, Font f)
 	{
 		findTurtle(_turtles, turtle_name)->setFont(f);
+	}
+
+	void Window::t_changeCursorColor(std::string turtle_name, RGBColor color)
+	{
+		findTurtle(_turtles, turtle_name)->changeCursorColor(color);
 	}
 
 

@@ -35,6 +35,8 @@ public:
 	Point2D setPos(float x, float y);
 	Point2D setPos(Point2D p);
 	float setHeading(float angle);
+	RGBColor setDrawingColor(RGBColor color);
+	float setDrawingThickness(float thickness);
 	PaintBrush setPen(PaintBrush pen);
 	void show();
 	void hide();
@@ -49,6 +51,7 @@ public:
 	void changeMotion(int turtle_motion);
 	void setFont(Font f);
 
+	void changeCursorColor(RGBColor color);
 	void drawCursor();
 	
 private:
@@ -56,11 +59,11 @@ private:
 	static const char * ARROW_CURSOR_PATH;
 
 	void init(std::string name, Point2D position, float direction, PaintBrush pen, int turtle_motion, Font & font, Window * window);
-	static ALLEGRO_BITMAP* initCursor(const char * cursor_path);
+	static ALLEGRO_BITMAP* initCursor(const char * cursor_path, RGBColor color);
 	void copy(const Turtle & t);
 	void destroy();
 	Point2D move(float dist, float direction);
-	static ALLEGRO_BITMAP* createArrowCursor();
+	static ALLEGRO_BITMAP* createArrowCursor(RGBColor color);
 
 	std::string name;
 	Point2D currentPosition;
