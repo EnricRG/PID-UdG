@@ -175,6 +175,18 @@
 		if (_drawLogging) log(new DrawFilledRoundedRectangle(x1, y1, x2, y2, rx, ry, color));
 	}
 
+	void Window::quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, RGBColor color, float thickness)
+	{
+		float vertices[8] = { x1,y1,x2,y2,x3,y3,x4,y4 };
+		polygon(vertices, 4, color, thickness);
+	}
+
+	void Window::filled_quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, RGBColor color)
+	{
+		float vertices[8] = { x1,y1,x2,y2,x3,y3,x4,y4 };
+		filled_polygon(vertices, 4, color);
+	}
+
 	void Window::ellipse(float cx, float cy, float rx, float ry, RGBColor color, float thickness)
 	{
 		float transformed_cx = cx, transformed_cy = cy;
@@ -465,6 +477,16 @@
 		filled_rounded_rectangle(p1.x, p1.y, p2.x, p2.y, rx, ry, color);
 	}
 
+	void Window::quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4, RGBColor color, float thickness)
+	{
+		quadrilateral(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y, p4.x, p4.y, color, thickness);
+	}
+
+	void Window::filled_quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4, RGBColor color)
+	{
+		filled_quadrilateral(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y, p4.x, p4.y, color);
+	}
+
 	void Window::ellipse(Point2D c, float rx, float ry, RGBColor color, float thickness)
 	{
 		ellipse(c.x, c.y, rx, ry, color, thickness);
@@ -601,6 +623,16 @@
 		filled_rounded_rectangle(x1, y1, x2, y2, rx, ry, _drawingBrush.color);
 	}
 
+	void Window::quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4)
+	{
+		quadrilateral(x1, y1, x2, y2, x3, y3, x4, y4, _drawingBrush.color, _drawingBrush.thickness);
+	}
+
+	void Window::filled_quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4)
+	{
+		filled_quadrilateral(x1, y1, x2, y2, x3, y3, x4, y4, _drawingBrush.color);
+	}
+
 	void Window::ellipse(float cx, float cy, float rx, float ry)
 	{
 		ellipse(cx, cy, rx, ry, _drawingBrush.color, _drawingBrush.thickness);
@@ -711,6 +743,16 @@
 	void Window::rounded_rectangle(Point2D p1, Point2D p2, float rx, float ry)
 	{
 		rounded_rectangle(p1, p2, rx, ry, _drawingBrush.color, _drawingBrush.thickness);
+	}
+
+	void Window::quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4)
+	{
+		quadrilateral(p1, p2, p3, p4, _drawingBrush.color, _drawingBrush.thickness);
+	}
+
+	void Window::filled_quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4)
+	{
+		filled_quadrilateral(p1, p2, p3, p4, _drawingBrush.color);
 	}
 
 	void Window::filled_rounded_rectangle(Point2D p1, Point2D p2, float rx, float ry)

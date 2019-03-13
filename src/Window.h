@@ -187,8 +187,8 @@ public:
 	*	@param y2 Y coordinate of the second point.
 	*	@param x3 X coordinate of the third point.
 	*	@param y3 Y coordinate of the third point.
-	*	@param color Color used to draw the line.
-	*	@param thickness Thickness of the line. Its value is <EM>1.0</EM> by default.
+	*	@param color Color used to draw the figure.
+	*	@param thickness Thickness of the figure. Its value is <EM>1.0</EM> by default.
 	*/
 	void triangle(float x1, float y1, float x2, float y2, float x3, float y3, RGBColor color, float thickness = 1.0);
 
@@ -275,6 +275,45 @@ public:
 	*	@param color Color used to draw the figure.
 	*/
 	void filled_rounded_rectangle(float x1, float y1, float x2, float y2, float rx, float ry, RGBColor color);
+
+	/** Draws a quadrilateral given its four vertices. 
+	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points. 
+	*	For example this code:
+	*	@include quadrilateral_1.cpp
+	*	Would generate this output:
+	*	@image html quadrilateral.png
+	*	@image latex quadrilateral.eps
+	*	@param x1 X coordinate of the first point.
+	*	@param y1 Y coordinate of the first point.
+	*	@param x2 X coordinate of the second point.
+	*	@param y2 Y coordinate of the second point.
+	*	@param x3 X coordinate of the third point.
+	*	@param y3 Y coordinate of the third point.
+	*	@param x4 X coordinate of the fourth point.
+	*	@param y4 Y coordinate of the fourth point.
+	*	@param color Color used to draw the edges.
+	*	@param thickness Thickness of the edges. Its value is <EM>1.0</EM> by default.
+	*/
+	void quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, RGBColor color, float thickness = 1.0);
+
+	/** Draws a filled quadrilateral given its four vertices.
+	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points.
+	*	For example this code:
+	*	@include filled_quadrilateral_1.cpp
+	*	Would generate this output:
+	*	@image html filled_quadrilateral.png
+	*	@image latex filled_quadrilateral.eps
+	*	@param x1 X coordinate of the first point.
+	*	@param y1 Y coordinate of the first point.
+	*	@param x2 X coordinate of the second point.
+	*	@param y2 Y coordinate of the second point.
+	*	@param x3 X coordinate of the third point.
+	*	@param y3 Y coordinate of the third point.
+	*	@param x4 X coordinate of the fourth point.
+	*	@param y4 Y coordinate of the fourth point.
+	*	@param color Color used to draw the edges.
+	*/
+	void filled_quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, RGBColor color);
 
 	/** Draws an ellipse given its center's coordinates and its radii.
 	*	For example this code:
@@ -635,6 +674,37 @@ public:
 	*/
 	void filled_rounded_rectangle(Point2D p1, Point2D p2, float rx, float ry, RGBColor color);
 	
+	/** Draws a quadrilateral given its four vertices.
+	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points.
+	*	For example this code:
+	*	@include quadrilateral_2.cpp
+	*	Would generate this output:
+	*	@image html quadrilateral.png
+	*	@image latex quadrilateral.eps
+	*	@param p1 coordinates of the first point.
+	*	@param p2 coordinates of the second point.
+	*	@param p3 coordinates of the third point.
+	*	@param p4 coordinates of the fourth point.
+	*	@param color Color used to draw the edges.
+	*	@param thickness Thickness of the edges. Its value is <EM>1.0</EM> by default.
+	*/
+	void quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4, RGBColor color, float thickness = 1.0);
+
+	/** Draws a filled quadrilateral given its four vertices.
+	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points.
+	*	For example this code:
+	*	@include filled_quadrilateral_2.cpp
+	*	Would generate this output:
+	*	@image html filled_quadrilateral.png
+	*	@image latex filled_quadrilateral.eps
+	*	@param p1 coordinates of the first point.
+	*	@param p2 coordinates of the second point.
+	*	@param p3 coordinates of the third point.
+	*	@param p4 coordinates of the fourth point.
+	*	@param color Color used to draw the edges.
+	*/
+	void filled_quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4, RGBColor color);
+
 	/** Draws an ellipse given its center's coordinates and its radii.
 	*	For example this code:
 	*	@include ellipse_2.cpp
@@ -988,7 +1058,43 @@ public:
 	*	@param ry Vertical radius of the rounding ellipse.
 	*/
 	void filled_rounded_rectangle(float x1, float y1, float x2, float y2, float rx, float ry);
-	
+
+	/** Draws a quadrilateral given its four vertices. This call uses the PaintBrush of the Window to draw, if needed.
+	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points.
+	*	For example this code:
+	*	@include quadrilateral_3.cpp
+	*	Would generate this output:
+	*	@image html quadrilateral.png
+	*	@image latex quadrilateral.eps
+	*	@param x1 X coordinate of the first point.
+	*	@param y1 Y coordinate of the first point.
+	*	@param x2 X coordinate of the second point.
+	*	@param y2 Y coordinate of the second point.
+	*	@param x3 X coordinate of the third point.
+	*	@param y3 Y coordinate of the third point.
+	*	@param x4 X coordinate of the fourth point.
+	*	@param y4 Y coordinate of the fourth point.
+	*/
+	void quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
+
+	/** Draws a filled quadrilateral given its four vertices. This call uses the PaintBrush of the Window to draw, if needed.
+	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points.
+	*	For example this code:
+	*	@include filled_quadrilateral_3.cpp
+	*	Would generate this output:
+	*	@image html filled_quadrilateral.png
+	*	@image latex filled_quadrilateral.eps
+	*	@param x1 X coordinate of the first point.
+	*	@param y1 Y coordinate of the first point.
+	*	@param x2 X coordinate of the second point.
+	*	@param y2 Y coordinate of the second point.
+	*	@param x3 X coordinate of the third point.
+	*	@param y3 Y coordinate of the third point.
+	*	@param x4 X coordinate of the fourth point.
+	*	@param y4 Y coordinate of the fourth point.
+	*/
+	void filled_quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
+
 	/** Draws an ellipse given its center's coordinates and its radii. This call uses the PaintBrush of the Window to draw, if needed.
 	*	For example this code:
 	*	@include ellipse_3.cpp
@@ -1279,7 +1385,35 @@ public:
 	*	@param ry Vertical radius of the rounding ellipse.
 	*/
 	void rounded_rectangle(Point2D p1, Point2D p2, float rx, float ry);
-	
+
+	/** Draws a quadrilateral given its four vertices. This call uses the PaintBrush of the Window to draw, if needed.
+	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points.
+	*	For example this code:
+	*	@include quadrilateral_42.cpp
+	*	Would generate this output:
+	*	@image html quadrilateral.png
+	*	@image latex quadrilateral.eps
+	*	@param p1 coordinates of the first point.
+	*	@param p2 coordinates of the second point.
+	*	@param p3 coordinates of the third point.
+	*	@param p4 coordinates of the fourth point.
+	*/
+	void quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4);
+
+	/** Draws a filled quadrilateral given its four vertices. This call uses the PaintBrush of the Window to draw, if needed.
+	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points.
+	*	For example this code:
+	*	@include filled_quadrilateral_4.cpp
+	*	Would generate this output:
+	*	@image html filled_quadrilateral.png
+	*	@image latex filled_quadrilateral.eps
+	*	@param p1 coordinates of the first point.
+	*	@param p2 coordinates of the second point.
+	*	@param p3 coordinates of the third point.
+	*	@param p4 coordinates of the fourth point.
+	*/
+	void filled_quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4);
+
 	/** Draws a rounded rectangle given its top left and bottom right corners' coordinates and its rounding radii. This call uses the PaintBrush of the Window to draw, if needed.
 	*	For example this code:
 	*	@include filled_rounded_rectangle_4.cpp
