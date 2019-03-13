@@ -9,7 +9,7 @@
 	#include "Figures.h"
 
 	#include "CommonUtils.h"
-#include "assert.h"
+	#include "assert.h"
 
 	int Window::NUMBER_OF_DISPLAYS = 0;
 
@@ -840,6 +840,7 @@
  			ALLEGRO_BITMAP* screen_state = al_clone_bitmap(al_get_backbuffer(_display));
 
 			drawTurtleCursors();
+
 			al_flip_display();
 
 			al_draw_bitmap(screen_state, 0, 0, 0);
@@ -917,6 +918,7 @@
 		_backgroundColor = c;
 		al_clear_to_color(_backgroundColor.toAllegroColor());
 		redraw();
+		turtleMoved();
 		update();
 	}
 
@@ -1750,7 +1752,7 @@
 
 	void Window::init(std::string window_title, int width, int height, RGBColor backgroundColor, RGBColor drawingColor, double lineWidth, bool inRadians, size_t logSize)
 	{
-		if (!al_install_system(ALLEGRO_VERSION_INT,NULL)) throw AllegroException("Error initializing Allegro"); //initializing Allegro
+		if (!al_init()) throw AllegroException("Error initializing Allegro"); //initializing Allegro
 
 		_display = al_create_display(width, height);
 
@@ -1816,7 +1818,7 @@
 		_turtles.clear();
 		_fonts.clear();
 		al_destroy_event_queue(_eventQueue);
-		al_set_target_bitmap(NULL);
+		//al_set_target_bitmap(NULL);
 		al_destroy_display(_display);
 		if (NUMBER_OF_DISPLAYS == 1) { //if its the last display to be destroyed
 			al_uninstall_mouse();
@@ -1825,7 +1827,7 @@
 			al_shutdown_font_addon();
 			al_shutdown_image_addon();
 			al_shutdown_primitives_addon();
-			al_uninstall_system();
+			//al_uninstall_system();
 		}
 		NUMBER_OF_DISPLAYS--;
 		//delete _activeTurtle; don't do this, it's a bad idea

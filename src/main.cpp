@@ -25,7 +25,7 @@ void primitives(Window & w, Image & i) {
 	std::string text = "Projecte d'Innovacio Docent\nImplementacio d'una classe Window en C++\ncom a interficie d'alt nivell a Allegro";
 	Point2D textPos(500, 300);
 	Font f("Fonts\\open-sans\\OpenSans-Light.ttf", BLUE, 14, 0);
-	w.addFont("OpenSansBold", "Fonts\\open-sans\\OpenSans-Bold.ttf", 16, GREEN);
+	w.addFont("OpenSansBold", "Fonts\\open-sans\\OpenSans-Bold.ttf", GREEN, 16);
 
 	w.text(500, 300, text.c_str(), TEXT_ALIGN_CENTER);
 	w.text(f, 500, 500, text.c_str(), TEXT_ALIGN_LEFT);
@@ -243,7 +243,7 @@ int main3(int argc, char **argv)
 
 	//w.setAutoUpdate(true);
 	w.enableLogging();
-	
+	/*
 	Font f("Fonts/open-sans/OpenSans-Bold.ttf", BLACK, 32, 0);
 	Point2D warningTextPos(width / 2, height / 2);
 	
@@ -288,7 +288,7 @@ int main3(int argc, char **argv)
 	//w.rest(7);
 	wait(w);
 	w.clear();
-
+	*/
 	w2.clear();
 	w2.rest(0.5);
 	w2.line(0, 0, 300, 300, RED);
@@ -310,14 +310,12 @@ int main3(int argc, char **argv)
 	return 0;
 } 
 
-int main2(int argc, char **argv) {
-	Window finestra_blanca("Finestreta blanqueta", 300, 300);
-	//Window finestra_negre("Finestreta negreta", 300, 300, BLACK, WHITE);
-	Window finestra_blanca_2 = finestra_blanca;
+int main(int argc, char **argv) {
+	
+	for (int i = 0; i < 2; i++) {
+		Window w;
+		w.waitWindowCloseButton();
+	}
 
-	finestra_blanca.circle(150, 150, 50);	//pintarà el cercle en negre
-	finestra_blanca_2.circle(150, 150, 50);	//pintarà igual que la primera
-
-	finestra_blanca.waitWindowCloseButton(); //ens esperem a que es tanqui la primera amb el botó X
 	return 0;
 }

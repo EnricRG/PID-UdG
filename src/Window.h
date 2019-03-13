@@ -15,7 +15,7 @@
 #include "WindowSpec.h"
 #include "Image.h"
 #include "Event.h"
-#include "Figures.h"
+#include "Point2D.h"
 
 #include <string>
 #include <iostream>
