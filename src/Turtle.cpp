@@ -88,28 +88,31 @@ Point2D Turtle::setPos(float x, float y)
 
 Point2D Turtle::setPos(Point2D p)
 {
+	Point2D aux = currentPosition;
 	currentPosition = p;
 	if (showPosition) {
 		window->turtleMoved();
 		window->cursorUpdate();
 	}
-	return currentPosition;
+	return aux;
 }
 
 float Turtle::setHeading(float angle)
 {
+	float aux = direction;
 	direction = angle;
 	if (showPosition) {
 		window->turtleMoved();
 		window->cursorUpdate();
 	}
-	return direction;
+	return aux;
 }
 
 PaintBrush Turtle::setPen(PaintBrush pen)
 {
+	PaintBrush aux = this->pen;
 	this->pen = pen;
-	return pen;
+	return aux;
 }
 
 void Turtle::show()

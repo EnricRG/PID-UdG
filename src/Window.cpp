@@ -1172,6 +1172,16 @@
 		return _activeTurtle->getPos();
 	}
 
+	float Window::t_getPosX() const
+	{
+		return t_getPos().x;
+	}
+
+	float Window::t_getPosY() const
+	{
+		return t_getPos().y;
+	}
+
 	Point2D Window::t_forward(float dist)
 	{
 		return _activeTurtle->forward(dist);
@@ -1300,6 +1310,16 @@
 		return peekTurtle(_turtles, turtle_name)->getPos();
 	}
 
+	float Window::t_getPosX(std::string turtle_name) const
+	{
+		return t_getPos(turtle_name).x;
+	}
+
+	float Window::t_getPosY(std::string turtle_name) const
+	{
+		return t_getPos(turtle_name).y;
+	}
+
 	Point2D Window::t_forward(std::string turtle_name, float dist)
 	{
 		return findTurtle(_turtles, turtle_name)->forward(dist);
@@ -1343,14 +1363,14 @@
 		return findTurtle(_turtles, turtle_name)->setPen(pen);
 	}
 
-	RGBColor Window::t_setPen(std::string turtle_name, RGBColor color)
+	PaintBrush Window::t_setPen(std::string turtle_name, RGBColor color)
 	{
 		return t_setPen(turtle_name, color, _drawingBrush.thickness);
 	}
 
-	RGBColor Window::t_setPen(std::string turtle_name, RGBColor color, float thickness)
+	PaintBrush Window::t_setPen(std::string turtle_name, RGBColor color, float thickness)
 	{
-		return t_setPen(turtle_name, PaintBrush(color, thickness)).color;
+		return t_setPen(turtle_name, PaintBrush(color, thickness));
 	}
 
 	Point2D Window::t_home(std::string turtle_name)
@@ -1763,6 +1783,16 @@
 	WindowSpec Window::getWindowSpec() const
 	{
 		return WindowSpec(al_get_display_width(_display), al_get_display_height(_display));
+	}
+
+	int Window::getWindowX() const
+	{
+		return al_get_display_width(_display);
+	}
+
+	int Window::getWindowY() const
+	{
+		return al_get_display_height(_display);
 	}
 
 	void Window::turtleMoved()

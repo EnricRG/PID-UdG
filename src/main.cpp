@@ -312,10 +312,11 @@ int main3(int argc, char **argv)
 
 int main(int argc, char **argv) {
 	
-	for (int i = 0; i < 2; i++) {
-		Window w;
-		w.waitWindowCloseButton();
-	}
+	Window w;
+
+	w.quadrilateral(Point2D(50, 50), Point2D(100, 50), Point2D(100, 100), Point2D(50, 100), RED);
+
+	w.waitWindowCloseButton();
 
 	return 0;
 }

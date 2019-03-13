@@ -312,6 +312,7 @@ public:
 	*	@param x4 X coordinate of the fourth point.
 	*	@param y4 Y coordinate of the fourth point.
 	*	@param color Color used to draw the edges.
+	*	@pre: To effectively draw this figure, the vertices should be defined counter clockwise.
 	*/
 	void filled_quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, RGBColor color);
 
@@ -543,6 +544,7 @@ public:
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@pre <EM>vertex_count</EM> must be less or equal than the real <EM>vertices</EM> buffer length divided by 2.
+	*		To effectively draw this figure, the vertices should be defined counter clockwise.
 	*/
 	void filled_polygon(const float *vertices, int vertex_count, RGBColor color);
 
@@ -702,6 +704,7 @@ public:
 	*	@param p3 coordinates of the third point.
 	*	@param p4 coordinates of the fourth point.
 	*	@param color Color used to draw the edges.
+	*	@pre: To effectively draw this figure, the vertices should be defined counter clockwise.
 	*/
 	void filled_quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4, RGBColor color);
 
@@ -923,6 +926,7 @@ public:
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@param color Color used to draw the figure.
 	*	@pre <EM>vertex_count</EM> must be less or equal than the real <EM>vertices</EM> buffer length.
+	*		To effectively draw this figure, the vertices should be defined counter clockwise.
 	*/
 	void filled_polygon(const Point2D *vertices, int vertex_count, RGBColor color);
 	
@@ -1092,6 +1096,7 @@ public:
 	*	@param y3 Y coordinate of the third point.
 	*	@param x4 X coordinate of the fourth point.
 	*	@param y4 Y coordinate of the fourth point.
+	*	@pre: To effectively draw this figure, the vertices should be defined counter clockwise.
 	*/
 	void filled_quadrilateral(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
 
@@ -1284,6 +1289,7 @@ public:
 	*	@param vertices An array of X and Y coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices (pairs of X and Y coordinates) that <EM>vertices</EM> contains.
 	*	@pre <EM>vertex_count</EM> must be less or equal than the real <EM>vertices</EM> buffer length divided by 2.
+	*		To effectively draw this figure, the vertices should be defined counter clockwise.
 	*/
 	void filled_polygon(const float *vertices, int vertex_count);
 	
@@ -1411,6 +1417,7 @@ public:
 	*	@param p2 coordinates of the second point.
 	*	@param p3 coordinates of the third point.
 	*	@param p4 coordinates of the fourth point.
+	*	@pre: To effectively draw this figure, the vertices should be defined counter clockwise.
 	*/
 	void filled_quadrilateral(Point2D p1, Point2D p2, Point2D p3, Point2D p4);
 
@@ -1610,6 +1617,7 @@ public:
 	*	@param vertices An array of coordinates describing the vertices of the polygon.
 	*	@param vertex_count The number of vertices that <EM>vertices</EM> contains.
 	*	@pre <EM>vertex_count</EM> must be less or equal than the real <EM>vertices</EM> buffer length.
+	*		To effectively draw this figure, the vertices should be defined counter clockwise.
 	*/
 	void filled_polygon(const Point2D *vertices, int vertex_count);
 	
@@ -1936,8 +1944,10 @@ public:
 	*/
 	size_t nTurtles() const;
 
+
 	//Active turtle interaction
 	
+
 	/** @return The active Turtle's name.
 	*/
 	std::string t_getName() const;
@@ -1949,6 +1959,14 @@ public:
 	/** @return The active Turtle's actual position.
 	*/
 	Point2D t_getPos() const;
+
+	/** @return The active Turtle's actual X position.
+	*/
+	float t_getPosX() const;
+
+	/** @return The active Turtle's actual Y position.
+	*/
+	float t_getPosY() const;
 	
 	/** Moves the active Turtle forward the distance specified by the user.
 	*	@param dist Distance.
@@ -1977,43 +1995,45 @@ public:
 	/** Changes the position of the active Turtle given the new position.
 	*	@param x X coordinate of the new position.
 	*	@param y Y coordinate of the new position.
-	*	@return The new position.
+	*	@return The old position.
 	*/
 	Point2D t_setPos(float x, float y);
 	
 	/** Changes the position of the active Turtle given the new position.
 	*	@param p The new position.
-	*	@return The new position.
+	*	@return The old position.
 	*/
 	Point2D t_setPos(Point2D p);
 	
 	/** Changes the heading (orientation) of the active Turtle given the new heading.
 	*	@param angle The new heading.
-	*	@return The new heading.
+	*	@return The old heading.
 	*/
 	float t_setHeading(float angle);
 	
+	//TODO: modificar llapis individualment.
+
 	/** Changes the pen of the active Turtle given the new PaintBrush.
 	*	@param pen The new PaintBrush.
-	*	@return The new PaintBrush.
+	*	@return The old PaintBrush.
 	*/
 	PaintBrush t_setPen(PaintBrush pen);
 	
 	/** Changes the pen of the active Turtle given a color. The thickness will be taken form the Window's PaintBrush.
 	*	@param color The new color.
-	*	@return The new PaintBrush.
+	*	@return The old PaintBrush.
 	*/
 	RGBColor t_setPen(RGBColor color);
 	
 	/** Changes the pen of the active Turtle given the color and the thickness of that pen.
 	*	@param color The new color.
 	*	@param thickness The new thickness.
-	*	@return The new PaintBrush.
+	*	@return The old PaintBrush.
 	*/
 	RGBColor t_setPen(RGBColor color, float thickness);
 	
 	/** Sets active Turtle's position to <EM>TURTLE_HOME</EM>.
-	*	@return The Turtle's new position.
+	*	@return The Turtle's old position.
 	*/
 	Point2D t_home();
 	
@@ -2098,6 +2118,18 @@ public:
 	*/
 	Point2D t_getPos(std::string turtle_name) const;
 	
+	/**
+	*	@param turtle_name Name of the selected Turtle.
+	*	@return Selected Turtle's actual X position.
+	*/
+	float t_getPosX(std::string turtle_name) const;
+
+	/**
+	*	@param turtle_name Name of the selected Turtle.
+	*	@return Selected Turtle's actual Y position.
+	*/
+	float t_getPosY(std::string turtle_name) const;
+
 	/** Moves the selected Turtle forward the distance specified by the user.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param dist Distance.
@@ -2130,49 +2162,49 @@ public:
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param x X coordinate of the new position.
 	*	@param y Y coordinate of the new position.
-	*	@return The new position.
+	*	@return The old position.
 	*/
 	Point2D t_setPos(std::string turtle_name, float x, float y);
 	
 	/** Changes the position of the selected Turtle given the new position.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param p The new position.
-	*	@return The new position.
+	*	@return The old position.
 	*/
 	Point2D t_setPos(std::string turtle_name, Point2D p);
 	
 	/** Changes the heading (orientation) of the selected Turtle given the new heading.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param angle The new heading.
-	*	@return The new heading.
+	*	@return The old heading.
 	*/
 	float t_setHeading(std::string turtle_name, float angle);
 	
 	/** Changes the pen of the selected Turtle given the new PaintBrush.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param pen The new PaintBrush.
-	*	@return The new PaintBrush.
+	*	@return The old PaintBrush.
 	*/
 	PaintBrush t_setPen(std::string turtle_name, PaintBrush pen);
 	
 	/** Changes the pen of the selected Turtle given a color. The thickness will be taken form the Window's PaintBrush.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param color The new color.
-	*	@return The new PaintBrush.
+	*	@return The old PaintBrush.
 	*/
-	RGBColor t_setPen(std::string turtle_name, RGBColor color);
+	PaintBrush t_setPen(std::string turtle_name, RGBColor color);
 	
 	/** Changes the pen of the selected Turtle given the color and the thickness of that pen.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param color The new color.
 	*	@param thickness The new thickness.
-	*	@return The new PaintBrush.
+	*	@return The old PaintBrush.
 	*/
-	RGBColor t_setPen(std::string turtle_name, RGBColor color, float thickness);
+	PaintBrush t_setPen(std::string turtle_name, RGBColor color, float thickness);
 	
 	/** Sets active Turtle's position to <EM>TURTLE_HOME</EM>.
 	*	@param turtle_name Name of the selected Turtle.
-	*	@return The Turtle's new position.
+	*	@return The Turtle's old position.
 	*/
 	Point2D t_home(std::string turtle_name);
 	
@@ -2325,6 +2357,14 @@ public:
 	/** @return The dimensions of the Window.
 	*/
 	WindowSpec getWindowSpec() const;
+
+	/** @return The X dimension of the Window.
+	*/
+	int getWindowX() const;
+
+	/** @return The Y dimension of the Window.
+	*/
+	int getWindowY() const;
 
 	//Turtle object interaction (SHOULDN'T BE USED BY USER CODE)
 	
