@@ -12,7 +12,7 @@ const int NUM_VOCALS = 5;
 const int NUM_LLETRES = 26;
 const int NUM_COLORS = 7;
 const float VOLTA_COMPLETA = 360;
-const RGBColor COLORS[NUM_COLORS] = { RED, MAGENTA, BLUE, CIAN, GREEN, YELLOW, BLACK };
+const RGBColor COLORS[NUM_COLORS] = { RED, MAGENTA, BLUE, CIAN, LIME, YELLOW, BLACK };
 const char VOCALS[NUM_VOCALS] = { 'A','E','I','O','U' };
 
 bool esMajuscula(char c) {
@@ -272,7 +272,7 @@ int rebreInputDelTeclatIF(Window & w) {
 
 void moureTortuga() {
 	int ample= 800, alt=600;
-	Window finestra("Tortugueta", ample, alt, WHITE, GREEN);	//Declarem la finestra amb titol "Tortugueta", amplada 'ample' i alçada 'alt', i color de fons negre i color de dibuix verd
+	Window finestra("Tortugueta", ample, alt, WHITE, LIME);	//Declarem la finestra amb titol "Tortugueta", amplada 'ample' i alçada 'alt', i color de fons negre i color de dibuix verd
 
 	//Preparem a la tortuga
 	finestra.t_setPos(ample / 2, alt / 2);						//La coloquem al centre de la pantalla
@@ -345,7 +345,7 @@ void triarColorFons() {
 	RGBColor color;
 	if (input == 'y') color = YELLOW;
 	else if (input == 'b') color = BLUE;
-	else if (input == 'g') color = GREEN;
+	else if (input == 'g') color = LIME;
 	else if (input == 'r') color = RED;
 	else color = BLACK;
 

@@ -25,7 +25,7 @@ void primitives(Window & w, Image & i) {
 	std::string text = "Projecte d'Innovacio Docent\nImplementacio d'una classe Window en C++\ncom a interficie d'alt nivell a Allegro";
 	Point2D textPos(500, 300);
 	Font f("Fonts\\open-sans\\OpenSans-Light.ttf", BLUE, 14, 0);
-	w.addFont("OpenSansBold", "Fonts\\open-sans\\OpenSans-Bold.ttf", GREEN, 16);
+	w.addFont("OpenSansBold", "Fonts\\open-sans\\OpenSans-Bold.ttf", LIME, 16);
 
 	w.text(500, 300, text.c_str(), TEXT_ALIGN_CENTER);
 	w.text(f, 500, 500, text.c_str(), TEXT_ALIGN_LEFT);
@@ -146,7 +146,7 @@ void draw(Window & w) {
 
 	Drawable* some[3];
 	some[0] = new DrawLine(Point2D(50, 50), Point2D(150, 50), CIAN, 3);
-	some[1] = new DrawLine(Point2D(150, 50), Point2D(300, 300), GREEN, 3);
+	some[1] = new DrawLine(Point2D(150, 50), Point2D(300, 300), LIME, 3);
 	some[2] = new DrawLine(Point2D(300, 300), Point2D(450, 300), BLUE, 3);
 	
 	w.draw(some, 3);

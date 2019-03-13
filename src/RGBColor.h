@@ -38,15 +38,30 @@ struct RGBColor {
 	ALLEGRO_COLOR toAllegroColor() const { return al_premul_rgba(r, g, b, a); }
 };
 
-const RGBColor WHITE(255, 255, 255);
 const RGBColor BLACK(0, 0, 0);
-const RGBColor RED(255, 0, 0);
-const RGBColor GREEN(0, 255, 0);
-const RGBColor BLUE(0, 0, 255);
-const RGBColor YELLOW(255, 255, 0);
-const RGBColor MAGENTA(255, 0, 255);
-const RGBColor CIAN(0, 255, 255);
-const RGBColor GRAY(127, 127, 127);
+const RGBColor GRAY(128, 128, 128);
+const RGBColor SILVER(192, 192, 192);
 const RGBColor LIGHTGRAY(223, 223, 223);
+const RGBColor WHITE(255, 255, 255);
+
+const RGBColor YELLOW(255, 255, 0);
+const RGBColor RED(255, 0, 0);
+const RGBColor MAROON(128, 0, 0);
+const RGBColor ORANGE(255, 165, 0);
+const RGBColor ORANGERED(255, 69, 0);
+const RGBColor DARKORANGE(255, 140, 0);
+const RGBColor CORAL(255, 127, 80);
+const RGBColor BROWN(65, 37, 0);
+const RGBColor PURPLE(128, 0, 128);
+const RGBColor MAGENTA(255, 0, 255);
+
+const RGBColor GREEN(0, 128, 0);
+const RGBColor DARKGREEN(0, 100, 0);
+const RGBColor LIME(0, 255, 0);
+const RGBColor OLIVE(128, 128, 0);
+const RGBColor BLUE(0, 0, 255);
+const RGBColor SKYBLUE(135, 206, 235);
+const RGBColor CIAN(0, 255, 255);
+const RGBColor TURQUOISE(64, 224, 208);
 
 #endif
