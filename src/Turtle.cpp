@@ -190,6 +190,7 @@ void Turtle::setFont(Font f)
 void Turtle::changeCursorColor(RGBColor color)
 {
 	cursor = Image(createArrowCursor(color));
+	window->turtleMoved();
 	window->cursorUpdate();
 }
 
@@ -246,6 +247,37 @@ void Turtle::destroy() {
 
 Point2D Turtle::move(float dist, float direction)
 {
+	TurtleMove::const_iterator * moves = turtleMotion->computeDestination(currentPosition, direction, dist, window->getWindowSpec());
+
+	Point2D next_pos;
+
+	do {
+		next_pos = moves->actual().getDestination();
+
+		if (painting && moves->actual().isVisible()) window->turtleLine(currentPosition, next_pos, pen.color, pen.thickness, showPosition);
+		else teleport(next_pos);
+		
+		currentPosition = next_pos;
+
+		if (showPosition) {
+			window->turtleMoved();
+			window->cursorUpdate();
+		}
+
+		moves->next();
+
+	} while (moves->hasNext());
+
+	return next_pos;
+}
+
+void Turtle::teleport(Point2D pos)
+{
+	currentPosition = pos;
+}
+/*
+Point2D Turtle::move(float dist, float direction)
+{
 	Point2D next_pos = turtleMotion->nextPosition(currentPosition, direction, dist, window->getWindowSpec());
 	Point2D current_pos = currentPosition;
 	currentPosition = next_pos;
@@ -258,7 +290,7 @@ Point2D Turtle::move(float dist, float direction)
 	}
 
 	return next_pos;
-}
+}*/
 
 ALLEGRO_BITMAP * Turtle::createArrowCursor(RGBColor color)
 {

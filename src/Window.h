@@ -16,6 +16,7 @@
 #include "Image.h"
 #include "Event.h"
 #include "Point2D.h"
+#include "TurtleMotion.h"
 
 #include <string>
 #include <iostream>

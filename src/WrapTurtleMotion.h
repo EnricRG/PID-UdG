@@ -10,7 +10,8 @@ public:
 	~WrapTurtleMotion();
 
 	Point2D nextPosition(Point2D actual_position, float direction, float distance, WindowSpec window);
-	//int type() { return WRAP_MODE; }
+	TurtleMove::const_iterator * computeDestination(Point2D actual_position, float direction, float distance, WindowSpec window);
+	int type() { return WRAP_MODE; }
 };
 
 #endif

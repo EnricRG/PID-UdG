@@ -314,10 +314,14 @@ int main(int argc, char **argv) {
 	
 	Window w;
 
-	w.t_setPos(100, 100);
 	w.t_show();
-	w.waitAnyKeypress();
-	w.t_changeCursorColor(GREEN);
+
+	w.t_changeMotion(WINDOW_MODE);
+
+	w.t_setPos(100, 100);
+
+	w.t_left(10);
+	w.t_forward(10000);
 
 	w.waitWindowCloseButton();
 

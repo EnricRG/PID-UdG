@@ -11,7 +11,7 @@
 #include <string>
 
 class Window;
-struct Image;
+//struct Image;
 
 class Turtle
 {
@@ -63,6 +63,7 @@ private:
 	void copy(const Turtle & t);
 	void destroy();
 	Point2D move(float dist, float direction);
+	void teleport(Point2D pos);
 	static ALLEGRO_BITMAP* createArrowCursor(RGBColor color);
 
 	std::string name;

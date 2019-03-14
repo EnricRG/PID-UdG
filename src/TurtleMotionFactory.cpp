@@ -18,9 +18,9 @@ TurtleMotion * TurtleMotionFactory::makeTurtleMotion(int motion_type)
 	TurtleMotion * motion;
 
 	switch (motion_type) {
-/*		case WRAP_MODE:
+		case WRAP_MODE:
 			motion = new WrapTurtleMotion();
-			break;*/
+			break;
 		case WINDOW_MODE:
 			motion = new WindowTurtleMotion();
 			break;
