@@ -268,6 +268,8 @@ Point2D Turtle::move(float dist, float direction)
 
 	} while (moves->hasNext());
 
+	delete moves;
+
 	return next_pos;
 }
 

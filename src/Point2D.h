@@ -1,6 +1,8 @@
 #ifndef POINT2D_H
 #define POINT2D_H
 
+#include <cmath>
+
 /// @brief Pair of coordinates.
 /** Struct that contains the information of a 2D point: its X and Y coordinates.
 */
@@ -17,6 +19,11 @@ struct Point2D {
 	*	@param y Y coordinate of the point.
 	*/
 	Point2D(float x, float y) { this->x = x; this->y = y; }
+
+	/** Computes the Euclidean distance between two points.
+	*	@param p The other point.
+	*/
+	float distance(Point2D p) const { return sqrt((x - p.x)*(x - p.x) + (y - p.y)*(y - p.y)); }
 
 	/** Operator that defines the addition operation between two points.
 	*	@param p The other point.
