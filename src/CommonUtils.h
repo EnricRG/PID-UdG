@@ -30,10 +30,10 @@ static int nElements(const int* int_arr) {
 }
 
 //source: https://stackoverflow.com/questions/1628386/normalise-orientation-between-0-and-360
-static float normalise(const float value, const float start, const float end)
+static double normalise(const double value, const double start, const double end)
 {
-	const float width = end - start;
-	const float offsetValue = value - start;
+	const double width = end - start;
+	const double offsetValue = value - start;
 
 	return (offsetValue - (floor(offsetValue / width) * width)) + start;
 }

@@ -308,10 +308,13 @@ int main3(int argc, char **argv)
 	//w.waitKeypress(ALLEGRO_KEY_SPACE, true);
 	
 	return 0;
-} 
+}
+
+#include <cmath>
+#include "CommonUtils.h"
 
 int main(int argc, char **argv) {
-	
+	/*
 	Window w;
 
 	w.t_show();
@@ -324,6 +327,8 @@ int main(int argc, char **argv) {
 	w.t_forward(10000);
 
 	w.waitWindowCloseButton();
+	*/
 
+	std::cout << atan2(0,0.01) << std::endl;
 	return 0;
 }
