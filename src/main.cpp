@@ -314,21 +314,23 @@ int main3(int argc, char **argv)
 #include "CommonUtils.h"
 
 int main(int argc, char **argv) {
-	/*
+	
 	Window w;
 
 	w.t_show();
 
-	w.t_changeMotion(WINDOW_MODE);
+	w.t_changeMotion(WRAP_MODE);
 
-	w.t_setPos(100, 100);
+	w.t_setPos(300, 300);
 
-	w.t_left(10);
-	w.t_forward(10000);
+	w.t_left(130);
+	w.t_forward(300);
+
+	w.line(149, 0, 149, 500, RED);
 
 	w.waitWindowCloseButton();
-	*/
+	
 
-	std::cout << atan2(0,0.01) << std::endl;
+	//std::cout << atan2(-5,-5)*180/PI << std::endl;
 	return 0;
 }
