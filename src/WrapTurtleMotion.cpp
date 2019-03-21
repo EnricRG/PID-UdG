@@ -4,7 +4,7 @@
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
+#include <iostream>
 const float MARGIN = (float) 0.01;
 
 WrapTurtleMotion::WrapTurtleMotion()
@@ -30,6 +30,8 @@ TurtleMove::const_iterator * WrapTurtleMotion::computeDestination(Point2D actual
 		remaining_distance -= hit.first.distance(previous_position); 
 		previous_position = hit.first;
 
+		std::cout << "Hit:  " << previous_position.x << " " << previous_position.y << " Hit type: " << hit.second << std::endl;
+		std::cout << "Distance remaining: " << remaining_distance << std::endl;
 		TurtleMove next_move = TurtleMove(hit.first, true); //visible turtle move
 		moves.push_back(next_move);
 
@@ -38,6 +40,7 @@ TurtleMove::const_iterator * WrapTurtleMotion::computeDestination(Point2D actual
 			previous_position = next_move.getDestination();
 			moves.push_back(next_move);
 			remaining_distance -= 1; //border wrap consumes 1 distance unit.
+			std::cout << "Warp: " << previous_position.x << " " << previous_position.y << std::endl;
 		}
 	}
 
@@ -55,8 +58,10 @@ std::pair<Point2D, WrapTurtleMotion::border_hit> WrapTurtleMotion::computeHit(Po
 	//This is a simplification, because the line that splits the screen is not a straight line. It's a division made to separate the top and left edges' calculations from the others.
 
 	double angle_to_tr_corner = normalise(atan2(window.height - previous_pos.y, window.width - previous_pos.x) , 0, 2 * M_PI);	//Angle between X axis and the line that joins point previous_pos with top right corner.
-	double angle_to_bl_corner = normalise(atan2(-1 - previous_pos.y, -1 - previous_pos.x), 0, 2 * M_PI);						//Angle between X axis and the line that joins point previous_pos with bottom left corner.
+	double angle_to_bl_corner = normalise(atan2(- 1 - previous_pos.y, -1 - previous_pos.x), 0, 2 * M_PI);						//Angle between X axis and the line that joins point previous_pos with bottom left corner.
 	
+	std::cout << "angle to top right corner: " << angle_to_tr_corner << " angle to bottom left corner: " << angle_to_bl_corner << std::endl;
+
 	double alpha, beta; //angles needed in order to compute the hit points.
 
 	if (norm_direction > angle_to_tr_corner && norm_direction < angle_to_bl_corner) {		//if the direction is pointing to the top or left border.
@@ -65,14 +70,14 @@ std::pair<Point2D, WrapTurtleMotion::border_hit> WrapTurtleMotion::computeHit(Po
 		if (norm_direction < angle_to_tl_corner) { //direction points to top edge.
 			alpha = angle_to_tl_corner - norm_direction;
 			beta = norm_direction;
-			double x = ( previous_pos.distance(Point2D(0, (float) window.height - 1)) * sin(alpha) ) / sin(beta);
+			double x = (previous_pos.distance(Point2D(0, (float) window.height - 1)) * sin(alpha) ) / sin(beta);
 			
 			hit_point = Point2D((float) x, (float) window.height - 1);
 			hit_type = TOP_EDGE_HIT;
 		}
 		else if (norm_direction > angle_to_tl_corner) { //direction points to left edge.
 			alpha = angle_to_bl_corner - norm_direction;
-			beta = norm_direction - M_PI_4;
+			beta = norm_direction - M_PI_2;
 			double y = (previous_pos.distance(Point2D(0, 0)) * sin(alpha)) / sin(beta);
 			
 			hit_point = Point2D(0, (float) y);
@@ -96,8 +101,8 @@ std::pair<Point2D, WrapTurtleMotion::border_hit> WrapTurtleMotion::computeHit(Po
 		}
 		else if (norm_direction > angle_to_br_corner) { //if direction points to right edge, we have to bear in mind that in this case the transition between 2*PI and 0 occurs.
 			if (direction >= 0) { //rotate all angles 90 degrees in order to avoid conditionals.
-				norm_direction = normalise(norm_direction - M_PI_4, 0, 2 * M_PI);
-				angle_to_br_corner = normalise(angle_to_br_corner - M_PI_4, 0, 2 * M_PI);
+				norm_direction = normalise(norm_direction - M_PI_2, 0, 2 * M_PI);
+				angle_to_br_corner = normalise(angle_to_br_corner - M_PI_2, 0, 2 * M_PI);
 			}
 			
 			alpha = norm_direction - angle_to_br_corner;

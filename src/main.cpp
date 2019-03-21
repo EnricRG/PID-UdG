@@ -315,16 +315,16 @@ int main3(int argc, char **argv)
 
 int main(int argc, char **argv) {
 	
-	Window w;
+	Window w(500,500);
 
 	w.t_show();
 
 	w.t_changeMotion(WRAP_MODE);
 
-	w.t_setPos(300, 300);
+	w.t_setPos(350, 350);
 
-	w.t_left(90);
-	w.t_forward(700);
+	w.t_left(135);
+	w.t_forward(1000);
 
 	w.waitWindowCloseButton();
 	
