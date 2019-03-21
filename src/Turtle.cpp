@@ -249,11 +249,12 @@ Point2D Turtle::move(float dist, float direction)
 {
 	TurtleMove::const_iterator * moves = turtleMotion->computeDestination(currentPosition, direction, dist, window->getWindowSpec());
 
-	Point2D next_pos;
+	Point2D next_pos = moves->actual().getDestination();
 
-	do {
-		next_pos = moves->actual().getDestination();
+	bool end = false;
 
+	while(!end){
+		
 		if (painting && moves->actual().isVisible()) window->turtleLine(currentPosition, next_pos, pen.color, pen.thickness, showPosition);
 		else teleport(next_pos);
 		
@@ -264,9 +265,10 @@ Point2D Turtle::move(float dist, float direction)
 			window->cursorUpdate();
 		}
 
-		moves->next();
+		end = !moves->hasNext();
 
-	} while (moves->hasNext());
+		next_pos = moves->next().getDestination();
+	}
 
 	delete moves;
 

@@ -321,9 +321,9 @@ int main(int argc, char **argv) {
 
 	w.t_changeMotion(WRAP_MODE);
 
-	w.t_setPos(350, 350);
+	w.t_setPos(0,0);
 
-	w.t_left(135);
+	w.t_left(90);
 	w.t_forward(1000);
 
 	w.waitWindowCloseButton();
