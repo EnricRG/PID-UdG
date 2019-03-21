@@ -1802,7 +1802,7 @@ public:
 	*	@param file_path Path of the image.
 	*	@return An Image, a container for the loaded bitmap.
 	*/
-	Image loadImage(std::string file_path);
+	Image loadImage(std::string file_path) const;
 	
 	/** Saves the actual Window screen to a file (like a screenshot).
 	*	@param save_path Full path (absolute or relative) without the file extension. Its value is <EM>"image"</EM> by default.
@@ -2407,7 +2407,7 @@ public:
 
 	/** @return A pointer to the ALLEGRO_DISPLAY of the Window. This is for more experienced users who want to unleash all the power of Allegro.
 	*/
-	ALLEGRO_DISPLAY* getDisplay(); //Release the beast
+	ALLEGRO_DISPLAY* getDisplay() const; //Release the beast
 	
 	/** @return The dimensions of the Window.
 	*/
@@ -2504,7 +2504,7 @@ private:
 	
 	/** Returns the transformation needed to convert the custom view (0,0 at bottom left) of the Window to the Allegro mapping of the screen (0,0 at top left).
 	*/
-	ALLEGRO_TRANSFORM getDefaultTransform();
+	ALLEGRO_TRANSFORM getDefaultTransform() const;
 	
 	/** Converts the user coordinates to Allegro-friendly coordinates.
 	*	@param t Transformation to convert from user to Allegro coordinates.

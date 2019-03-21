@@ -323,10 +323,8 @@ int main(int argc, char **argv) {
 
 	w.t_setPos(300, 300);
 
-	w.t_left(130);
-	w.t_forward(300);
-
-	w.line(149, 0, 149, 500, RED);
+	w.t_left(90);
+	w.t_forward(700);
 
 	w.waitWindowCloseButton();
 	

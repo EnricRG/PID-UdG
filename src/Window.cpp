@@ -1032,7 +1032,7 @@
 
 
 
-	Image Window::loadImage(std::string file_path)
+	Image Window::loadImage(std::string file_path) const
 	{
 		return Image(file_path);
 	}
@@ -1503,7 +1503,7 @@
 		al_set_window_title(_display, title.c_str());
 	}
 
-	ALLEGRO_TRANSFORM Window::getDefaultTransform()
+	ALLEGRO_TRANSFORM Window::getDefaultTransform() const
 	{
 		ALLEGRO_TRANSFORM T;
 		al_identity_transform(&T);			  //base transform, if applied now this transform doesn't change the state of the display
@@ -1815,7 +1815,7 @@
 		waitForEvent(ALLEGRO_EVENT_DISPLAY_CLOSE);
 	}
 
-	ALLEGRO_DISPLAY* Window::getDisplay()
+	ALLEGRO_DISPLAY* Window::getDisplay() const
 	{
 		return _display;
 	}
