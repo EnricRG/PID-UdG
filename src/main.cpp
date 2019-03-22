@@ -319,7 +319,7 @@ int main(int argc, char **argv) {
 
 	w.t_show();
 
-	w.t_changeMotion(WRAP_MODE);
+	w.t_changeMotion(FENCE_MODE);
 
 	w.t_setPos(0,0);
 
