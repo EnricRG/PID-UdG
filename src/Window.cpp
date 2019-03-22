@@ -1161,7 +1161,7 @@
 		return _activeTurtle->getName();
 	}
 
-	float Window::t_heading() const
+	double Window::t_heading() const
 	{
 		Angle a(0, _activeTurtle->heading(), RADS_TO_DEGS); //turtle heading is always in rads, so we convert it to degs
 		return a.delta;
@@ -1182,23 +1182,23 @@
 		return t_getPos().y;
 	}
 
-	Point2D Window::t_forward(float dist)
+	Point2D Window::t_forward(double dist)
 	{
 		return _activeTurtle->forward(dist);
 	}
 
-	Point2D Window::t_back(float dist)
+	Point2D Window::t_back(double dist)
 	{
 		return _activeTurtle->back(dist);
 	}
 
-	float Window::t_left(float angle)
+	double Window::t_left(double angle)
 	{
 		Angle a(0, angle, _angleConversionType);
 		return _activeTurtle->left(a.delta);
 	}
 
-	float Window::t_right(float angle)
+	double Window::t_right(double angle)
 	{
 		Angle a(0, angle, _angleConversionType);
 		return _activeTurtle->right(a.delta);
@@ -1214,7 +1214,7 @@
 		return _activeTurtle->setPos(p);
 	}
 
-	float Window::t_setHeading(float angle)
+	double Window::t_setHeading(double angle)
 	{
 		Angle a(0, angle, _angleConversionType);
 		return _activeTurtle->setHeading(a.delta);
@@ -1320,7 +1320,7 @@
 		return peekTurtle(_turtles, turtle_name)->getName();
 	}
 
-	float Window::t_heading(std::string turtle_name) const
+	double Window::t_heading(std::string turtle_name) const
 	{
 		return peekTurtle(_turtles, turtle_name)->heading(); //Because this method throws if turtle is not found, we can assume that when returns it returns a valid pointer
 	}
@@ -1340,23 +1340,23 @@
 		return t_getPos(turtle_name).y;
 	}
 
-	Point2D Window::t_forward(std::string turtle_name, float dist)
+	Point2D Window::t_forward(std::string turtle_name, double dist)
 	{
 		return findTurtle(_turtles, turtle_name)->forward(dist);
 	}
 
-	Point2D Window::t_back(std::string turtle_name, float dist)
+	Point2D Window::t_back(std::string turtle_name, double dist)
 	{
 		return findTurtle(_turtles, turtle_name)->back(dist);
 	}
 
-	float Window::t_left(std::string turtle_name, float angle)
+	double Window::t_left(std::string turtle_name, double angle)
 	{
 		Angle a(0, angle, _angleConversionType);
 		return findTurtle(_turtles, turtle_name)->left(a.delta);
 	}
 
-	float Window::t_right(std::string turtle_name, float angle)
+	double Window::t_right(std::string turtle_name, double angle)
 	{
 		Angle a(0, angle, _angleConversionType);
 		return findTurtle(_turtles, turtle_name)->right(a.delta);
@@ -1372,7 +1372,7 @@
 		return findTurtle(_turtles, turtle_name)->setPos(p);
 	}
 
-	float Window::t_setHeading(std::string turtle_name, float angle)
+	double Window::t_setHeading(std::string turtle_name, double angle)
 	{
 		Angle a(0, angle, _angleConversionType);
 		return findTurtle(_turtles, turtle_name)->setHeading(a.delta);

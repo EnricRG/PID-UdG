@@ -14,10 +14,10 @@ WrapTurtleMotion::~WrapTurtleMotion()
 {
 }
 
-TurtleMove::const_iterator * WrapTurtleMotion::computeDestination(Point2D actual_position, float direction, float distance, WindowSpec window) const
+TurtleMove::const_iterator * WrapTurtleMotion::computeDestination(Point2D actual_position, double direction, double distance, WindowSpec window) const
 {
 	std::vector<TurtleMove> moves;
-	float remaining_distance = distance;
+	double remaining_distance = distance;
 
 	Point2D previous_position = actual_position;
 	std::pair<Point2D, BorderHitCalculator::border_hit> hit;

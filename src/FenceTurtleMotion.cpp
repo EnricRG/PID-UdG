@@ -11,7 +11,7 @@ FenceTurtleMotion::~FenceTurtleMotion()
 {
 }
 
-TurtleMove::const_iterator * FenceTurtleMotion::computeDestination(Point2D actual_position, float direction, float distance, WindowSpec window) const
+TurtleMove::const_iterator * FenceTurtleMotion::computeDestination(Point2D actual_position, double direction, double distance, WindowSpec window) const
 {
 	Point2D hit = BorderHitCalculator::computeHit(actual_position, direction, distance, window).first;
 

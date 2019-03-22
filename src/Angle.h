@@ -19,7 +19,7 @@ static const int DEGS = RADS_TO_DEGS;			/**< The angle's unit are degrees.*/
 *	This struct can store an angle in different units: degrees, radians or unspecified. If you use degrees or radians, conversions can be made between them.
 */
 struct Angle {
-	float start, 			/**< Starting angle.*/
+	double start, 			/**< Starting angle.*/
 		  delta; 		 	/**< Difference between the starting point and end point of the angle.*/
 	int units; 				/**< Angle's units.*/
 
@@ -32,7 +32,7 @@ struct Angle {
 	*	@param delta Difference between the starting point and end point of the angle.
 	*	@param conversion_type Type of conversion.
 	*/
-	Angle(float start, float delta, int conversion_type) {
+	Angle(double start, double delta, int conversion_type) {
 		this->start = start;
 		this->delta = delta;
 		this->units = conversion_type;
@@ -44,7 +44,7 @@ struct Angle {
 	*	@param conversion_factor Conversion factor.
 	*	@return The conversion for @p angle.
 	*/
-	float convert(float angle, float conversion_factor) {
+	float convert(double angle, double conversion_factor) {
 		return angle * conversion_factor;
 	}
 

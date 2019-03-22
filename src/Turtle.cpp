@@ -36,7 +36,7 @@ std::string Turtle::getName() const
 	return this->name;
 }
 
-float Turtle::heading() const
+double Turtle::heading() const
 {
 	return direction;
 }
@@ -51,17 +51,17 @@ bool Turtle::isVisible() const
 	return showPosition;
 }
 
-Point2D Turtle::forward(float dist)
+Point2D Turtle::forward(double dist)
 {
 	return move(dist, direction);
 }
 
-Point2D Turtle::back(float dist)
+Point2D Turtle::back(double dist)
 {
 	return move(dist, direction+ALLEGRO_PI);
 }
 
-float Turtle::left(float angle)
+double Turtle::left(double angle)
 {
 	direction += angle;
 	if (showPosition) {
@@ -71,7 +71,7 @@ float Turtle::left(float angle)
 	return direction;
 }
 
-float Turtle::right(float angle)
+double Turtle::right(double angle)
 {
 	direction -= angle;
 	if (showPosition) {
@@ -97,7 +97,7 @@ Point2D Turtle::setPos(Point2D p)
 	return aux;
 }
 
-float Turtle::setHeading(float angle)
+double Turtle::setHeading(double angle)
 {
 	float aux = direction;
 	direction = angle;
@@ -201,7 +201,7 @@ void Turtle::drawCursor()
 	window->turtle_rotated_image(cursor, rotation_point, currentPosition + positioning, direction);
 }
 
-void Turtle::init(std::string name, Point2D position, float direction, PaintBrush pen, int turtle_motion, Font & font, Window * window)
+void Turtle::init(std::string name, Point2D position, double direction, PaintBrush pen, int turtle_motion, Font & font, Window * window)
 {
 	this->name = name;
 	this->currentPosition = position;
@@ -245,7 +245,7 @@ void Turtle::destroy() {
 	window = NULL;
 }
 
-Point2D Turtle::move(float dist, float direction)
+Point2D Turtle::move(double dist, double direction)
 {
 	TurtleMove::const_iterator * moves = turtleMotion->computeDestination(currentPosition, direction, dist, window->getWindowSpec());
 

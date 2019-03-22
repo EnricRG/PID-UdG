@@ -24,17 +24,17 @@ public:
 	Turtle& operator=(const Turtle &t);
 
 	std::string getName() const;
-	float heading() const;
+	double heading() const;
 	Point2D getPos() const;
 	bool isVisible() const;
 
-	Point2D forward(float dist);
-	Point2D back(float dist);
-	float left(float angle);
-	float right(float angle);
+	Point2D forward(double dist);
+	Point2D back(double dist);
+	double left(double angle);
+	double right(double angle);
 	Point2D setPos(float x, float y);
 	Point2D setPos(Point2D p);
-	float setHeading(float angle);
+	double setHeading(double angle);
 	RGBColor setDrawingColor(RGBColor color);
 	float setDrawingThickness(float thickness);
 	PaintBrush setPen(PaintBrush pen);
@@ -58,17 +58,17 @@ private:
 	static const char * TURTLE_CURSOR_PATH;
 	static const char * ARROW_CURSOR_PATH;
 
-	void init(std::string name, Point2D position, float direction, PaintBrush pen, int turtle_motion, Font & font, Window * window);
+	void init(std::string name, Point2D position, double direction, PaintBrush pen, int turtle_motion, Font & font, Window * window);
 	static ALLEGRO_BITMAP* initCursor(const char * cursor_path, RGBColor color);
 	void copy(const Turtle & t);
 	void destroy();
-	Point2D move(float dist, float direction);
+	Point2D move(double dist, double direction);
 	void teleport(Point2D pos);
 	static ALLEGRO_BITMAP* createArrowCursor(RGBColor color);
 
 	std::string name;
 	Point2D currentPosition;
-	float direction;
+	double direction;
 	PaintBrush pen;
 	bool painting;
 	bool showPosition;

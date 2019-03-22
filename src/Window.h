@@ -1955,7 +1955,7 @@ public:
 	
 	/** @return The active Turtle's actual orientation.
 	*/
-	float t_heading() const;
+	double t_heading() const;
 	
 	/** @return The active Turtle's actual position.
 	*/
@@ -1973,25 +1973,25 @@ public:
 	*	@param dist Distance.
 	*	@return The Turtle's new position.
 	*/
-	Point2D t_forward(float dist);
+	Point2D t_forward(double dist);
 	
 	/** Moves the active Turtle forward the distance specified by the user.
 	*	@param dist Distance.
 	*	@return The Turtle's new position.
 	*/
-	Point2D t_back(float dist);
+	Point2D t_back(double dist);
 	
 	/** Rotates the active Turtle to the left over itself.
 	*	@param angle Rotation angle.
 	*	@return The new direction.
 	*/
-	float t_left(float angle);
+	double t_left(double angle);
 	
 	/** Rotates the active Turtle to the right over itself.
 	*	@param angle Rotation angle.
 	*	@return The new direction.
 	*/
-	float t_right(float angle);
+	double t_right(double angle);
 	
 	/** Changes the position of the active Turtle given the new position.
 	*	@param x X coordinate of the new position.
@@ -2010,7 +2010,7 @@ public:
 	*	@param angle The new heading.
 	*	@return The old heading.
 	*/
-	float t_setHeading(float angle);
+	double t_setHeading(double angle);
 	
 	/** Changes the color of the active Turtle given the new color.
 	*	@param color The new color.
@@ -2135,7 +2135,7 @@ public:
 	*	@param turtle_name Name of the selected Turtle.
 	*	@return Selected Turtle's actual orientation.
 	*/
-	float t_heading(std::string turtle_name) const;
+	double t_heading(std::string turtle_name) const;
 	
 	/** 
 	*	@param turtle_name Name of the selected Turtle.
@@ -2160,28 +2160,28 @@ public:
 	*	@param dist Distance.
 	*	@return The Turtle's new position.
 	*/
-	Point2D t_forward(std::string turtle_name, float dist);
+	Point2D t_forward(std::string turtle_name, double dist);
 	
 	/** Moves the selected Turtle forward the distance specified by the user.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param dist Distance.
 	*	@return The Turtle's new position.
 	*/
-	Point2D t_back(std::string turtle_name, float dist);
+	Point2D t_back(std::string turtle_name, double dist);
 	
 	/** Rotates the selected Turtle to the left over itself.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param angle Rotation angle.
 	*	@return The new direction.
 	*/
-	float t_left(std::string turtle_name, float angle);
+	double t_left(std::string turtle_name, double angle);
 	
 	/** Rotates the selected Turtle to the right over itself.
 	*	@param turtle_name Name of the selected Turtle.
 	*	@param angle Rotation angle.
 	*	@return The new direction.
 	*/
-	float t_right(std::string turtle_name, float angle);
+	double t_right(std::string turtle_name, double angle);
 	
 	/** Changes the position of the selected Turtle given the new position.
 	*	@param turtle_name Name of the selected Turtle.
@@ -2203,7 +2203,7 @@ public:
 	*	@param angle The new heading.
 	*	@return The old heading.
 	*/
-	float t_setHeading(std::string turtle_name, float angle);
+	double t_setHeading(std::string turtle_name, double angle);
 
 	/** Changes the color of the active Turtle given the new color.
 	*	@param turtle_name Name of the selected Turtle.
