@@ -14,6 +14,7 @@ public:
 		NO_HIT
 	};
 
+	static bool positionInsideScreen(Point2D p, WindowSpec window);
 	static std::pair<Point2D, BorderHitCalculator::border_hit> computeHit(Point2D previous_pos, double direction, double distance, WindowSpec window);
 
 private:
