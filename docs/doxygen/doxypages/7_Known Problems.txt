@@ -4,4 +4,10 @@
 		This can happen when you explicitly delete a Window and then create a new one, or even if a Window that has been created inside a function that has finished its scope is destroyed implicitly.
 		<br><br>
 		<strong>Solution: </strong> Close MSI Afterburner when running programs that can exhibit this behavior.
+		
+		@section blackscreen Black screen after maximizing a window
+		This is not a bug, it has to do with the way Windows manages the windows (oops). You can learn more about this here: <a href="faq.html#faq_blackscreen">FAQ - Blackscreen when maximizing</a>.
+		
+		@section pixel_precision My drawings are sometimes lacking a pixel
+		This is not a bug either, it has to do with the sub-pixel precision. You can learn more about what that is and why sometimes your drawings don't look like you would expect here: <a href="https://liballeg.org/a5docs/trunk/primitives.html#pixel-precise-output">Allegro Documentation - Pixel-precise output</a>.
 */
