@@ -411,8 +411,8 @@ public:
 	*	For example this code:
 	*	@include pieslice_1.cpp
 	*	Would generate this output:
-	*	@image html pie slice.png
-	*	@image latex pie slice.eps
+	*	@image html pieslice.png
+	*	@image latex pieslice.eps
 	*	@param cx X coordinate of the center of the pie slice.
 	*	@param cy Y coordinate of the center of the pie slice.
 	*	@param r Radius of the pie slice.
@@ -797,8 +797,8 @@ public:
 	*	For example this code:
 	*	@include pieslice_2.cpp
 	*	Would generate this output:
-	*	@image html pie slice.png
-	*	@image latex pie slice.eps
+	*	@image html pieslice.png
+	*	@image latex pieslice.eps
 	*	@param c coordinates of the center of the pie slice.
 	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
@@ -1185,8 +1185,8 @@ public:
 	*	For example this code:
 	*	@include pieslice_3.cpp
 	*	Would generate this output:
-	*	@image html pie slice.png
-	*	@image latex pie slice.eps
+	*	@image html pieslice.png
+	*	@image latex pieslice.eps
 	*	@param cx X coordinate of the center of the pie slice.
 	*	@param cy Y coordinate of the center of the pie slice.
 	*	@param r Radius of the pie slice.
@@ -1396,7 +1396,7 @@ public:
 	/** Draws a quadrilateral given its four vertices. This call uses the PaintBrush of the Window to draw, if needed.
 	*	The quadrilateral is drawn as follows: a line connects first and second point, then a line connects second point and the third, then the third is connected to the fourth and finally a line connects fourth and first points.
 	*	For example this code:
-	*	@include quadrilateral_42.cpp
+	*	@include quadrilateral_4.cpp
 	*	Would generate this output:
 	*	@image html quadrilateral.png
 	*	@image latex quadrilateral.eps
@@ -1516,8 +1516,8 @@ public:
 	*	For example this code:
 	*	@include pieslice_4.cpp
 	*	Would generate this output:
-	*	@image html pie slice.png
-	*	@image latex pie slice.eps
+	*	@image html pieslice.png
+	*	@image latex pieslice.eps
 	*	@param c coordinates of the center of the pie slice.
 	*	@param r Radius of the pie slice.
 	*	@param start_theta Start point of the angle.
@@ -2027,9 +2027,9 @@ public:
 	*/
 	RGBColor t_setDrawingColor(int r, int g, int b, int a);
 
-	/** Changes the drawing thickness of the active Turtle given the new color.
-	*	@param color The new color.
-	*	@return The old color.
+	/** Changes the drawing thickness of the active Turtle given the new thickness.
+	*	@param thickness The new thickness.
+	*	@return The old thickness.
 	*/
 	float t_setDrawingThickness(float thickness);
 
@@ -2222,10 +2222,10 @@ public:
 	*/
 	RGBColor t_setDrawingColor(std::string turtle_name, int r, int g, int b, int a);
 
-	/** Changes the drawing thickness of the active Turtle given the new color.
+	/** Changes the drawing thickness of the active Turtle given the new thickness.
 	*	@param turtle_name Name of the selected Turtle.
-	*	@param color The new color.
-	*	@return The old color.
+	*	@param thickness The new thickness.
+	*	@return The old thickness.
 	*/
 	float t_setDrawingThickness(std::string turtle_name, float thickness);
 
