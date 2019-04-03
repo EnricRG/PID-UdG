@@ -18,9 +18,11 @@
 			<h2> Q: When I maximize my window the content turns black. Why? </h2>
 			Normally when a window is minimized its graphic state is not preserved to save some space in memory. This is why you see a black screen. But this doesn't mean the state is lost, it can be preserved in your program's state. So normally, using Allegro, you would refresh the display (flip the back and front buffers) and your content would be shown again.
 			<br><br>
-			With the window, it's exactly the same. You can call Window::update() method to restore the window state before minimizing, but knowing when your Window has been minimized and maximized requires you to know about the @ref events and how it works. Fortunately, I have a better solution for you: the Window can <strong>automatically</strong> restore its state when maximized.
+			With the window, it's exactly the same. You can call Window::update() method to restore the window state before minimizing, but knowing when your Window has been minimized and maximized requires you to know about the @ref events and how it works.
 			<br><br>
-			You can enable this feature using the method Window::enableAutoRefresh() and disable it with Window::disableAutoRefresh(). It's as simple as that. If you want to ensure that this feature is enabled before your users minimize the window, I recommend you to call it just right after you've declared your Window.
-			This feature has one caveat: your Window has to be waiting for some type of @ref event_handling interaction to be able to listen to minimization and maximization events. So using Window::rest() will make your application unable to use this functionality even if it is enabled.
+			Fortunately, I have a better solution for you: the Window can <strong>automatically</strong> restore its state when maximized. You can enable this feature using the method Window::enableAutoRefresh() and disable it with Window::disableAutoRefresh(). It's as simple as that. <br>
+			If you want to ensure that this feature is enabled before your users maximize the window, I recommend you to call the method just right after you've declared your Window.
+			<br><br>
+			This feature has one drawback: your Window has to be waiting for some type of @ref event_handling interaction to be able to listen to minimization and maximization events. So using Window::rest() will make your application unable to use this functionality even if it is enabled.
 		</div>
 */
