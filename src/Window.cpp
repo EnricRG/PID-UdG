@@ -918,6 +918,16 @@
 		_autoUpdate = false;
 	}
 
+	void Window::enableAutoRefresh()
+	{
+		_autoRefresh = true;
+	}
+
+	void Window::disableAutoRefresh()
+	{
+		_autoRefresh = false;
+	}
+
 	void Window::enableLogging()
 	{
 		_drawLogging = true;

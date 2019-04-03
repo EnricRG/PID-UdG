@@ -1692,6 +1692,14 @@ public:
 	/** Disables Auto Update functionality. When Auto Update is disabled, the only way to refresh the screen is calling <EM>update()</EM> function.
 	*/
 	void disableAutoUpdate();
+
+	/** Enables Auto Refresh functionality. When Auto Refresh is enabled, the screen refreshes itself every time the window is restored (visible again).
+	*/
+	void enableAutoRefresh();
+
+	/** Disables Auto Refresh functionality. When Auto Refresh is disabled, the only way to refresh the screen is calling <EM>update()</EM> function.
+	*/
+	void disableAutoRefresh();
 	
 	/** Enables Logging functionality. When Logging is enabled, every draw call made on this Window is logged and can be redrawn when needed (for example when the background color is changed).
 	*/
@@ -2337,7 +2345,10 @@ public:
 
 	/** @}*/
 	
-	//Event handling 
+	/** @defgroup event_handling Event Handling
+	*	Here you have all the functions used to interact with the Window. 
+	*	@{
+	*/ 
 	
 	/** Waits for the next WindowEvent, without filters. Be careful, this method waits forever. If no event is triggered, the program will go on forever, without exiting this method. It's more recommendable to use @ref waitWindowEventTimed(float) to not to wait forever.
 	*	@return The first WindowEvent in the EventQueue of the Window.
@@ -2405,6 +2416,8 @@ public:
 	*/
 	void waitWindowCloseButton();
 
+	/** @}*/
+	
 	/** @return A pointer to the ALLEGRO_DISPLAY of the Window. This is for more experienced users who want to unleash all the power of Allegro.
 	*/
 	ALLEGRO_DISPLAY* getDisplay() const; //Release the beast
