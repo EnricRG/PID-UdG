@@ -1,0 +1,55 @@
+/**	@page images Drawing and storing an Image
+	And what if you want to load and draw a pre-existing image? Or what if you want to export your current drawing as a file? Well, you can do both things without any problem. 
+	<br><br>
+	As with the fonts, you can instantiate and load an Image directly to your program with its constructor Image::Image(), without interacting with the Window at all. This is useful if you want to reuse it, but very impractical if you only want to draw this image once. You can also load an image through the Window with Window::loadImage(). This method returns the loaded Image if all went ok, and an invalid Image if not (see Image::isValid() for more details). And last but not least, you can draw directly an image to the Window, without having to explicitly load it. Let's see how this three alternatives work.
+	
+	One thing that these alternatives have in common is that they require the path of an image file, and if the Image cannot be loaded correctly, will generate an invalid Image and throw an exception if used.
+	
+		@section load_image Loading an Image
+			@subsection load_image_explicitly Explicitly instantiating an Image 
+			As simple as it sounds, you only must instantiate the Image giving as a parameter the path where the file can be found. Let's see an example:
+			@include load_image_explicit.cpp
+			And if your path was correct, you'll see the image printed to the screen. We will explore in more detail how to draw images later.
+			<br><br>
+			
+			@subsection load_image_window Loading an Image using the Window method
+			Another way of loading the Image explicitly is using Window::loadImage() method. Given an image path and some optional parameters, it loads and returns us the Image object. Let's see an example:
+			@include load_image_window_method.cpp
+			Both ways are equivalent, so choose the one you prefer. Note that in these examples we're also drawing the image. Obviously, Window::image() is not part of loading an Image to your program.
+			
+		@section draw_image Drawing an Image
+		Now that we've seen how to load images, let's see how to draw them. There's two basic ways of drawing any Image: explicitly and implicitly. If you load an Image explicitly (as shown on @ref load_image), you will have somewhere on your program a variable of type Image that stores the information about it. Doing it this way has a very obvious advantage: you can check whether the Image has been loaded correctly or not. You can do it with Image::isValid() or Image::isInvalid(). 
+		<br><br>
+		But if you're sure that your image will be correctly loaded, then you can draw it implicitly: you give a file path to the drawing method and it will load and draw the image for you, without having any Image variable at all. You'll find some examples of both things below.
+		<br><br>
+		As with text, an Image can be drawn using a primitive or using a Turtle. Let's see how you would do that.
+			
+			@subsection window_draw_image Drawing an Image with a Window primitive
+			First step before drawing and Image is to check that you have the correct path of its file. Remember that if an invalid Image is drawn, an exception will be thrown. I've downloaded a city icon and moved it to the main directory of my program. I recommend you use the built-in resources folder to store your assets, or maybe creating a new directory to put them.
+			<br><br>
+			So once this is done, we can test the following code:
+			@include load_image_explicit.cpp
+			This example loads the Image explicitly. You can also do something like:
+			@include draw_image_implicit.cpp
+			These two codes are equivalent, and generate the following output:
+			@image html draw_image.png
+			You can check the documentation about Window::image() for more details. You can also look at Window::rotated_image() if you're interested in that.
+			
+			@subsection turtle_draw_image Drawing an Image with a Turtle
+			Using a primitive isn't the only way to draw an image. You can also draw one using the position of a Turtle instead of a defined point in the screen. Let's see how it works:
+			@include turtle_image_explicit.cpp
+			This example also loads the Image explicitly. An implicit version of it would be:
+			@include turtle_image_implicit.cpp
+			These two codes are equivalent, and generate the following output:
+			@image html draw_image.png
+		
+		@section save_image Saving an Image
+		One of the features that the library has is the ability to save the actual screen state to a bitmap and output it as an image to a file. Unfortunately, saving to a variable on your program is not supported. But you can still do plenty of things with this feature. Let's see an example of how this works.
+		<br><br>
+		First, we draw something to the screen. Then, we call Window::saveToFile() indicating the (absolute or relative) path where the file will be saved and the extension of that file (png or jpg). The path must not contain the extension of the file. By default, if none of these parameters are indicated, the image will be saved on the run directory of the program with its name being <i>image.png</i>. Let's see how it works:
+		@include save_image.cpp
+		As a result of this code, we will find a file called <i>screenshot.png</i> in the running directory of our program.
+		@image html image_in_explorer.png
+		And this image contains all the drawings you've done:
+		@image html screenshot.png
+*/

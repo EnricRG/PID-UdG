@@ -1,0 +1,7 @@
+/**	@page known_problems Known Problems
+		@section afterburner MSI Afterburner
+		It's known that <strong>MSI Afterburner</strong> produces crashes when destroying a Window and then creating a new one. It's a bug present in the interaction between Afterburner and the core of Allegro library, and has nothing to do with the Window Add-on.
+		This can happen when you explicitly delete a Window and then create a new one, or even if a Window that has been created inside a function that has finished its scope is destroyed implicitly.
+		<br><br>
+		<strong>Solution: </strong> Close MSI Afterburner when running programs that can exhibit this behavior.
+*/

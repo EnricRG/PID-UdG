@@ -1,0 +1,71 @@
+/**	@page window Using the Window
+	@section window_firststeps First steps with the Window
+	The first you need to know is that the Window is the main class/object of the library. You'll use it always you want to draw something to the screen, so bear in mind that anywhere you want to draw, a Window should be declared. 
+	<br><br>
+	@b IMPORTANT: with the download of the add-on comes a folder called @a resources that has to be located in the running directory of your program if it uses the Window. <strong>If you forget it, your program will crash</strong>. See @ref faq to get more information about this.
+	<br><br>
+	You maybe didn't think of it, but if you declare a Window, execute some code and then finish the program (or the scope where the Window was declared), the Window will be destroyed and removed from your screen. You can try it. Create a simple program like this:
+	<br>
+	@include window_1.cpp
+	If you run this code you can see that the Window pops up and then disappears in an instant. This is because the scope of the Window object has finished and the Window has been destroyed. This is how C++ works, but you can do something to avoid finishing like that. What you must do is to pause the program somehow. The library gives you two different ways of doing it: pausing the Window or using the Event mechanism. The second one is for advanced users so I'll introduce you the first one: pausing the Window.
+	<br><br>
+	You can call a method named @ref Window::rest() to pause the program for an amount of time determined in the single parameter of this function. Now try that:
+	@include window_2.cpp
+	See? If you run this code you can observe that the Window doesn't close. Instead, it stays there for 5 seconds. This function simply stops the execution flow at the line where it is called, so don't think that the rest of the code is being executed meanwhile.
+	The other solution will be further explored in @ref events page.
+	
+		@section primitives Learning how to use the Window: primitives
+		Now that we know how to create a Window, let's use it. Let's start by drawing a black rectangle on a white screen:
+		@include rectangle_1.cpp
+		This code would generate this output:
+		@image html rectangle.png
+		As simple as that. To draw any figure, you must know that the origin (0,0) is at the left bottom corner of the screen. Let's check what's going on in this code:
+		<br>
+		The first line declares a 201x201 Window with white background and black drawing color. You can check the Window declaration parameters on @ref window_ctors section.
+		<br>
+		The second line draws the rectangle. @ref Window::rectangle() has 6 parameters: the coordinates of the top left and bottom right corners, the color of the rectangle and the thickness of its border. As the comment next to the line indicates, the thickness is implicitly given. See method's documentation to get more information about this primitive. Also note that this isn't the only way of calling the exact same primitive. More on that later.
+		<br>
+		The last line is something new. Does the same effect as @ref Window::rest() but instead of waiting for a period of time and then continue, it waits indefinitely until the close button of the window is pressed. This is very useful when trying to show some code results.
+		<br><br>
+		As I commented before, this isn't the only way to draw the exact same figure on the window. In fact, every primitive can be called using 4 different methods that are named the same but have different parameters (method overloading). Here's a simple description of them:
+		<ul>
+		<li> <strong>Raw call</strong>: All parameters are passed as Allegro (core library) would use them. It's usually the function with more parameters of the four.</li>
+		<li> <strong>Point call</strong>: Floating point coordinates of the points are replaced with an struct that holds both coordinates of a point. This struct is called Point2D (click to see more). This makes easier to store and move them in your programs and also to understand how the primitives work. </li>
+		<li> <strong>Raw call with Window parameters</strong>: Similar to <em>Raw call</em>, but with some implicit parameters. Window stores a set of parameters that can be used when a draw call is used. One of them is the PaintBrush, a struct that holds an RGBColor and a floating point number representing a line thickness. This is basically storing the configuration of the pencil you're using to draw. As you may have seen, a lot of drawing primitives demand an RGBColor and a thickness (optional parameter). Using this type of call, you're using the ones built in the Window, that can be changed whenever you want.</li>
+		<li> <strong>Point call with Window parameters</strong>: same as the previous one but using Point2D instead of floating point coordinates.</li>
+		</ul>
+		You've already seen the first type of primitive, <strong>Raw call</strong>. Let's see how the other forms of drawing the same rectangle look like.
+		<br>
+		
+		<h2> Point call</h2>
+		Instead of using raw floating point coordinates, let's use a more comfortable way of carrying them: the Point2D structure. The way of doing it is as follows:
+		@include rectangle_2.cpp
+		And the output is the same as before:
+		@image html rectangle.png
+		It is as simple as it looks, you instantiate (in this case) two Point2D with the coordinates of each point you want to use and it's done, simply pass them to the function.
+		<br>
+		
+		<h2> Raw call with Window parameters </h2>
+		As I said before, when using this call the parameters @p color and @p thickness are not required. You simply call the function without these parameters and IT WORKS!!!
+		@include rectangle_3.cpp
+		Result:
+		@image html rectangle.png
+		See @ref change_color to learn on how to modify this Window parameters.
+		
+		<h2> Point call with Window parameters </h2>
+		This one is a mix of the Point call and the Raw call with Window parameters. Simply declare and instantiate the points you want to use and call the function without giving a @p color or a @p thickness:
+		@include rectangle_4.cpp
+		Result:
+		@image html rectangle.png
+		Again, see @ref change_color to learn on how to modify this Window parameters.
+		<h3> Important </h3>
+		Obviously, Window is capable of drawing a lot more things than a rectangle. Check @ref window_primitives "Window primitives" to see which figures you can draw with a single call.
+		
+			@subsection change_color Change drawing color and thickness of the Window
+			To change the color and thickness of the Window pencil, you can use this functions:
+			<ul>
+			<li> Window::changeDrawingColor() - Changes the drawing color of the PaintBrush</li>
+			<li> Window::changeDrawingThickness() - Changes the drawing thickness of the PaintBrush</li>
+			</ul>
+			Once changed, this configuration persists until you change it again, or if the Window is destroyed (its scope finishes).
+*/

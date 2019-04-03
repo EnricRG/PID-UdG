@@ -1,0 +1,13 @@
+/**	@page events Event System
+	If you have checked the previous tutorials on how to use the Window, maybe you are asking yourself: "Well, primitives and direct orders are the only way to use the Window? How can I get information about user's interaction on the screen?".
+	<br><br>
+	An Event is produced when the Window outputs some information that can be received by the main program and then processed. An example of this concept is a mouse click. The Window will report the pixel coordinates where the mouse was pointing at when the button was pressed (or released). But this is not the only type of event your the window can report. The event system of the Window is based in <a href="https://www.allegro.cc/manual/5/events.html"> Allegro Event System </a> and works almost the same, so checking what an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event </a> is will be good for you.
+		@section Window Event
+		So what is exactly a WindowEvent? It uses the concept of <a href="http://www.cplusplus.com/doc/tutorial/other_data_types/"> union </a> to use one structure as a container of all possible types of events. It's like a container large enough to store the information of all types of events the Window can throw. Some events have fields that others don't, but all events have three fields in common:
+		<ul>
+		<li>@b type : type of event. You'll need this field in order to classify them.</li>
+		<li>@b any.source : the source that generated that particular event.</li>
+		<li>@b any.timestamp : time when that particular event was produced.</li>
+		</ul>
+		As you can see, all events have a field called @a any that contains the fields in common with other events (except for the type). Other fields are tpye-specific and you should analyze the type of the event before accessing them. All the fields of the WindowEvent have the same meaning as the ones in an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event </a>, so feel free to check its documentation for more information.
+*/

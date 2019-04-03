@@ -1,0 +1,71 @@
+/**	@page text Printing text to a Window
+	Another cool thing you can do with a Window is print text on it. As trivial as it sounds, this allows you to create a whole new spectrum of applications. There's two basic ways of printing text to a Window:
+	<ul>
+	<li>Using the Window::text() primitive.</li>
+	<li>Using a Turtle's Window::t_label() operation.</li>
+	</ul>
+		@section text_primitive Using the Window::text() primitive
+		As all figures, text can be printed directly to a region of the display. When drawing text, one basic element is the Font. With it, you can choose the type of text you want to print. By default, the Window has a default font located in the @a resources folder in your project's directory. The name of this font cannot be modified.
+		<br> As Turtles, the Window has a list of Fonts where you can store and use your own Fonts. Also as Turtles, the fonts are identified by a string. You can name them like you want in your own program, but it will not change the name of the file from where the Font is loaded. You can add new fonts with Window::addFont() and use them passing its name as the first parameter of a Window::text() call. To delete a Font, simply call Window::deleteFont("fontname").
+		<br><br>
+		You can also load a Font independently from the Window, using the Font constructor. You can declare and load a Font from your program if you want to store it your way, or if it's a onetime use Font. See Font::Font() for more details. Then, to use it the only thing you must do is to pass it as the first parameter of a Window::text() call. 
+		<br><br>
+		Firstly, let's see an example of how to load a font independently from a Window.
+		@include text_3.cpp
+		The first step is to load the Font. In this code, the first line initializes the Window, but it hasn't to be this way. You could perfectly declare the Font and then the Window without any trouble. As many other methods, loading and using a Font is not mandatory. The library has a default Font built in, so you can skip this parameter if you want. Then the Window::text() call would look like:
+		@code
+		w.text(c, "Your text goes here", TEXT_ALIGN_CENTER);
+		@endcode
+		Technically, the implicit font used here is not the default Font, but the active Font. By default, the active Font is the default Font, but you can change it the same way as the Turtles work. More on that later.
+		<br>
+		Then, you declare the Point2D where your text will be placed (depends on @ref text_align parameter). @p c can be perfectly replaced by its floating-point coordinates instead, so you would have:
+		@code
+		w.text(f, 101, 101, "Your text goes here", TEXT_ALIGN_CENTER);
+		@endcode
+		When you have all this things, you can call the Window::text() method. Note that depending on the text alignment you choose, the point given to the primitive will represent a different point relative to the text box. Also note that this isn't the only way to call this primitive. Check Window::text() for more details.
+		<br><br>
+		As a result of the previous code, we get this output:
+		@image html text.png
+		
+		@section text_turtle Using a Turtle's Window::t_label() operation
+		<i>If you haven't done it yet, you should check @ref turtles section before proceeding with this tutorial.</i>
+		<br><br>
+		
+		Printing text with a Turtle is as simple as you might think: give the Turtle the text's parameters and she will print it to the screen. To tell this to a Turtle, you must use Window::t_label() instruction. Let's see an example of how you should do that:
+		<br>
+		@include turtle_label.cpp
+		This piece of code will show you:
+		@image html turtle_label.png
+		
+		@section text_fonts How to use the Fonts
+		If you didn't notice it, inside your <i>resources</i> there's a ttf font file. This file is needed for proper library operation. But this isn't the only font you can use in your program. In fact, there's a way to load and store Fonts inside the Window object, something like @ref turtles system. 
+		<br><br>
+		A Font is a struct that holds the information needed to use it as your text font. If you look carefully, you can pass a Font as a parameter of a Window::text() or Window::t_label() operation. You're not limited to the default font. 
+		<br><br>
+		You can load a Font to your program in different ways, but they have one thing in common: you've to download a font file. I strongly recommend you to use TrueType fonts (.ttf). This is not the only font format supported by Allegro but is the more standardized one. You'll find a lot of cool custom fonts on the Internet.
+		<br>
+		Once you have the file, you can load it in two different ways: @ref create_font or @ref font_list. In the following examples I'll use the Bold version of the default font. Make sure you know the location of your ttf file before trying to code anything. If the library doesn't find your file when loading it, an exception will be thrown, and if you don't catch it your program will crash.
+		
+			@subsection create_font Creating a Font object
+			First, you need to instantiate a Font object giving it, at least, the path of the font file you want to load. You can set also additional parameters such as font color or size. Look at the constructor Font::Font() of the struct to learn more about this. Then, the only thing you must do is to pass this font as a parameter of a @ref text_operations in order to get your text printed with this font. Let's look at an example:
+			@include text_font_fail.cpp 
+			This code would generate this output:
+			@image html text_font_fail.png
+			<br>
+			Oops! Maybe using white as the same background and drawing color is not a good idea. Let's try again with a different color:
+			@include text_font_success.cpp
+			Now, this code gives us:
+			@image html text_font_success.png
+			<br>
+			And that's it. No more steps required.
+			@subsection font_list Adding a Font to the Window Font list
+			As I mentioned before, the Window object can hold fonts as with the Turtles: with a Window call, you can load and save your font into the Window, and then use it wherever you want simply indicating the name you assigned to that Font.
+			Let's see an example of how this works:
+			@include text_font_map.cpp
+			And as before, you get:
+			@image html text_font_success.png
+			<br>
+			You can also load a Font to the Window from a previously created one like this:
+			@include text_font_map2.cpp
+			And get the same result as the first example.
+*/

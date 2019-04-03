@@ -1,0 +1,12 @@
+/**	@page faq Frequently Asked Questions
+		
+		<h2> Q: How can I get started? </h2>
+		Firstly, you should download and install the Window Add-on. You can download the add-on here: LINK
+		<br><br>
+		After that, you can start reading this short tutorials to introduce yourself to the basic concepts of the library: @ref index .
+		
+		<h2> Q: I tried to run some code and it crashed with message "Assertion failed: bitmap, file .../bitmap.c". What can I do? </h2>
+		The crashes with messages with the pattern "Assertion failed: ..." are usually caused by missing files that your program or the Window itself need but were not supplied. In this particular case, you're getting this error because you forgot to add the @a resources folder into the running directory of your executable. 
+		<br><br>
+		You will usually get this type of errors when you try to load an Image or a Font with a wrong file path.
+*/

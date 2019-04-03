@@ -1,0 +1,17 @@
+/** @mainpage Getting Started
+	Hi. 
+	<br> <br>
+	If you are using it on your own initiative, I hope that it is useful for you and you enjoy it. If you are forced to use it, then I will try to make this experience as pleasant as possible for you. 
+	<br> <br>
+	The aim of using this library is to complement your projects with a fancier output. When you start programming in C++, usually what you do is a simple code that outputs some numbers or characters on a black terminal. This is as simple as it's useful, but maybe you started programming having in mind something like the window you're using to read this. With the Window add-on, you'll be introduced to this concept and take a glimpse of how graphic programming is.
+	<br><br>
+	In this website you'll find the information needed to use all of the functionalities that Window add-on has. To learn how to use the Window, <strong>I recommend you to read the pages of this list in order</strong>, section by section:
+	<br>
+	<ol>
+	<li> @ref window - Start to create Window objects and use them in your code. Draw simple figures using its primitives and join them to create more complex drawings.</li>
+	<li> @ref turtles - Turtle graphics is a more intuitive and funny way to introduce yourself in graphics. If you're familiar with <em>Logo</em>, this will seem like the same for you.</li>
+	<li> @ref text - Printing text is one of the functionalities of the Window. As simple as it sounds, this expands the possibilities of your applications to a new level.</li>
+	<li> @ref images - You can also load images from a file and print them to the screen. Here you'll have a brief explanation of how to do it.</li>
+	<li> @ref events - Interactivity is handled with events. Click here if you want to learn more about the Event system and its capabilities. </li>
+	</ol>
+*/
