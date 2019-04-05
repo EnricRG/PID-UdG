@@ -73,11 +73,25 @@
 		<br><br>
 		If you're using multiple Turtles, the only difference with the code above is that you will have to specify the name of the Turtle you want to move at each instruction. All @ref window_turtles work the same way as the ones above.
 	
-	@section turtle_movement Turtle Motion Modes
+	@section turtle_motion Turtle Motion Modes
 	As <i>Logo</i>, the Turtles in a Window can move in different ways. In summary: <br>
 	<ul>
 	<li><strong>Window Mode</strong>: When the turtle hits an edge, she can freely continue moving outside the visible range.</li>
 	<li><strong>Fence Mode</strong>: When the Turtle hits and edge, she stops moving in that direction.</li>
 	<li><strong>Wrap Mode</strong>: When the Turtle hits an edge gets teleported to the opposite edge.</li>
 	</ul>
+	<br>
+	By <strong>default</strong>, every Turtle created is spawned in Window Mode. Let's provide a detailed description of how this three modes work.
+	
+		@subsection turtle_motion_window Window Mode
+		In this mode you can move the Turtle freely in the 2D space of your Window, included the part that is not visible. Yes, this region of the screen also exists and you can draw to it (but it's pretty useless). Let's see an example of how this mode works.
+		<br>
+		Here you have a piece of code that positions the turtle at the center of screen and moves it pointing to the right edge <i>WIDHT</i> units (width of the screen):
+		@include turtle_motion_window.cpp
+		And produces the following output:
+		@image html turtle_motion_window.png
+		As you can see, the Turtle cursor is not visible anymore. This is because it has gone beyond the edge and remains outside the screen. You can continue using that Turtle, it's not lost, it's only not visible. If you move it towards the screen and position it somewhere inside the edges you'll see her again.
+		
+		@subsection turtle_motion_fence Fence Mode
+		
 */
