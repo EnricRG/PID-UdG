@@ -891,7 +891,7 @@
 			al_destroy_bitmap(screen_state);
 		}
 		else {
-			////
+			//// This piece of code was made for debugging, and I find it usefull and funny, so it stays here.
 			ALLEGRO_BITMAP* b= al_get_target_bitmap();
 			if (!b) throw "stringo";
 			////

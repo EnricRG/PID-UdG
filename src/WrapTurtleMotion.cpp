@@ -29,8 +29,6 @@ TurtleMove::const_iterator * WrapTurtleMotion::computeDestination(Point2D actual
 			remaining_distance -= hit.first.distance(previous_position);
 			previous_position = hit.first;
 
-			std::cout << "Hit:  " << previous_position.x << " " << previous_position.y << " Hit type: " << hit.second << std::endl;
-			std::cout << "Distance remaining: " << remaining_distance << std::endl;
 			TurtleMove next_move = TurtleMove(hit.first, true); //visible turtle move
 			moves.push_back(next_move);
 
@@ -39,7 +37,6 @@ TurtleMove::const_iterator * WrapTurtleMotion::computeDestination(Point2D actual
 				previous_position = next_move.getDestination();
 				moves.push_back(next_move);
 				remaining_distance -= 1; //border wrap consumes 1 distance unit.
-				std::cout << "Warp: " << previous_position.x << " " << previous_position.y << std::endl;
 			}
 		}
 
