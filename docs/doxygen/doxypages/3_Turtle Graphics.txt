@@ -70,6 +70,14 @@
 		This code will output:
 		@image html turtle_leftRight.png
 		
-	<br><br>
-	If you're using multiple Turtles, the only difference with the code above is that you will have to specify the name of the Turtle you want to move at each instruction. All @ref window_turtles work the same way as the ones above.
+		<br><br>
+		If you're using multiple Turtles, the only difference with the code above is that you will have to specify the name of the Turtle you want to move at each instruction. All @ref window_turtles work the same way as the ones above.
+	
+	@section turtle_movement Turtle Motion Modes
+	As <i>Logo</i>, the Turtles in a Window can move in different ways. In summary: <br>
+	<ul>
+	<li><strong>Window Mode</strong>: When the turtle hits an edge, she can freely continue moving outside the visible range.</li>
+	<li><strong>Fence Mode</strong>: When the Turtle hits and edge, she stops moving in that direction.</li>
+	<li><strong>Wrap Mode</strong>: When the Turtle hits an edge gets teleported to the opposite edge.</li>
+	</ul>
 */
