@@ -84,14 +84,26 @@
 	By <strong>default</strong>, every Turtle created is spawned in Window Mode. Let's provide a detailed description of how this three modes work.
 	
 		@subsection turtle_motion_window Window Mode
-		In this mode you can move the Turtle freely in the 2D space of your Window, included the part that is not visible. Yes, this region of the screen also exists and you can draw to it (but it's pretty useless). Let's see an example of how this mode works.
+		In this mode you can move the Turtle freely in the 2D space of your Window, also in the part that is not visible. Yes, this region of the screen also exists and you can draw to it (but it's pretty useless). Let's see an example of how this mode works.
 		<br>
-		Here you have a piece of code that positions the turtle at the center of screen and moves it pointing to the right edge <i>WIDHT</i> units (width of the screen):
+		Here you have a piece of code that positions the turtle at the center of screen and moves it pointing to the right edge <i>WIDTH</i> units (width of the screen):
 		@include turtle_motion_window.cpp
 		And produces the following output:
 		@image html turtle_motion_window.png
-		As you can see, the Turtle cursor is not visible anymore. This is because it has gone beyond the edge and remains outside the screen. You can continue using that Turtle, it's not lost, it's only not visible. If you move it towards the screen and position it somewhere inside the edges you'll see her again.
+		As you can see, the Turtle's cursor is not visible anymore. This is because it has gone beyond the edge and remains outside the screen. You can continue using that Turtle, it's not lost, it's only not visible. If you move it towards the screen and position it somewhere inside the edges you'll see her again.
 		
 		@subsection turtle_motion_fence Fence Mode
+		Using the same example as before, let's adapt it to the Fence Mode. This code:
+		@include turtle_motion_fence.cpp
+		Generates the following output:
+		@image html turtle_motion_fence.png
+		As expected, the Turtle stops moving when she hits the right edge.
 		
+		@subsection turtle_motion_wrap Wrap Mode
+		Using again the same example, happens what you would expect: the Turtle hits the right edge and then teleports to the left edge, continuing her way. Let's check it out:
+		@include turtle_motion_wrap.cpp
+		Outputs:
+		@image html turtle_motion_wrap.png
+		As expected.
+		<br><br>
 */
