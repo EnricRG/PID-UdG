@@ -1685,6 +1685,10 @@ public:
 	*/
 	void clear();
 	
+	/** Redraws all the content of the Draw Log. Usually used when the screen is cleared.
+	*/
+	void redraw();
+
 	/** Enables Auto Update functionality. When Auto Update is enabled, the screen refreshes itself every time a draw call is made.
 	*/
 	void enableAutoUpdate();
@@ -2538,10 +2542,6 @@ private:
 	*	@param operation Drawable object that encapsulates a drawing action.
 	*/
 	void log(Drawable* operation);
-	
-	/** Redraws all the content of the Draw Log. Usually used when the screen is cleared.
-	*/
-	void redraw();
 	
 	/** Auxiliary function to add a Turtle to the Window's Turtle list (it isn't really a list, it's a map). 
 	*	@param turtle_name Name of the Turtle.

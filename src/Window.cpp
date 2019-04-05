@@ -969,7 +969,7 @@
 
 		_backgroundColor = c;
 		al_clear_to_color(_backgroundColor.toAllegroColor());
-		redraw();
+		if(_drawLogging) redraw();
 		turtleMoved();
 		update();
 	}
@@ -1538,16 +1538,16 @@
 
 	void Window::redraw()
 	{
-		if (_drawLogging) {
+		if (_drawLog.size() > 0) {
 
+			bool drawLogging = _drawLogging, autoUpdate = _autoUpdate;
 			_drawLogging = false;						//to avoid logging the redrawn primitives
-			bool autoUpdate = _autoUpdate;
 			disableAutoUpdate();
 
 			for (size_t i = 0; i<_drawLog.size(); i++)	//iterate over draw log
 				_drawLog[i]->draw(*this);				//draw Drawable object on actual Window 
 
-			_drawLogging = true;						//reactivate logging draw calls
+			_drawLogging = drawLogging;					//reactivate logging draw calls
 			_autoUpdate = autoUpdate;
 			update();
 		}
@@ -1897,7 +1897,7 @@
 		_maxY = height;
 
 		_autoUpdate = true;
-		_drawLogging = false;
+		_drawLogging = true;
 		_autoRefresh = false;
 		_turtleCursorMoved = false;
 		_switchedIn = false;
