@@ -3,13 +3,13 @@
 
 #include <windows.h>
 
-//Window Add-on main header file
-#include "windowAddon/Window.h"
-
 #ifdef BUILD_DLL
     #define DLL_EXPORT __declspec(dllexport)
 #else
     #define DLL_EXPORT __declspec(dllimport)
 #endif
+
+//Window Add-on main header file
+#include "windowAddon/Window.h"
 
 #endif // __MAIN_H__
