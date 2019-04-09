@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of a spline and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawSpline : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawSpline : public Drawable
+#else
+	class DrawSpline : public Drawable
+#endif
 {
 public:
 

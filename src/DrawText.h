@@ -10,7 +10,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information needed to draw text on a Window.
 */
-class DLL_EXPORT DrawText : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawText : public Drawable
+#else
+	class DrawText : public Drawable
+#endif
 {
 public:
 

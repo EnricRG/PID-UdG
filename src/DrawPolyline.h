@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of a polyline and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawPolyline : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawPolyline : public Drawable
+#else
+	class DrawPolyline : public Drawable
+#endif
 {
 public:
 

@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of a triangle and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawTriangle : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawTriangle : public Drawable
+#else
+	class DrawTriangle : public Drawable
+#endif
 {
 public:
 

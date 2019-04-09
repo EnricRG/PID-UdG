@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of a pie slice and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawPieslice : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawPieslice : public Drawable
+#else
+	class DrawPieslice : public Drawable
+#endif
 {
 public:
 	

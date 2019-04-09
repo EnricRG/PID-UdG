@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of a rounded rectangle and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawRoundedRectangle : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawRoundedRectangle : public Drawable
+#else
+	class DrawRoundedRectangle : public Drawable
+#endif
 {
 public:
 	

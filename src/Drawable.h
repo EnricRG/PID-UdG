@@ -1,10 +1,12 @@
 #ifndef DRAWABLE_H
 #define DRAWABLE_H
 
-#ifdef BUILD_DLL
-#define DLL_EXPORT  
-#else
-#define DLL_EXPORT  
+#ifdef _WIN32
+	#ifdef BUILD_DLL
+		#define DLL_EXPORT __declspec(dllexport)
+	#else
+		#define DLL_EXPORT __declspec(dllimport)
+	#endif
 #endif
 
 class Window; //forward declaration to avoid circular references when compiling

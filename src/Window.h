@@ -2,6 +2,14 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+#ifdef _WIN32
+	#ifdef BUILD_DLL
+		#define DLL_EXPORT __declspec(dllexport)
+	#else
+		#define DLL_EXPORT __declspec(dllimport)
+	#endif
+#endif
+
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_primitives.h>
@@ -90,7 +98,11 @@ static const Font DEFAULT_FONT(DEFAULT_FONT_PATH, DEFAULT_FONT_COLOR, DEFAULT_FO
 *	the Turtles. Look for <EM>primitives</EM> or <EM>turtle drawing</EM> in documentation for more detail about drawing functionalities. It also allows you to store
 *	some Fonts and access them by the name you choose. 
 */
-class Window
+#ifdef _WIN32
+	class DLL_EXPORT Window
+#else
+	class Window
+#endif
 {
 public:
 	//class constants

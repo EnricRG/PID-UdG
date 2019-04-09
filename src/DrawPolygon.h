@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of a polygon and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawPolygon : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawPolygon : public Drawable
+#else
+	class DrawPolygon : public Drawable
+#endif
 {
 public:
 
