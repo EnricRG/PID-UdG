@@ -38,7 +38,9 @@
 		</li>
 		
 		<li>
-			Now you should see three files inside <i>bin/Release</i> directory of the project named <i>windowAddon.a, windowAddon.dll and windowAddon.def</i>. We're interested in the first two. Create a directory named <i>bin</i> inside your installation files folder and put <i>windowAddon.dll</i> in it. Do the same with <i>windowAddon.a</i> but in a folder called <i>lib</i>. Now your installation files folder should look like that:
+			Now you should see three files inside <i>bin/Release</i> directory of the project named <i>windowAddon.a, windowAddon.dll and windowAddon.def</i>. We're interested in the first two. 
+			@image html bin_release.png
+			Create a directory named <i>bin</i> inside your installation files folder and put <i>windowAddon.dll</i> in it. Do the same with <i>windowAddon.a</i> but in a folder called <i>lib</i>. Now your installation files folder should look like that:
 			@image html installation_files.png
 		</li>		
 	</ol>
