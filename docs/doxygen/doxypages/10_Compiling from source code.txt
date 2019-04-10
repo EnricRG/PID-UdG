@@ -1,15 +1,24 @@
 /**
 @page compilation_guides Compiling from source code
 
-	@page compile_windowaddon_windows Compiling Window Add-on DLL for Windows
+	@subpage compile_windowaddon_windows
+	@subpage compile_windowaddon_linux
+
+	@page compile_windowaddon_windows Compiling Window Add-on for Windows
 	
 	<b>Prerequisites</b>: Allegro (recommended version: 5.2.4) installed on your MinGW installation.
 	<br><br>
-	
+	The objective of this tutorial is to teach you how to create both <i>windowAddon.dll</i> and <i>windowAddon.a</i> files needed to install the add-on to your MinGW installation. We will be using Code::Blocks to generate them.
+	<br><br>
 	Follow this steps in order to compile windowAddon.dll from the source code:
 	<ol>
 		<li>
-			Go to File --> New --> Project and create a Dynamic Link Library Project. Choose the name and path you prefer, but you have to remember it. In my case the name will be "WindowAddon1.1".
+			Make sure that you set Code::Blocks MinGW path to be the MinGW installation where you want to install the Window Add-on. Go to <i>Settings &rarr Compiler &rarr Toolchain executables</i> to check that out.
+			@image html toolchain_executables.png
+		</li>
+		
+		<li>
+			Go to <i>File &rarr New &rarr Project</i> and create a <i>Dynamic Link Library</i> Project. Choose the name and path you prefer, but you have to remember it. In my case the name will be "WindowAddon1.1".
 			@image html dll_project.png
 		</li>
 		
@@ -33,4 +42,6 @@
 		nosing jere
 		</li>
 	</ol>
+	
+	@page compile_windowaddon_linux Compiling Window Add-on for Linux
 */
