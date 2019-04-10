@@ -1,0 +1,6 @@
+/**
+@page compilation_guides Compile WindowAddon from sources
+
+	@subpage compile_windowaddon_windows
+	@subpage compile_windowaddon_linux
+*/

@@ -2,7 +2,7 @@
 		
 		<div id="faq_get_started">
 			<h2> Q: How can I get started? </h2>
-			Firstly, you should download and install the Window Add-on. You can download the add-on here: LINK
+			Firstly, you should download and install the Window Add-on. You can check the download page here: @ref downloads
 			<br><br>
 			After that, you can start reading this short tutorials to introduce yourself to the basic concepts of the library: @ref index .
 		</div>
