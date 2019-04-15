@@ -8,6 +8,10 @@
 	Follow this steps in order to compile them from the source code:
 	<ol>
 		<li>
+			Download 
+		</li>
+	
+		<li>
 			Make sure that you set Code::Blocks MinGW path to be the MinGW installation where you want to install the Window Add-on. Go to <i>Settings &rarr; Compiler &rarr; Toolchain executables</i> to check that out.
 			@image html toolchain_executables.png
 		</li>
@@ -34,7 +38,7 @@
 		</li>
 		
 		<li>
-			Compile the project. Make sure you have selected the <i><b>Release</b></i> build option and click <i><b>Rebuild</b></i> to compile it from zero (to ensure you are not using some intermediate files that have been created during a possible test compile)
+			Compile the project. Make sure you have selected the <i><b>Release</b></i> build option and click <i><b>Rebuild</b></i> to compile it from zero (to ensure you are not using some intermediate files that have been created during a possible test compile). You'll see some warnings coming from <i>CommonUtils.h</i> and <i>Event.h</i>, but this is fine.
 		</li>
 		
 		<li>
