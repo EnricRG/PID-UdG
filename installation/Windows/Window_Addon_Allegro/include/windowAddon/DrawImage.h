@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of an Image and represent it on a Window drawing it.
 */
-class DLL_EXPORT DrawImage : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawImage : public Drawable
+#else
+	class DrawImage : public Drawable
+#endif
 {
 public:
 
