@@ -8,7 +8,7 @@
 	Follow this steps in order to compile them from the source code:
 	<ol>
 		<li>
-			Download 
+			Download the source code from the <a href="https://github.com/EnricRG/PID-UdG"> GitHub repository</a>. The source code is located inside <i>src</i> folder.
 		</li>
 	
 		<li>
@@ -17,7 +17,7 @@
 		</li>
 		
 		<li>
-			Go to <i>File &rarr; New &rarr; Project</i> and create a <i>Dynamic Link Library</i> Project. Choose the name and path you prefer, but you have to remember it. In my case the name will be "WindowAddon1.1".
+			Go to <i>File &rarr; New &rarr; Project</i> and create a <i>Dynamic Link Library</i> Project. Name it "WindowAddon". If you don't name it like this, you'll have to modify the name of the final compiled files.
 			@image html dll_project.png
 		</li>
 		
