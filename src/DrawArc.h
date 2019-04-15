@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of an arc and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawArc : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawArc : public Drawable
+#else
+	class DrawArc : public Drawable
+#endif
 {
 public:
 

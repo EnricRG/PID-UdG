@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of an elliptical arc and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawEllipticalArc : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawEllipticalArc : public Drawable
+#else
+	class DrawEllipticalArc : public Drawable
+#endif
 {
 public:
 
