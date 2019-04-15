@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of an ellipse and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawEllipse : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawEllipse : public Drawable
+#else
+	class DrawEllipse : public Drawable
+#endif
 {
 public:
 

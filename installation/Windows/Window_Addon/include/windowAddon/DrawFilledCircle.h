@@ -8,7 +8,11 @@
 /** @brief Implementation of Drawable interface.
 *	This class is capable of storing the information of a filled circle and represent it on a Window drawing the figure.
 */
-class DLL_EXPORT DrawFilledCircle : public Drawable
+#ifdef _WIN32
+	class DLL_EXPORT DrawFilledCircle : public Drawable
+#else
+	class DrawFilledCircle : public Drawable
+#endif
 {
 public:
 

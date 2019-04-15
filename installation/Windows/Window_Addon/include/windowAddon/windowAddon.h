@@ -1,15 +1,19 @@
-#ifndef __MAIN_H__
-#define __MAIN_H__
+// Version 1.1
 
-#include <windows.h>
+#ifndef __WINDOWADDON_H__
+#define __WINDOWADDON_H__
 
-#ifdef BUILD_DLL
-    #define DLL_EXPORT __declspec(dllexport)
-#else
-    #define DLL_EXPORT __declspec(dllimport)
+#ifdef _WIN32 //Windows 32 and 64 bits
+    #include <windows.h>
+
+    #ifdef BUILD_DLL
+        #define DLL_EXPORT __declspec(dllexport)
+    #else
+        #define DLL_EXPORT __declspec(dllimport)
+    #endif
 #endif
 
-//Window Add-on main header file
-#include "windowAddon/Window.h"
+#include "windowAddon/Window.h" //Window Add-on main header file
+#include "windowAddon/Drawables.h"
 
-#endif // __MAIN_H__
+#endif // __WINDOWADDON_H__
