@@ -5,22 +5,21 @@
 	
 	@section install_allegro_windows Installing Allegro
 	
-		Allegro is the core library used to bring to life the Window Add-on. You have to install it first in order to get all working.
-		<br><br>
-		
-		To install it, you can:
-		<ul>
-			<li>Download pre-compiled binaries from @ref windows_downloads .</li>
-			<li>Compile latest Allegro from source code. The Allegro documentation has a nice tutorial on how to do it. You can find it <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Windows">here</a>. You'll want to compile the <b><i>Monolith</i></b> version. <b>Recommendation</b>: You'll need to use <i>MSYS</i> to download and install some dependences, but the MinGW installation bundled with Code::Blocks doesn't have it by default. I recommend you to download a clean MinGW install from <a href="https://sourceforge.net/projects/mingw/files/"> MinGW project</a> that contains <i>MSYS</i> and copy <i>msys</i> folder to your Code::Blocks MinGW installation. Make sure you select <i>MSYS</i> option in the auto-installer.</li>
-		</ul>
+	Allegro is the core library used to bring to life the Window Add-on. You have to install it first in order to get all working.
+	<br>
+	To install it, you can:
+	<ul>
+		<li>Download pre-compiled binaries from @ref windows_downloads.</li>
+		<li>Compile latest Allegro from source code. The Allegro documentation has a nice tutorial on how to do it. You can find it <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Windows">here</a>. You'll want to compile the <b><i>Monolith</i></b> version. <b>Recommendation</b>: You'll need to use <i>MSYS</i> to download and install some dependences, but the MinGW installation bundled with Code::Blocks doesn't have it by default. I recommend you to download a clean MinGW install from <a href="https://sourceforge.net/projects/mingw/files/"> MinGW project</a> that contains <i>MSYS</i> and copy <i>msys</i> folder to your Code::Blocks MinGW installation. Make sure you select <i>MSYS</i> option in the auto-installer.</li>
+	</ul>
 	
 	@section install_window_addon Installing Window Add-on
 	
-		Once we have Allegro installed, we can continue installing the Add-on. As with Allegro, you can:
-		<ul>
-			<li>Download pre-compiled binaries at @ref windows_downloads . Make sure that you have the same GCC version.</li>
-			<li>Compile binaries from source code by yourself. You can check how to do it below.</li>
-		</ul>
+	Once we have Allegro installed, we can continue installing the Add-on. As with Allegro, you can:
+	<ul>
+		<li>Download pre-compiled binaries at @ref windows_downloads. Make sure that you have the same GCC version.</li>
+		<li>Compile binaries from source code by yourself. You can check how to do it below.</li>
+	</ul>
 	
 	@subsection compile_windowaddon_windows Compiling Window Add-on binaries for Windows
 	
@@ -79,4 +78,5 @@
 	@subsection install_windows_files Install the files
 	
 	Whether you have downloaded or compiled the files, now what you have to do is to install them on your MinGW setup. It's as simple as <b>drag and drop</b> this files into MinGW's root directory. This process should not override any file, so if a window pops up warning that you'll in facto do that is because you had an older installation of Allegro or Window Add-on and you should delete this files first.
+	@image html mingw_files.png
 */
