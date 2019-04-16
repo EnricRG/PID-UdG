@@ -1,0 +1,82 @@
+/**
+	@page windows_installation Windows Installation Guide
+	
+	This page will teach you how to <b>install</b> the Window Add-on and all the extra libraries and files that it needs to run properly. If you want to <b>update</b> your current installation you can follow this exact same guide but deleting all old installation files first.
+	
+	@section install_allegro_windows Installing Allegro
+	
+		Allegro is the core library used to bring to life the Window Add-on. You have to install it first in order to get all working.
+		<br><br>
+		
+		To install it, you can:
+		<ul>
+			<li>Download pre-compiled binaries from @ref windows_downloads .</li>
+			<li>Compile latest Allegro from source code. The Allegro documentation has a nice tutorial on how to do it. You can find it <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Windows">here</a>. You'll want to compile the <b><i>Monolith</i></b> version. <b>Recommendation</b>: You'll need to use <i>MSYS</i> to download and install some dependences, but the MinGW installation bundled with Code::Blocks doesn't have it by default. I recommend you to download a clean MinGW install from <a href="https://sourceforge.net/projects/mingw/files/"> MinGW project</a> that contains <i>MSYS</i> and copy <i>msys</i> folder to your Code::Blocks MinGW installation. Make sure you select <i>MSYS</i> option in the auto-installer.</li>
+		</ul>
+	
+	@section install_window_addon Installing Window Add-on
+	
+		Once we have Allegro installed, we can continue installing the Add-on. As with Allegro, you can:
+		<ul>
+			<li>Download pre-compiled binaries at @ref windows_downloads . Make sure that you have the same GCC version.</li>
+			<li>Compile binaries from source code by yourself. You can check how to do it below.</li>
+		</ul>
+	
+	@subsection compile_windowaddon_windows Compiling Window Add-on binaries for Windows
+	
+	<b>Prerequisites</b>: Allegro (recommended version: 5.2.4) must be installed on your MinGW installation first.
+	<br><br>
+	The objective of this tutorial is to teach you how to create both <i>windowAddon.dll</i> and <i>windowAddon.a</i> files needed to install the add-on to your MinGW installation. We will be using Code::Blocks to generate them.
+	<br><br>
+	Follow this steps in order to compile them from the source code:
+	<ol>
+		<li>
+			Download the source code from the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a>. The source code is located inside <i>src</i> folder.
+		</li>
+	
+		<li>
+			Make sure that you set Code::Blocks MinGW path to be the MinGW installation where you want to install the Window Add-on. Go to <i>Settings &rarr; Compiler &rarr; Toolchain executables</i> to check that out.
+			@image html toolchain_executables.png
+		</li>
+		
+		<li>
+			Go to <i>File &rarr; New &rarr; Project</i> and create a <i>Dynamic Link Library</i> Project. Name it "WindowAddon". If you don't name it like this, you'll have to modify the name of the final compiled files.
+			@image html dll_project.png
+		</li>
+		
+		<li>
+			Make a copy of the Window Add-on sources into the root of this new project and put it in a directory called <i>windowAddon</i>. You can not choose this name, make sure you type it right.
+			@image html windows_windowaddon_copysource.png
+		</li>
+		
+		<li>
+			Replace your main.h and main.cpp with this samples:
+			<br><br>
+			<i>main.h</i>
+			@include dll_main.h
+			<i>main.cpp</i>
+			@include dll_main.cpp
+			<br>
+			In more detail: First of all, you have to include the headers that you want to be accessible when using the library. You also have to delete the sample function that Code::Blocks creates with the project. The provided samples are the ones intended to be used, but feel free to modify anything you want in order to fit your needs.
+		</li>
+		
+		<li>
+			Compile the project. Make sure you have selected the <i><b>Release</b></i> build option and click <i><b>Rebuild</b></i> to compile it from zero (to ensure you are not using some intermediate files that have been created during a possible test compile). You'll see some warnings coming from <i>CommonUtils.h</i> and <i>Event.h</i>, but this is fine.
+		</li>
+		
+		<li>
+			Now you should see three files inside <i>bin/Release</i> directory of the project named <i>windowAddon.a, windowAddon.dll and windowAddon.def</i>. We're interested in the first two. 
+			@image html bin_release.png <br>
+			Create a directory named <i>bin</i> inside your installation files folder and put <i>windowAddon.dll</i> in it. Do the same with <i>windowAddon.a</i> but in a folder called <i>lib</i>. You can download <i>include</i> folder at @ref windows_downloads. Now your installation files folder should look like that: <br>
+			@image html installation_files.png
+		</li>		
+	</ol>
+	
+	And that's it. Now you can continue to the next section to finish your installation process.
+	<br><br>
+	<b>NOTE</b>: If you update your MinGW installation you'll have to recompile the Add-on again as done in this tutorial.
+	
+	@subsection install_windows_files Install the files
+	
+	Whether you have downloaded or compiled the files, now what you have to do is to install them on your MinGW setup. It's as simple as <b>drag and drop</b> this files into MinGW's root directory. This process should not override any file, so if a window pops up warning that you'll in facto do that is because you had an older installation of Allegro or Window Add-on and you should delete this files first.
+*/

@@ -1,0 +1,12 @@
+/**
+@page installation_guides How to install Window Add-on
+	
+	In order to have access to all the functionalities of the Window Add-on, you have to install it first.
+	
+	<ul>
+		<li> Installation instructions for Windows: @subpage windows_installation </li>
+		<li> Installation instructions for Linux: @subpage linux_installation </li>
+	</ul>
+	
+	If you have any doubts, remember to check the @ref faq and @ref known_problems.
+*/

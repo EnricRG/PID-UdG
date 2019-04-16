@@ -1,3 +1,0 @@
-/**
-	@page compile_windowaddon_linux Compiling for Linux
-*/

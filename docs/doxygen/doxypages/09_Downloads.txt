@@ -1,3 +1,13 @@
 /**
 	@page downloads Downloads
+	
+	<div style="display: none;"> 
+		@subpage windows_downloads
+		@subpage linux_downloads
+	</div>
+	
+	@page windows_downloads Windows Downloads
+	
+	@page linux_downloads Linux Downloads
+	
 */
