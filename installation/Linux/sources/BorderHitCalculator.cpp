@@ -5,8 +5,6 @@
 #define WINDOWADDON_PI			3.14159265358979323846
 #define WINDOWADDON_PI_2		1.57079632679489661923
 
-#include <cmath>
-
 const double MARGIN_OF_ERROR = 0.0001; //less than 0.01 degrees
 
 bool BorderHitCalculator::positionInsideScreen(Point2D p, WindowSpec window){
