@@ -1,0 +1,344 @@
+#ifndef EVENT_H
+#define EVENT_H
+
+#include <allegro5/allegro.h>
+
+typedef ALLEGRO_EVENT_TYPE WindowEventType;
+//typedef unsigned int WindowEventType;
+
+enum
+{
+	WINDOW_EVENT_JOYSTICK_AXIS = ALLEGRO_EVENT_JOYSTICK_AXIS,
+	WINDOW_EVENT_JOYSTICK_BUTTON_DOWN = ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN ,
+	WINDOW_EVENT_JOYSTICK_BUTTON_UP = ALLEGRO_EVENT_JOYSTICK_BUTTON_UP,
+	WINDOW_EVENT_JOYSTICK_CONFIGURATION = ALLEGRO_EVENT_JOYSTICK_CONFIGURATION,
+
+	WINDOW_EVENT_KEY_DOWN = ALLEGRO_EVENT_KEY_DOWN,
+	WINDOW_EVENT_KEY_CHAR = ALLEGRO_EVENT_KEY_CHAR,
+	WINDOW_EVENT_KEY_UP = ALLEGRO_EVENT_KEY_UP,
+
+	WINDOW_EVENT_MOUSE_AXES = ALLEGRO_EVENT_MOUSE_AXES,
+	WINDOW_EVENT_MOUSE_BUTTON_DOWN = ALLEGRO_EVENT_MOUSE_BUTTON_DOWN,
+	WINDOW_EVENT_MOUSE_BUTTON_UP = ALLEGRO_EVENT_MOUSE_BUTTON_UP,
+	WINDOW_EVENT_MOUSE_ENTER_DISPLAY = ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY,
+	WINDOW_EVENT_MOUSE_LEAVE_DISPLAY = ALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY,
+	WINDOW_EVENT_MOUSE_WARPED = ALLEGRO_EVENT_MOUSE_WARPED,
+
+	WINDOW_EVENT_TIMER = ALLEGRO_EVENT_TIMER,
+
+	WINDOW_EVENT_DISPLAY_EXPOSE = ALLEGRO_EVENT_DISPLAY_EXPOSE,
+	WINDOW_EVENT_DISPLAY_RESIZE = ALLEGRO_EVENT_DISPLAY_RESIZE,
+	WINDOW_EVENT_DISPLAY_CLOSE = ALLEGRO_EVENT_DISPLAY_CLOSE,
+	WINDOW_EVENT_DISPLAY_LOST = ALLEGRO_EVENT_DISPLAY_LOST,
+	WINDOW_EVENT_DISPLAY_FOUND = ALLEGRO_EVENT_DISPLAY_FOUND,
+	WINDOW_EVENT_DISPLAY_SWITCH_IN = ALLEGRO_EVENT_DISPLAY_SWITCH_IN,
+	WINDOW_EVENT_DISPLAY_SWITCH_OUT = ALLEGRO_EVENT_DISPLAY_SWITCH_OUT,
+	WINDOW_EVENT_DISPLAY_ORIENTATION = ALLEGRO_EVENT_DISPLAY_ORIENTATION,
+	WINDOW_EVENT_DISPLAY_HALT_DRAWING = ALLEGRO_EVENT_DISPLAY_HALT_DRAWING,
+	WINDOW_EVENT_DISPLAY_RESUME_DRAWING = ALLEGRO_EVENT_DISPLAY_RESUME_DRAWING,
+
+	WINDOW_EVENT_TOUCH_BEGIN = ALLEGRO_EVENT_TOUCH_BEGIN,
+	WINDOW_EVENT_TOUCH_END = ALLEGRO_EVENT_TOUCH_END,
+	WINDOW_EVENT_TOUCH_MOVE = ALLEGRO_EVENT_TOUCH_MOVE,
+	WINDOW_EVENT_TOUCH_CANCEL = ALLEGRO_EVENT_TOUCH_CANCEL,
+
+	WINDOW_EVENT_DISPLAY_CONNECTED = ALLEGRO_EVENT_DISPLAY_CONNECTED,
+	WINDOW_EVENT_DISPLAY_DISCONNECTED = ALLEGRO_EVENT_DISPLAY_DISCONNECTED
+};
+
+enum
+{
+	KEYBOARD_KEY_A = ALLEGRO_KEY_A,
+	KEYBOARD_KEY_B = ALLEGRO_KEY_B,
+	KEYBOARD_KEY_C = ALLEGRO_KEY_C,
+	KEYBOARD_KEY_D = ALLEGRO_KEY_D,
+	KEYBOARD_KEY_E = ALLEGRO_KEY_E,
+	KEYBOARD_KEY_F = ALLEGRO_KEY_F,
+	KEYBOARD_KEY_G = ALLEGRO_KEY_G,
+	KEYBOARD_KEY_H = ALLEGRO_KEY_H,
+	KEYBOARD_KEY_I = ALLEGRO_KEY_I,
+	KEYBOARD_KEY_J = ALLEGRO_KEY_J,
+	KEYBOARD_KEY_K = ALLEGRO_KEY_K,
+	KEYBOARD_KEY_L = ALLEGRO_KEY_L,
+	KEYBOARD_KEY_M = ALLEGRO_KEY_M,
+	KEYBOARD_KEY_N = ALLEGRO_KEY_N,
+	KEYBOARD_KEY_O = ALLEGRO_KEY_O,
+	KEYBOARD_KEY_P = ALLEGRO_KEY_P,
+	KEYBOARD_KEY_Q = ALLEGRO_KEY_Q,
+	KEYBOARD_KEY_R = ALLEGRO_KEY_R,
+	KEYBOARD_KEY_S = ALLEGRO_KEY_S,
+	KEYBOARD_KEY_T = ALLEGRO_KEY_T,
+	KEYBOARD_KEY_U = ALLEGRO_KEY_U,
+	KEYBOARD_KEY_V = ALLEGRO_KEY_V,
+	KEYBOARD_KEY_W = ALLEGRO_KEY_W,
+	KEYBOARD_KEY_X = ALLEGRO_KEY_X,
+	KEYBOARD_KEY_Y = ALLEGRO_KEY_Y,
+	KEYBOARD_KEY_Z = ALLEGRO_KEY_Z,
+	KEYBOARD_KEY_0 = ALLEGRO_KEY_0,
+	KEYBOARD_KEY_1 = ALLEGRO_KEY_1,
+	KEYBOARD_KEY_2 = ALLEGRO_KEY_2,
+	KEYBOARD_KEY_3 = ALLEGRO_KEY_3,
+	KEYBOARD_KEY_4 = ALLEGRO_KEY_4,
+	KEYBOARD_KEY_5 = ALLEGRO_KEY_5,
+	KEYBOARD_KEY_6 = ALLEGRO_KEY_6,
+	KEYBOARD_KEY_7 = ALLEGRO_KEY_7,
+	KEYBOARD_KEY_8 = ALLEGRO_KEY_8,
+	KEYBOARD_KEY_9 = ALLEGRO_KEY_9,
+	KEYBOARD_KEY_PAD_0 = ALLEGRO_KEY_PAD_0,
+	KEYBOARD_KEY_PAD_1 = ALLEGRO_KEY_PAD_1,
+	KEYBOARD_KEY_PAD_2 = ALLEGRO_KEY_PAD_2,
+	KEYBOARD_KEY_PAD_3 = ALLEGRO_KEY_PAD_3,
+	KEYBOARD_KEY_PAD_4 = ALLEGRO_KEY_PAD_4,
+	KEYBOARD_KEY_PAD_5 = ALLEGRO_KEY_PAD_5,
+	KEYBOARD_KEY_PAD_6 = ALLEGRO_KEY_PAD_6,
+	KEYBOARD_KEY_PAD_7 = ALLEGRO_KEY_PAD_7,
+	KEYBOARD_KEY_PAD_8 = ALLEGRO_KEY_PAD_8,
+	KEYBOARD_KEY_PAD_9 = ALLEGRO_KEY_PAD_9,
+	KEYBOARD_KEY_F1 = ALLEGRO_KEY_F1,
+	KEYBOARD_KEY_F2 = ALLEGRO_KEY_F2,
+	KEYBOARD_KEY_F3 = ALLEGRO_KEY_F3,
+	KEYBOARD_KEY_F4 = ALLEGRO_KEY_F4,
+	KEYBOARD_KEY_F5 = ALLEGRO_KEY_F5,
+	KEYBOARD_KEY_F6 = ALLEGRO_KEY_F6,
+	KEYBOARD_KEY_F7 = ALLEGRO_KEY_F7,
+	KEYBOARD_KEY_F8 = ALLEGRO_KEY_F8,
+	KEYBOARD_KEY_F9 = ALLEGRO_KEY_F9,
+	KEYBOARD_KEY_F10 = ALLEGRO_KEY_F10,
+	KEYBOARD_KEY_F11 = ALLEGRO_KEY_F11,
+	KEYBOARD_KEY_F12 = ALLEGRO_KEY_F12,
+	KEYBOARD_KEY_ESCAPE = ALLEGRO_KEY_ESCAPE,
+	KEYBOARD_KEY_TILDE = ALLEGRO_KEY_TILDE,
+	KEYBOARD_KEY_MINUS = ALLEGRO_KEY_MINUS,
+	KEYBOARD_KEY_EQUALS = ALLEGRO_KEY_EQUALS,
+	KEYBOARD_KEY_BACKSPACE = ALLEGRO_KEY_BACKSPACE,
+	KEYBOARD_KEY_TAB = ALLEGRO_KEY_TAB,
+	KEYBOARD_KEY_OPENBRACE = ALLEGRO_KEY_OPENBRACE, KEYBOARD_KEY_CLOSEBRACE = ALLEGRO_KEY_CLOSEBRACE,
+	KEYBOARD_KEY_ENTER = ALLEGRO_KEY_ENTER,
+	KEYBOARD_KEY_SEMICOLON = ALLEGRO_KEY_SEMICOLON,
+	KEYBOARD_KEY_QUOTE = ALLEGRO_KEY_QUOTE,
+	KEYBOARD_KEY_BACKSLASH = ALLEGRO_KEY_BACKSLASH, KEYBOARD_KEY_BACKSLASH2 = ALLEGRO_KEY_BACKSLASH2,
+	KEYBOARD_KEY_COMMA = ALLEGRO_KEY_COMMA,
+	KEYBOARD_KEY_FULLSTOP = ALLEGRO_KEY_FULLSTOP,
+	KEYBOARD_KEY_SLASH = ALLEGRO_KEY_SLASH,
+	KEYBOARD_KEY_SPACE = ALLEGRO_KEY_SPACE,
+	KEYBOARD_KEY_INSERT = ALLEGRO_KEY_INSERT, KEYBOARD_KEY_DELETE = ALLEGRO_KEY_DELETE,
+	KEYBOARD_KEY_HOME = ALLEGRO_KEY_HOME, KEYBOARD_KEY_END = ALLEGRO_KEY_END,
+	KEYBOARD_KEY_PGUP = ALLEGRO_KEY_PGUP, KEYBOARD_KEY_PGDN = ALLEGRO_KEY_PGDN,
+	KEYBOARD_KEY_LEFT = ALLEGRO_KEY_LEFT, KEYBOARD_KEY_RIGHT = ALLEGRO_KEY_RIGHT,
+	KEYBOARD_KEY_UP = ALLEGRO_KEY_UP, KEYBOARD_KEY_DOWN = ALLEGRO_KEY_DOWN,
+	KEYBOARD_KEY_PAD_SLASH = ALLEGRO_KEY_PAD_SLASH, KEYBOARD_KEY_PAD_ASTERISK = ALLEGRO_KEY_PAD_ASTERISK,
+	KEYBOARD_KEY_PAD_MINUS = ALLEGRO_KEY_PAD_MINUS, KEYBOARD_KEY_PAD_PLUS = ALLEGRO_KEY_PAD_PLUS,
+	KEYBOARD_KEY_PAD_DELETE = ALLEGRO_KEY_PAD_DELETE, KEYBOARD_KEY_PAD_ENTER = ALLEGRO_KEY_PAD_ENTER,
+	KEYBOARD_KEY_PRINTSCREEN = ALLEGRO_KEY_PRINTSCREEN, KEYBOARD_KEY_PAUSE = ALLEGRO_KEY_PAUSE,
+	KEYBOARD_KEY_ABNT_C1 = ALLEGRO_KEY_ABNT_C1, KEYBOARD_KEY_YEN = ALLEGRO_KEY_YEN, KEYBOARD_KEY_KANA = ALLEGRO_KEY_KANA,
+	KEYBOARD_KEY_CONVERT = ALLEGRO_KEY_CONVERT, KEYBOARD_KEY_NOCONVERT = ALLEGRO_KEY_NOCONVERT,
+	KEYBOARD_KEY_AT = ALLEGRO_KEY_AT, KEYBOARD_KEY_CIRCUMFLEX = ALLEGRO_KEY_CIRCUMFLEX,
+	KEYBOARD_KEY_COLON2 = ALLEGRO_KEY_COLON2, KEYBOARD_KEY_KANJI = ALLEGRO_KEY_KANJI,
+	KEYBOARD_KEY_LSHIFT = ALLEGRO_KEY_LSHIFT, KEYBOARD_KEY_RSHIFT = ALLEGRO_KEY_RSHIFT,
+	KEYBOARD_KEY_LCTRL = ALLEGRO_KEY_LCTRL, KEYBOARD_KEY_RCTRL = ALLEGRO_KEY_RCTRL,
+	KEYBOARD_KEY_ALT = ALLEGRO_KEY_ALT, KEYBOARD_KEY_ALTGR = ALLEGRO_KEY_ALTGR,
+	KEYBOARD_KEY_LWIN = ALLEGRO_KEY_LWIN, KEYBOARD_KEY_RWIN = ALLEGRO_KEY_RWIN,
+	KEYBOARD_KEY_MENU = ALLEGRO_KEY_MENU,
+	KEYBOARD_KEY_SCROLLLOCK = ALLEGRO_KEY_SCROLLLOCK,
+	KEYBOARD_KEY_NUMLOCK = ALLEGRO_KEY_NUMLOCK,
+	KEYBOARD_KEY_CAPSLOCK = ALLEGRO_KEY_CAPSLOCK,
+	KEYBOARD_KEY_PAD_EQUALS = ALLEGRO_KEY_PAD_EQUALS,
+	KEYBOARD_KEY_BACKQUOTE = ALLEGRO_KEY_BACKQUOTE,
+	KEYBOARD_KEY_SEMICOLON2 = ALLEGRO_KEY_SEMICOLON2,
+	KEYBOARD_KEY_COMMAND = ALLEGRO_KEY_COMMAND,
+	KEYBOARD_KEYMOD_SHIFT = ALLEGRO_KEYMOD_SHIFT,
+	KEYBOARD_KEYMOD_CTRL = ALLEGRO_KEYMOD_CTRL,
+	KEYBOARD_KEYMOD_ALT = ALLEGRO_KEYMOD_ALT,
+	KEYBOARD_KEYMOD_LWIN = ALLEGRO_KEYMOD_LWIN,
+	KEYBOARD_KEYMOD_RWIN = ALLEGRO_KEYMOD_RWIN,
+	KEYBOARD_KEYMOD_MENU = ALLEGRO_KEYMOD_MENU,
+	KEYBOARD_KEYMOD_ALTGR = ALLEGRO_KEYMOD_ALTGR,
+	KEYBOARD_KEYMOD_COMMAND = ALLEGRO_KEYMOD_COMMAND,
+	KEYBOARD_KEYMOD_SCROLLLOCK = ALLEGRO_KEYMOD_SCROLLLOCK,
+	KEYBOARD_KEYMOD_NUMLOCK = ALLEGRO_KEYMOD_NUMLOCK,
+	KEYBOARD_KEYMOD_CAPSLOCK = ALLEGRO_KEYMOD_CAPSLOCK,
+	KEYBOARD_KEYMOD_INALTSEQ = ALLEGRO_KEYMOD_INALTSEQ,
+	KEYBOARD_KEYMOD_ACCENT1 = ALLEGRO_KEYMOD_ACCENT1,
+	KEYBOARD_KEYMOD_ACCENT2 = ALLEGRO_KEYMOD_ACCENT2,
+	KEYBOARD_KEYMOD_ACCENT3 = ALLEGRO_KEYMOD_ACCENT3,
+	KEYBOARD_KEYMOD_ACCENT4 = ALLEGRO_KEYMOD_ACCENT4,
+	KEYBOARD_KEY_MAX = ALLEGRO_KEY_MAX
+};
+
+//#define _WINDOW_EVENT_HEADER(srctype)		\
+//   WindowEventType type;		            \
+//   srctype *source;						\
+//   double timestamp;
+//
+//
+//struct WindowEventSource{
+//	int pad[32];
+//};
+
+typedef struct ALLEGRO_ANY_EVENT WindowAnyEvent;
+
+//struct WindowAnyEvent {
+//	_WINDOW_EVENT_HEADER(struct WindowEventSource);
+//};
+
+typedef struct ALLEGRO_DISPLAY_EVENT WindowDisplayEvent;
+
+//struct WindowDisplayEvent {
+//	_WINDOW_EVENT_HEADER(struct ALLEGRO_DISPLAY)
+//	int x, y;
+//	int width, height;
+//	int orientation;
+//};
+
+typedef struct ALLEGRO_JOYSTICK_EVENT WindowJoystickEvent;
+
+//struct WindowJoystickEvent{
+//	_WINDOW_EVENT_HEADER(struct ALLEGRO_JOYSTICK)
+//	struct ALLEGRO_JOYSTICK *id;
+//	int stick;
+//	int axis;
+//	float pos;
+//	int button;
+//};
+
+typedef struct ALLEGRO_KEYBOARD_EVENT WindowKeyboardEvent;
+
+//struct WindowKeyboardEvent
+//{
+//	_WINDOW_EVENT_HEADER(struct ALLEGRO_KEYBOARD)
+//	struct ALLEGRO_DISPLAY *display; /* the window the key was pressed in */
+//	int keycode;					 /* the physical key pressed */
+//	int unichar;					 /* unicode character or negative */
+//	unsigned int modifiers;			 /* bitfield */
+//	bool repeat;					 /* auto-repeated or not */
+//};
+
+typedef struct ALLEGRO_MOUSE_EVENT WindowMouseEvent;
+
+//struct WindowMouseEvent
+//{
+//	_WINDOW_EVENT_HEADER(struct ALLEGRO_MOUSE)
+//	struct ALLEGRO_DISPLAY *display;
+//	/* (display) Window the event originate from
+//	 * (x, y) Primary mouse position
+//	 * (z) Mouse wheel position (1D 'wheel'), or,
+//	 * (w, z) Mouse wheel position (2D 'ball')
+//	 * (pressure) The pressure applied, for stylus (0 or 1 for normal mouse)
+//	 */
+//	int x, y, z, w;
+//	int dx, dy, dz, dw;
+//	unsigned int button;
+//	float pressure;
+//
+//	WindowMouseEvent& operator=(const ALLEGRO_MOUSE_EVENT & ev) {
+//		copy(ev);
+//		return *this;
+//	}
+//
+//	void copy(const ALLEGRO_MOUSE_EVENT & ev) {
+//		type = ev.type;
+//		source = ev.source;
+//		timestamp = ev.timestamp;
+//		display = ev.display;
+//		x = ev.x;
+//		y = ev.y;
+//		z = ev.z;
+//		w = ev.w;
+//		dx = ev.dx;
+//		dy = ev.dy;
+//		dz = ev.dz;
+//		dw = ev.dw;
+//		button = ev.button;
+//		pressure = ev.pressure;
+//	}
+//};
+
+typedef struct ALLEGRO_TIMER_EVENT WindowTimerEvent;
+
+//struct WindowTimerEvent
+//{
+//	_WINDOW_EVENT_HEADER(struct ALLEGRO_TIMER)
+//	int64_t count;
+//	double error;
+//};
+
+typedef struct ALLEGRO_TOUCH_EVENT WindowTouchEvent;
+
+//struct WindowTouchEvent
+//{
+//	_WINDOW_EVENT_HEADER(struct ALLEGRO_TOUCH_INPUT)
+//	struct ALLEGRO_DISPLAY *display;
+//	/* (id) Identifier of the event, always positive number.
+//	 * (x, y) Touch position on the screen in 1:1 resolution.
+//	 * (dx, dy) Relative touch position.
+//	 * (primary) True, if touch is a primary one (usually first one).
+//	 */
+//	int id;
+//	float x, y;
+//	float dx, dy;
+//	bool primary;
+//};
+
+typedef struct ALLEGRO_USER_EVENT WindowUserEvent;
+
+//struct WindowUserEvent
+//{
+//	_WINDOW_EVENT_HEADER(struct ALLEGRO_EVENT_SOURCE)
+//	struct ALLEGRO_USER_EVENT_DESCRIPTOR *__internal__descr;
+//	intptr_t data1;
+//	intptr_t data2;
+//	intptr_t data3;
+//	intptr_t data4;
+//};
+
+/// @brief Data structure that contains all the information about a Window event.
+/**
+*	This union acts as a pseudonimization of Allegro Event System. See <a href="https://liballeg.org/a5docs/trunk/events.html#allegro_event">Allegro Event system and events</a> for a detailed description.
+*/
+union WindowEvent
+{
+	WindowEventType		type;		/**< Type of event. */
+	WindowAnyEvent      any;		/**< This field stores the information that all the events have in common: */
+	WindowDisplayEvent  display;	/**< Stores the information about a display event*/
+	WindowJoystickEvent joystick;	/**< Stores the information about a joystick event*/
+	WindowKeyboardEvent keyboard;	/**< Stores the information about a keyboard event*/
+	WindowMouseEvent    mouse;		/**< Stores the information about a mouse event*/
+	WindowTimerEvent    timer;		/**< Stores the information about a timer event*/
+	WindowTouchEvent    touch;		/**< Stores the information about a touch event*/
+	WindowUserEvent     user;		/**< Stores the information about a user event*/
+
+	/** Default constructor of the union.
+	*/
+	WindowEvent() {};
+
+	/**	Copy constructor taking as a model an Allegro Event.
+	* @param ev Allegro Event containing the information to be copied.
+	*/
+	WindowEvent(const ALLEGRO_EVENT & ev) { copy(ev); }
+
+	/** Assignment operator taking as operand an Allegro Event.
+	*	@param ev Allegro Event.
+	*/
+	WindowEvent& operator=(const ALLEGRO_EVENT & ev) {
+		copy(ev);
+		return *this;
+	}
+
+	/** Copies the information of an Allegro Event into this structure.
+	*	@param ev Target Allegro Event to get the information.
+	*/
+ 	void copy(const ALLEGRO_EVENT & ev) {
+		//type = ev.type;
+		//any = ev.any;
+		//display = ev.display;
+		//joystick = ev.joystick;
+		//keyboard = ev.keyboard;
+		mouse = ev.mouse; //Because this is an union, we only need to copy the biggest possible element of the union (the totality of the space that can be filled by the union)
+		//timer = ev.timer;
+		//touch = ev.touch;
+		//user = ev.user;
+	}
+};
+
+#endif
+
