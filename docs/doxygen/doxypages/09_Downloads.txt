@@ -1,13 +1,15 @@
 /**
 	@page downloads Downloads
 	
-	<div style="display: none;"> 
-		@subpage windows_downloads
-		@subpage linux_downloads
-	</div>
+	@section windows_downloads Windows Downloads
+	Check the @ref installation_guides to learn how to use this files.
+	<ul>
+		<li><a href="">Window Add-on headers</a> (used when compiling Window Add-on from source code)
+		<li><a href="">MinGW pre-compiled Allegro binaries</a> (GCC 5.1.0)</li>
+		<li><a href="">MinGW pre-compiled Window Add-on binaries</a> (GCC 5.1.0)</li>
+	</ul>
 	
-	@page windows_downloads Windows Downloads
+	@section linux_downloads Linux Downloads
 	
-	@page linux_downloads Linux Downloads
-	
+	You'll find all Linux installation files inside <i>installation/linux</i> folder in our <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a>. Use @code git clone https://github.com/EnricRG/PID-UdG @endcode and follow the instructions in the <i>readme.txt</i> or follow the @ref linux_installation.
 */

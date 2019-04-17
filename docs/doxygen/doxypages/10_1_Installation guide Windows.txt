@@ -9,8 +9,10 @@
 	<br>
 	To install it, you can:
 	<ul>
-		<li>Download pre-compiled binaries from @ref windows_downloads.</li>
-		<li>Compile latest Allegro from source code. The Allegro documentation has a nice tutorial on how to do it. You can find it <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Windows">here</a>. You'll want to compile the <b><i>Monolith</i></b> version. <b>Recommendation</b>: You'll need to use <i>MSYS</i> to download and install some dependences, but the MinGW installation bundled with Code::Blocks doesn't have it by default. I recommend you to download a clean MinGW install from <a href="https://sourceforge.net/projects/mingw/files/"> MinGW project</a> that contains <i>MSYS</i> and copy <i>msys</i> folder to your Code::Blocks MinGW installation. Make sure you select <i>MSYS</i> option in the auto-installer.</li>
+		<li><b>Recommended</b>: Download pre-compiled binaries from @ref windows_downloads and copy the downloaded content into the root of your MinGW installation.
+		@image html mingw_files.png
+		</li>
+		<li>Compile latest Allegro from source code. The Allegro documentation has a nice tutorial on how to do it. You can find it <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Windows">here</a>. You'll want to compile the <b><i>Monolith debug</i></b> version. <b>Recommendation</b>: You'll need to use <i>MSYS</i> to download and install some dependences, but the MinGW installation bundled with Code::Blocks doesn't have it by default. I recommend you to download a clean MinGW install from <a href="https://sourceforge.net/projects/mingw/files/"> MinGW project</a> that contains <i>MSYS</i> and copy <i>msys</i> folder to your Code::Blocks MinGW installation. Make sure you select <i>MSYS</i> option in the auto-installer. It is important that you use the MinGW bundled with Code::Blocks to compile Allegro.</li>
 	</ul>
 	
 	@section install_window_addon Installing Window Add-on
@@ -23,7 +25,7 @@
 	
 	@subsection compile_windowaddon_windows Compiling Window Add-on binaries for Windows
 	
-	<b>Prerequisites</b>: Allegro (recommended version: 5.2.4) must be installed on your MinGW installation first.
+	<b>Prerequisites</b>: Allegro (recommended version: 5.2.4) must be installed on your MinGW installation.
 	<br><br>
 	The objective of this tutorial is to teach you how to create both <i>windowAddon.dll</i> and <i>windowAddon.a</i> files needed to install the add-on to your MinGW installation. We will be using Code::Blocks to generate them.
 	<br><br>
@@ -66,17 +68,24 @@
 		<li>
 			Now you should see three files inside <i>bin/Release</i> directory of the project named <i>windowAddon.a, windowAddon.dll and windowAddon.def</i>. We're interested in the first two. 
 			@image html bin_release.png <br>
-			Create a directory named <i>bin</i> inside your installation files folder and put <i>windowAddon.dll</i> in it. Do the same with <i>windowAddon.a</i> but in a folder called <i>lib</i>. You can download <i>include</i> folder at @ref windows_downloads. Now your installation files folder should look like that: <br>
+			Create a directory named <i>bin</i> inside your installation files folder and put <i>windowAddon.dll</i> in it. Do the same with <i>windowAddon.a</i> but in a folder called <i>lib</i>. You can download <i>include</i> folder at @ref windows_downloads. Now your installation files folder should look like that:
 			@image html installation_files.png
 		</li>		
 	</ol>
 	
 	And that's it. Now you can continue to the next section to finish your installation process.
 	<br><br>
-	<b>NOTE</b>: If you update your MinGW installation you'll have to recompile the Add-on again as done in this tutorial.
+	<b>NOTE</b>: If you update your MinGW (more precisely GCC) installation you'll have to recompile the Add-on again as done in this tutorial.
 	
 	@subsection install_windows_files Install the files
 	
 	Whether you have downloaded or compiled the files, now what you have to do is to install them on your MinGW setup. It's as simple as <b>drag and drop</b> this files into MinGW's root directory. This process should not override any file, so if a window pops up warning that you'll in facto do that is because you had an older installation of Allegro or Window Add-on and you should delete this files first.
 	@image html mingw_files.png
+	
+	@section windows_codeblocks How to use the Window Add-on in your Code::Blocks project
+	
+	And how do you use both Allegro and the add-on? First what you have to do is to say to your compiler how to link to this libraries. This can be done by going to <i>Settings &rarr; Compiler &rarr; Linker Settings</i> and adding the flags <i>-lallegro_monolith-debug</i> and <i>-lWindowAddon</i>.
+	@image html linker_settings.png
+	
+	And now you can start including the library and compile your own projects with it.
 */

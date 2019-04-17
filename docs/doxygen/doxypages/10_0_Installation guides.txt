@@ -1,5 +1,5 @@
 /**
-@page installation_guides How to install Window Add-on
+@page installation_guides How to install the Window Add-on
 	
 	In order to have access to all the functionalities of the Window Add-on, you have to install it first.
 	
