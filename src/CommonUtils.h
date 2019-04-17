@@ -1,6 +1,8 @@
 #ifndef COMMONUTILS_H
 #define COMMONUTILS_H
 
+#include <cmath>
+
 //pre: n is at least the length of src
 template<class T>
 static T* getCopyOfArray(const T* src, int n) {
