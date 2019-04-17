@@ -1,5 +1,19 @@
 /**
 	@page linux_installation Linux Installation Guide
 	
+	First, you want to install Allegro. Check <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Linux/Debian">this tutorial</a> to find out how. You'll need <i>git</i> and <i>cmake</i>.
 	
+	Once allegro is installed in your system, clone the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a> with 
+	@code git clone https://github.com/EnricRG/PID-UdG @endcode and run <i>make</i> on the main directory. 
+	@image html linux_make.png
+	This will generate a file called libWindowAddon.so. Take that file and put it inside /usr/lib/ folder, or somewhere that the compiler can find it.
+	@image html linux_dot_so.png
+	Next, you must put the headers somewhere the compiler can find them. The headers are inside the include folder. My recommendation is to put them into /usr/include.
+	@image html linux_headers.png
+	
+	And that’s it, you have successfully installed my library. Don’t forget to link your executables to the corresponding Allegro libraries to get your applications compiled. 
+	<br>
+	A simple and very practical way of doing this is using pkg-config. Inside the downloaded files you have a directory called test. There you have a simple code and a Makefile to compile it. Check that to see how to compile with this addon.
+	@image html linux_test_compile.png
+	If it compiles, run it. You should see a thin black circle on a white screen.
 */
