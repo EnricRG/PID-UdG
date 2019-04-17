@@ -1,9 +1,9 @@
 /**
 	@page linux_installation Linux Installation Guide
 	
-	First, you want to install Allegro. Check <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Linux/Debian">this tutorial</a> to find out how. You'll need <i>git</i> and <i>cmake</i>.
+	First, you want to install Allegro. Check <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Linux/Debian">this tutorial</a> to find out how. You'll need <i>git</i> and <i>cmake</i>. You can also use the package manager bundled with your distribution and search for "Allegro". I recommend the version 5.2.4.
 	
-	Once allegro is installed in your system, clone the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a> with 
+	Once Allegro is installed in your system, clone the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a> with 
 	@code git clone https://github.com/EnricRG/PID-UdG @endcode and run <i>make</i> on the main directory. 
 	@image html linux_make.png
 	This will generate a file called libWindowAddon.so. Take that file and put it inside /usr/lib/ folder, or somewhere that the compiler can find it.
