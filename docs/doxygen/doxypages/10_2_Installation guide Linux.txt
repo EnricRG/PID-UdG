@@ -6,9 +6,9 @@
 	Once Allegro is installed in your system, clone the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a> with 
 	@code git clone https://github.com/EnricRG/PID-UdG @endcode and run <i>make</i> on the main directory. 
 	@image html make.png
-	This will generate a file called libWindowAddon.so. Take that file and put it inside /usr/lib/ folder, or somewhere the compiler can find it.
+	This will generate a file called libWindowAddon.so. Take that file and put it inside /usr/lib/ folder, or somewhere the compiler can find it. You'll need root privileges if you decide to move it somewhere on your root.
 	@image html dot_so.png
-	Next, you must put the headers somewhere the compiler can find them. The headers are inside the <i>include</i> folder. My recommendation is to put them into <i>/usr/include</i>.
+	Next, you must put the headers somewhere the compiler can find them. The headers are inside the <i>include</i> folder. My recommendation is to put them into <i>/usr/include</i>. Remember that you need root privileges to be able to perform this action.
 	@image html headers.png
 	<br>
 	And that's it, you have <b>successfully installed</b> my library. Don't forget to link your executables to the corresponding Allegro libraries to get your applications compiled. 
