@@ -11,7 +11,7 @@
 	Next, you must put the headers somewhere the compiler can find them. The headers are inside the <i>include</i> folder. My recommendation is to put them into <i>/usr/include</i>.
 	@image html headers.png
 	
-	And that’s it, you have successfully installed my library. Don’t forget to link your executables to the corresponding Allegro libraries to get your applications compiled. 
+	And that's it, you have successfully installed my library. Don't forget to link your executables to the corresponding Allegro libraries to get your applications compiled. 
 	<br>
 	A simple and very practical way of doing this is using pkg-config. Inside the downloaded files you have a directory called test. There you have a simple code and a Makefile to compile it. Check those files to see how to compile with this add-on.
 	@image html test_compile.png
