@@ -1,22 +1,22 @@
 /**
 	@page linux_installation Linux Installation Guide
 	
-	First, you want to install Allegro. Check <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Linux/Debian">this tutorial</a> to find out how. You'll need <i>git</i> and <i>cmake</i>. You can also use the package manager bundled with your distribution and search for "Allegro". I recommend the version 5.2.4.
+	First, you want to install Allegro. You can use the package manager bundled with your distribution and search for "Allegro", but in some distributions you'll have troubles with outdated repositories. I recommend the version 5.2.4, so if your package manager allows you to download that version or similar (5.2.x), do it. If you don't want to miss the bullet, check <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Linux/Debian">this tutorial</a> to find out how to compile it from sources. You'll need <i>git</i> and <i>cmake</i>. 
 	
 	Once Allegro is installed in your system, clone the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a> with 
 	@code git clone https://github.com/EnricRG/PID-UdG @endcode
 	@image html git_clone.png
-	And run <i>make</i> on the main directory. 
+	And run <i>make</i> on <i>/PID-UdG/installation/Linux/</i>. 
 	@image html make.png
-	This will generate a file called libWindowAddon.so. Take that file and put it inside /usr/lib/ folder, or somewhere the compiler can find it. You'll need root privileges if you decide to move it somewhere on your root.
+	This will generate a file called <i>libWindowAddon.so</i>. Take that file and put it inside <i>/usr/lib/</i> folder, or somewhere the compiler can find it. You'll need root privileges if you decide to move it somewhere on your root.
 	@image html dot_so.png
 	Next, you must put the headers somewhere the compiler can find them. The headers are inside the <i>include</i> folder. My recommendation is to put them into <i>/usr/include</i>. Remember that you need root privileges to be able to perform this action.
 	@image html headers.png
 	<br>
-	And that's it, you have <b>successfully installed</b> my library. Don't forget to link your executables to the corresponding Allegro libraries to get your applications compiled. 
+	And that's it, you have <b>successfully installed</b> our library. Don't forget to link your executables to the corresponding Allegro libraries to get your applications compiled. 
 	<br><br>
-	A simple and very practical way of doing this is using pkg-config. Inside the downloaded files you have a directory called test. There you have a simple code and a Makefile to compile it. Check those files to see how to compile with this add-on.
+	A simple and very practical way of doing this is using pkg-config. Inside <i>/PID-UdG/installation/Linux/</i> you have a directory called <i>test</i>. There you have a simple code and a Makefile to compile it. Check those files to see how to compile with this add-on.
 	@image html test_compile.png
 	<br>
-	If it compiles, run it. You should see a thin black circle on a white screen.
+	If it compiles, run it. You should see a thin black circle on a white screen with a little text on it.
 */
