@@ -1,7 +1,7 @@
 /**	@page images Drawing and storing an Image
 	And what if you want to load and draw a pre-existing image? Or what if you want to export your current drawing as a file? Well, you can do both things without any problem. 
 	<br><br>
-	As with the fonts, you can instantiate and load an Image directly to your program with its constructor Image::Image(), without interacting with the Window at all. This is useful if you want to reuse it, but very impractical if you only want to draw this image once. You can also load an image through the Window with Window::loadImage(). This method returns the loaded Image if all went ok, and an invalid Image if not (see Image::isValid() for more details). And last but not least, you can draw directly an image to the Window, without having to explicitly load it. Let's see how this three alternatives work.
+	As with the fonts, you can instantiate and load an Image directly to your program with its constructor Image::Image(), without interacting with the Window at all. This is useful if you want to reuse it, but very impractical if you only want to draw this image once. You can also load an image through the Window with Window::loadImage(). This method returns the loaded Image if all went OK, and an invalid Image if not (see Image::isValid() for more details). And last but not least, you can draw directly an image to the Window, without having to explicitly load it. Let's see how this three alternatives work.
 	
 	One thing that these alternatives have in common is that they require the path of an image file, and if the Image cannot be loaded correctly, will generate an invalid Image and throw an exception if used.
 	

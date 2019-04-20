@@ -9,5 +9,5 @@
 		<li>@b any.source : the source that generated that particular event.</li>
 		<li>@b any.timestamp : time when that particular event was produced.</li>
 		</ul>
-		As you can see, all events have a field called @a any that contains the fields in common with other events (except for the type). Other fields are tpye-specific and you should analyze the type of the event before accessing them. All the fields of the WindowEvent have the same meaning as the ones in an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event</a>, so feel free to check its documentation for more information.
+		As you can see, all events have a field called @a any that contains the fields in common with other events (except for the type). Other fields are tpye-specific and you should analyze the type of the event before accessing them. All the fields of the WindowEvent have the same meaning as the ones in an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event</a>, so feel free to check its documentation for more information. You can also visit @ref event_handling to check what functions does the Window have to manage its events.
 */
