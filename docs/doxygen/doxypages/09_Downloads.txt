@@ -9,10 +9,10 @@
 	
 	Check the @ref installation_guides to learn how to use this files. The version numbers inside () tells you what version of the prerequisites is needed to get the downloaded files working.
 	<ul>
-		<li><a href="">Window Add-on headers</a> (used when compiling Window Add-on from source code)
-		<li><a href="">MinGW pre-compiled Allegro binaries (5.2.4)</a> (GCC 5.1.0)</li>
-		<li><a href="">MinGW pre-compiled Window Add-on binaries (1.1)</a> (GCC 5.1.0/Allegro 5.2.4)</li>
-		<li><a href="">MinGW pre-compiled Window Add-on binaries (1.1) + pre-compiled Allegro 5.2.4 binaries</a> (GCC 5.1.0). With this download you simply have to drag and drop all the files inside your MinGW installation and you'll have both Allegro and Window Add-on properly installed.</li>
+		<li><a href="http://imae.udg.edu/programacio/Contingut/WindowAddon/downloads/windows_include.zip">Window Add-on headers</a> (used when compiling Window Add-on from source code)
+		<li><a href="http://imae.udg.edu/programacio/Contingut/WindowAddon/downloads/Allegro_5.2.4.zip">MinGW pre-compiled Allegro binaries (5.2.4)</a> (GCC 5.1.0)</li>
+		<li><a href="http://imae.udg.edu/programacio/Contingut/WindowAddon/downloads/Window_Addon_1.1.zip">MinGW pre-compiled Window Add-on binaries (1.1)</a> (GCC 5.1.0/Allegro 5.2.4)</li>
+		<li><a href="http://imae.udg.edu/programacio/Contingut/WindowAddon/downloads/Window_Addon_1.1_Allegro_5.2.4.zip">MinGW pre-compiled Window Add-on binaries (1.1) + pre-compiled Allegro 5.2.4 binaries</a> (GCC 5.1.0). With this download you simply have to drag and drop all the files inside your MinGW installation and you'll have both Allegro and Window Add-on properly installed.</li>
 	</ul>
 	
 	@section linux_downloads Linux Downloads
