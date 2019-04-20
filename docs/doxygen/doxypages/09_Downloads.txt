@@ -1,7 +1,12 @@
 /**
 	@page downloads Downloads
 	
+	@section common_downloads Common downloads
+	
+	Allegro 5 GitHub repository: https://github.com/liballeg/allegro5
+	
 	@section windows_downloads Windows Downloads
+	
 	Check the @ref installation_guides to learn how to use this files.
 	<ul>
 		<li><a href="">Window Add-on headers</a> (used when compiling Window Add-on from source code)
@@ -11,5 +16,5 @@
 	
 	@section linux_downloads Linux Downloads
 	
-	You'll find all Linux installation files inside <i>installation/linux</i> folder in our <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a>. Use @code git clone https://github.com/EnricRG/PID-UdG @endcode and follow the instructions in the <i>readme.txt</i> or follow the @ref linux_installation.
+	You'll find all Linux installation files inside <i>installation/Linux</i> folder in our <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a>. Use @code git clone https://github.com/EnricRG/PID-UdG @endcode and follow the instructions in the <i>readme.txt</i> on that folder, or follow the @ref linux_installation.
 */

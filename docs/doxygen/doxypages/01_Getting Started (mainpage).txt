@@ -14,4 +14,6 @@
 	<li> @ref images - You can also load images from a file and print them to the screen. Here you'll have a brief explanation of how to do it.</li>
 	<li> @ref events - Interactivity is handled with events. Click here if you want to learn more about the Event system and its capabilities. </li>
 	</ol>
+	<br>
+	If you want to learn more about how this add-on works, you can check <a href="https://www.allegro.cc/about">Allegro website</a> and <a href="https://liballeg.org/a5docs/trunk/">Allegro documentation</a>.
 */
