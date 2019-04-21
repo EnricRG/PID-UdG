@@ -2,12 +2,40 @@
 	If you have checked the previous tutorials on how to use the Window, maybe you are asking yourself: "Well, primitives and direct orders are the only way to use the Window? How can I get information about user's interaction on the screen?".
 	<br><br>
 	An Event is produced when the Window outputs some information that can be received by the main program and then processed. An example of this concept is a mouse click. The Window will report the pixel coordinates where the mouse was pointing at when the button was pressed (or released). But this is not the only type of event your the window can report. The event system of the Window is based in <a href="https://www.allegro.cc/manual/5/events.html"> Allegro Event System </a> and works almost the same, so checking what an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event </a> is will be good for you.
-		@section Window Event
-		So what is exactly a WindowEvent? It uses the concept of <a href="http://www.cplusplus.com/doc/tutorial/other_data_types/"> union </a> to use one structure as a container of all possible types of events. It's like a container large enough to store the information of all types of events the Window can throw. Some events have fields that others don't, but all events have three fields in common:
-		<ul>
-		<li>@b type : type of event. You'll need this field in order to classify them.</li>
-		<li>@b any.source : the source that generated that particular event.</li>
-		<li>@b any.timestamp : time when that particular event was produced.</li>
-		</ul>
-		As you can see, all events have a field called @a any that contains the fields in common with other events (except for the type). Other fields are tpye-specific and you should analyze the type of the event before accessing them. All the fields of the WindowEvent have the same meaning as the ones in an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event</a>, so feel free to check its documentation for more information. You can also visit @ref event_handling to check what functions does the Window have to manage its events.
+		
+	@section window_event Window Event
+	So what is exactly a WindowEvent? It uses the concept of <a href="http://www.cplusplus.com/doc/tutorial/other_data_types/"> union </a> to use one structure as a container of all possible types of events. It's like a container large enough to store the information of all types of events the Window can throw. Some events have fields that others don't, but all events have three fields in common:
+	<ul>
+	<li>@b type : type of event. You'll need this field in order to classify them.</li>
+	<li>@b any.source : the source that generated that particular event.</li>
+	<li>@b any.timestamp : time when that particular event was produced.</li>
+	</ul>
+	As you can see, all events have a field called @a any that contains the fields in common with other events (except for the type). Other fields are tpye-specific and you should analyze the type of the event before accessing them. All the fields of the WindowEvent have the same meaning as the ones in an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event</a>, so feel free to check its documentation for more information. You can also visit @ref event_handling to check what functions does the Window have to manage its events. 
+	<br><br>
+	<b>NOTE</b>: If you have any doubts of what types of event you can receive from the Window and what they mean, you should also check Event.h file. It is pretty self-explanatory, if you have a little bit of C/C++ experience you will find it easy to understand and maybe it helps you to understand how the Events work. You should check <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event</a> before doing this, it's a better guide to understand how they work and you'll possibly find there what you're looking for.
+	<br><br>
+	Let's see some examples of event handling below.
+	
+	@section generic_event_handling Generic Event Handling
+	
+	hwef
+	
+	@section concrete_event_handling Concrete Event Handling
+	
+	The section above explained how powerful the Event concept is, but why should you care about handling other events that you don't want to?
+	<br><br>
+	Because of this, Window has some functions that allow you to abstract from this concept of event and retrieve only some relevant information of them. You can also find them in @ref event_hanling. 
+	<br><br>
+	One feature that is missing in all this concrete event handlers is the possibility to set a timeout. So if you don't want your program to hang forever, you must use generic event handlers.
+	
+		@subsection close_button_event_handling Close Button Event handling
+		If you did not notice, almost all the examples you will find in this documentation contain a line calling the method Window::waitWindowCloseButton(). As it sounds, this method stops the thread that called it until Window's close button is pressed. You will almost always want to call it just at the end of your code to make the Window persist, but this is not mandatory.
+		<br><br>
+		So for example if you run the following code:
+		@include wait_window_close_button.cpp
+		You'll not see the text printed on the screen until the button is pressed. Then, if you press it again, the main function will return and the program should finish.
+		<br><br>
+		As simple as it is, you'll probably want to use this line in all your projects since it comes very handy when you want to print something to the screen and rest there until the user wants to close the program and not make the user wait a predefined time until he/she can continue with its life.
+		
+		@subsection mouse_event_handling Mouse Event Handling
 */
