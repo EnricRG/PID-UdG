@@ -40,38 +40,38 @@
 	<br><br>
 	When you set a Turtle as the Active Turtle, the previous one will no longer be it and it will become a normal Turtle, and the new one will remain active until you call Window::setActiveTurtle() again or the Window is destroyed. By default, Donatello is the Active Turtle when you create a Window object, so if you only want to use one Turtle, you can use Active Turtle functions without having to know any Turtle name.
 	
-		@section move_turtle How to move the Turtle
-		Once you have your Turtle set up, your next step is moving it. You can move your Turtles absolutely by setting its position with Window::t_setPos() or its orientation with Window::t_setHeading(). But there's a funnier way of doing it. You can also move the Turtles relative to its positions. If a Turtle is headed to a direction, you can tell her to move forward a number of distance units (in this case, pixels). 
-		<br><br>
-		So, for example, you can position your Turtle at the center of the screen and then move it 50 pixels upwards changing its absolute position.
-		@include turtle_absolute.cpp
-		And get this output:
-		@image html turtle_absolute.png
-		But doing it like that you are only teleporting the Turtle. If you want to paint the path of the Turtle you will not be able to do it like that.
-		<br><br>
-		So, let's explore the other way: tell the Turtle to move itself.
-		<br><br>
-		This way of moving the Turtle can be useful if your Turtle has to perform some operations sequentially on the screen, taking into account previous position and states.
-		For example, let's do the same as before but with relative movement:
-		@include turtle_relative.cpp
-		You get this result:
-		@image html turtle_relative.png
-		As you can see, more things happened here. The Turtle moved across the screen instead of teleporting. So if your Turtle was set to paint its path (enabled by default), you would see a straight line between the initial and final position of the Turtle, as it happened. It is also more convenient. If you want to move to a non-defined point, say "50 pixels north and then 50 pixels west", you don't have to calculate these points, the Turtle does this job. 
-		<br><br>
-		If you want to stop the Turtle from drawing its path, use Window::t_penUp() (it's like lifting the pen and the tip of it doesn't touch the screen anymore). To re-enable this option, use Window::t_penDown(). If you lift the pen in the previous code, you would have this:
-		@include turtle_penUp.cpp
-		And get this output:
-		@image html turtle_penUp.png
-		<br>
-		Also, if you want to hide Turtle's cursor (the arrow), you can use Window::t_hide(). To show it, as we've done before, use Window::t_show().
-		<br><br>
-		Another way of changing Turtle's direction or heading is rotating the turtle over itself a certain number of degrees instead of setting its orientation directly. The instructions Window::t_right() and Window::t_left() are the ones used to achieve this.
-		@include turtle_leftRight.cpp
-		This code will output:
-		@image html turtle_leftRight.png
-		
-		<br><br>
-		If you're using multiple Turtles, the only difference with the code above is that you will have to specify the name of the Turtle you want to move at each instruction. All @ref window_turtles work the same way as the ones above.
+	@section move_turtle How to move the Turtle
+	Once you have your Turtle set up, your next step is moving it. You can move your Turtles absolutely by setting its position with Window::t_setPos() or its orientation with Window::t_setHeading(). But there's a funnier way of doing it. You can also move the Turtles relative to its positions. If a Turtle is headed to a direction, you can tell her to move forward a number of distance units (in this case, pixels). 
+	<br><br>
+	So, for example, you can position your Turtle at the center of the screen and then move it 50 pixels upwards changing its absolute position.
+	@include turtle_absolute.cpp
+	And get this output:
+	@image html turtle_absolute.png
+	But doing it like that you are only teleporting the Turtle. If you want to paint the path of the Turtle you will not be able to do it like that.
+	<br><br>
+	So, let's explore the other way: tell the Turtle to move itself.
+	<br><br>
+	This way of moving the Turtle can be useful if your Turtle has to perform some operations sequentially on the screen, taking into account previous position and states.
+	For example, let's do the same as before but with relative movement:
+	@include turtle_relative.cpp
+	You get this result:
+	@image html turtle_relative.png
+	As you can see, more things happened here. The Turtle moved across the screen instead of teleporting. So if your Turtle was set to paint its path (enabled by default), you would see a straight line between the initial and final position of the Turtle, as it happened. It is also more convenient. If you want to move to a non-defined point, say "50 pixels north and then 50 pixels west", you don't have to calculate these points, the Turtle does this job. 
+	<br><br>
+	If you want to stop the Turtle from drawing its path, use Window::t_penUp() (it's like lifting the pen and the tip of it doesn't touch the screen anymore). To re-enable this option, use Window::t_penDown(). If you lift the pen in the previous code, you would have this:
+	@include turtle_penUp.cpp
+	And get this output:
+	@image html turtle_penUp.png
+	<br>
+	Also, if you want to hide Turtle's cursor (the arrow), you can use Window::t_hide(). To show it, as we've done before, use Window::t_show().
+	<br><br>
+	Another way of changing Turtle's direction or heading is rotating the turtle over itself a certain number of degrees instead of setting its orientation directly. The instructions Window::t_right() and Window::t_left() are the ones used to achieve this.
+	@include turtle_leftRight.cpp
+	This code will output:
+	@image html turtle_leftRight.png
+	
+	<br><br>
+	If you're using multiple Turtles, the only difference with the code above is that you will have to specify the name of the Turtle you want to move at each instruction. All @ref window_turtles work the same way as the ones above.
 	
 	@section turtle_motion Turtle Motion Modes
 	As <i>Logo</i>, the Turtles in a Window can move in different ways. In summary: <br>
