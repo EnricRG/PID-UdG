@@ -24,7 +24,7 @@
 	
 	The section above explained how powerful the Event concept is, but why should you care about handling other events that you don't want to?
 	<br><br>
-	Because of this, Window has some functions that allow you to abstract from this concept of event and retrieve only some relevant information of them. You can also find them in @ref event_hanling. 
+	Because of this, Window has some functions that allow you to abstract from this concept of event and retrieve only some relevant information of them. You can also find them in @ref event_handling. 
 	<br><br>
 	One feature that is missing in all this concrete event handlers is the possibility to set a timeout. So if you don't want your program to hang forever, you must use generic event handlers.
 	
