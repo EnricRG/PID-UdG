@@ -18,7 +18,7 @@
 	
 	@section generic_event_handling Generic Event Handling
 	
-	hwef
+	
 	
 	@section concrete_event_handling Concrete Event Handling
 	
@@ -38,4 +38,10 @@
 		As simple as it is, you'll probably want to use this line in all your projects since it comes very handy when you want to print something to the screen and rest there until the user wants to close the program and not make the user wait a predefined time until he/she can continue with its life.
 		
 		@subsection mouse_event_handling Mouse Event Handling
+		
+		It is common to want something as simple as knowing where the user clicks with the mouse. Why should you build a complex event handling structure if you only want to know the coordinates of that point? It's your lucky day, because you don't have to. With mouse event handling methods like Window::waitMouseClick() you'll not have to worry about anything (except for the fact that your program will stop waiting for the mouse click). Once the user clicks on the screen and the function returns, you'll get the coordinates where the mouse was just at the click event. Easy right?
+		<br><br>
+		Let's see some examples.
+		
+		
 */
