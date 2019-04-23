@@ -1,20 +1,20 @@
 /**	@page events Event System
 	If you have checked the previous tutorials on how to use the Window, maybe you are asking yourself: "Well, primitives and direct orders are the only way to use the Window? How can I get information about user's interaction on the screen?".
 	<br><br>
-	An Event is produced when the Window outputs some information that can be received by the main program and then processed. An example of this concept is a mouse click. The Window will report the pixel coordinates where the mouse was pointing at when the button was pressed (or released). But this is not the only type of event your the window can report. The event system of the Window is based in <a href="https://www.allegro.cc/manual/5/events.html"> Allegro Event System </a> and works almost the same, so checking what an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event </a> is will be good for you.
-		
+	A WindowEvent is produced when the Window outputs some information that can be received by the main program and then processed. An example of this concept is a mouse click. The Window will report the pixel coordinates where the mouse was pointing at when the button was pressed (or released). But this is not the only type of event the window can report. The event system of the Window is based in <a href="https://www.allegro.cc/manual/5/events.html"> Allegro Event System </a> and works almost the same way, so checking what an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event </a> is will benefit you.
+	
 	@section window_event Window Event
-	So what is exactly a WindowEvent? It uses the concept of <a href="http://www.cplusplus.com/doc/tutorial/other_data_types/"> union </a> to use one structure as a container of all possible types of events. It's like a container large enough to store the information of all types of events the Window can throw. Some events have fields that others don't, but all events have three fields in common:
+	So what is exactly a WindowEvent? It uses the concept of <a href="http://www.cplusplus.com/doc/tutorial/other_data_types/">union</a> to use one structure as a container for all the possible types of event. It's like a container large enough to store the information of all types of events the Window can throw. Some events have fields that others don't, but all events have three fields in common:
 	<ul>
 	<li>@b type : type of event. You'll need this field in order to classify them.</li>
 	<li>@b any.source : the source that generated that particular event.</li>
 	<li>@b any.timestamp : time when that particular event was produced.</li>
 	</ul>
-	As you can see, all events have a field called @a any that contains the fields in common with other events (except for the type). Other fields are tpye-specific and you should analyze the type of the event before accessing them. All the fields of the WindowEvent have the same meaning as the ones in an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event</a>, so feel free to check its documentation for more information. You can also visit @ref event_handling to check what functions does the Window have to manage its events. 
+	As you can see, all events have a field called @a any that contains the fields in common with other events (except for the type). Other fields are tpye-specific and you should analyze the type of the event before accessing them. All the fields of the WindowEvent have the same meaning as the ones in an <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT">Allegro Event</a>, so feel free to check its documentation for more information. You can also visit @ref event_handling to check what functions does the Window have to manage its events. 
 	<br><br>
-	<b>NOTE</b>: If you have any doubts of what types of event you can receive from the Window and what they mean, you should also check Event.h file. It is pretty self-explanatory, if you have a little bit of C/C++ experience you will find it easy to understand and maybe it helps you to understand how the Events work. You should check <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT"> Allegro Event</a> before doing this, it's a better guide to understand how they work and you'll possibly find there what you're looking for.
+	<b>NOTE</b>: If you have any doubts of what types of event you can receive from the Window and what they mean, you should also check Event.h file. It is pretty self-explanatory, so if you have a some C/C++ experience you will find it easy to read and maybe it helps you to understand how the events work. You should check <a href="https://www.allegro.cc/manual/5/ALLEGRO_EVENT">Allegro Event</a> before doing this, it's a better guide to understand how they work and you'll probably find what you're looking for there.
 	<br><br>
-	Let's see some examples of event handling below.
+	Let's see some examples of WindowEvent handling below.
 	
 	@section generic_event_handling Generic Event Handling
 	
@@ -22,26 +22,45 @@
 	
 	@section concrete_event_handling Concrete Event Handling
 	
-	The section above explained how powerful the Event concept is, but why should you care about handling other events that you don't want to?
+	The section above has shown how powerful the event concept is, but why should you care about handling other events that you don't want to?
 	<br><br>
-	Because of this, Window has some functions that allow you to abstract from this concept of event and retrieve only some relevant information of them. You can also find them in @ref event_handling. 
+	Because of this, Window has some functions that allow you to abstract from this concept of event and retrieve only some relevant information form them. You can also find this calls in @ref event_handling. 
 	<br><br>
-	One feature that is missing in all this concrete event handlers is the possibility to set a timeout. So if you don't want your program to hang forever, you must use generic event handlers.
+	One feature that is missing in all this concrete event handlers is the possibility to set a timeout. If you don't want your program to hang forever, you must use generic event handlers.
 	
-		@subsection close_button_event_handling Close Button Event handling
-		If you did not notice, almost all the examples you will find in this documentation contain a line calling the method Window::waitWindowCloseButton(). As it sounds, this method stops the thread that called it until Window's close button is pressed. You will almost always want to call it just at the end of your code to make the Window persist, but this is not mandatory.
-		<br><br>
-		So for example if you run the following code:
-		@include wait_window_close_button.cpp
-		You'll not see the text printed on the screen until the button is pressed. Then, if you press it again, the main function will return and the program should finish.
-		<br><br>
-		As simple as it is, you'll probably want to use this line in all your projects since it comes very handy when you want to print something to the screen and rest there until the user wants to close the program and not make the user wait a predefined time until he/she can continue with its life.
-		
-		@subsection mouse_event_handling Mouse Event Handling
-		
-		It is common to want something as simple as knowing where the user clicks with the mouse. Why should you build a complex event handling structure if you only want to know the coordinates of that point? It's your lucky day, because you don't have to. With mouse event handling methods like Window::waitMouseClick() you'll not have to worry about anything (except for the fact that your program will stop waiting for the mouse click). Once the user clicks on the screen and the function returns, you'll get the coordinates where the mouse was just at the click event. Easy right?
-		<br><br>
-		Let's see some examples.
-		
-		
+	@subsection close_button_event_handling Close Button Event handling
+	If you did not notice, almost all the examples you will find in this documentation contain a line calling the method Window::waitWindowCloseButton(). As it sounds, this method stops the thread that called it until Window's close button is pressed. You will almost always want to call it just at the end of your code to make the Window persist, but this is not the only use case.
+	<br><br>
+	For example if you run the following code:
+	@include wait_window_close_button.cpp
+	You'll not see the text printed on the screen until the button is pressed. Then, if you press it again, the main function will return and the program should finish. This could be useful if you want to prompt a warning before closing the Window, for example.
+	<br><br>
+	As simple as it is, you'll probably want to use this line in all your projects since it comes very handy when you want to print something to the screen and make it rest there until the user wants to close the program.
+	
+	@subsection mouse_event_handling Mouse Event Handling
+	
+	It's a common thing to want something as simple as knowing where the user clicks with the mouse. Why should you build a complex event handling structure if you only want to know the coordinates of that point? It's your lucky day, because you don't have to. With mouse event handling methods like Window::waitMouseClick() you'll not have to worry about anything (except for the fact that your program will stop waiting for the mouse click). Once the user clicks on the screen and the function returns, you'll get the coordinates where the mouse was. Easy right?
+	<br>
+	
+	Let's start with the <b>basic</b>: what can you expect from a mouse's behavior? You could expect the buttons to be pressed or released. All mouse event handling functions have a parameter in common: @a onRelease. This is a boolean parameter that tells the method to wait for a pressing button event when @a onRelease = <i>false</i>, or for a releasing button event when @a onRelease = <i>true</i>. By default this parameter is <i>false</i> so the method will wait for pressing events.
+	<br>
+	
+	For example this code will wait for a pressing left click with Window::waitMouseLeftClick() before showing the text:
+	@include wait_mouse_left_click.cpp
+	<br>
+	You could do the same but using Window::waitMouseRightClick() instead. The program would wait for a pressing right click event. If you don't want to wait for a specific button but for any button instead, you can use Window::waitMouseAnyClick().
+	<br>
+	
+	But what if you want to be able to use more buttons than the typical left and right ones? Then you can use Window::waitMouseClick() that has an integer parameter @a mouse_button referencing to the <i>id</i> of the button you want to listen. Generally, <i>id 0</i> refers to the left button and <i>id 1</i> to the right one, but you cannot ensure what <i>id</i> will have the programmable buttons in some mice. And some mice maybe don't have that buttons, be careful.
+	
+	For example, <i>Window::waitMouseClick(1)</i> would be equivalent to Window::waitMouseRightClick().
+	
+	One limitation of this approach is that you cannot wait for two different buttons at once (if this even makes sense). You will have to build a custom event handler to do that.
+	
+	@subsection keyboard_event_handling Keyboard Event Handling
+	
+	And what about the keyboard? As you have thought, you can also get information about what keys are being pressed or released. Having a function for every key is a bad idea, so here you only have two options: Window::waitAnyKeypress() to wait until any key is pressed or Window::waitKeypress() that receives a <i>key id</i> as a parameter, and waits until that key is pressed. You can check key ids on Event.h. Both methods return the <i>id</i> of the key that was pressed. As mouse events, you can specify with the boolean parameter @a onRelease if you want to wait for the key to be pressed or to be released.
+	
+	For example, this code will wait until the <i>Space Bar</i> is released, then the text will be shown.
+	@include wait_keypress.cpp
 */
