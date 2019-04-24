@@ -22,7 +22,7 @@
 		@code
 		w.text(f, 101, 101, "Your text goes here", TEXT_ALIGN_CENTER);
 		@endcode
-		When you have all this things, you can call the Window::text() method. Note that depending on the text alignment you choose, the point given to the primitive will represent a different point relative to the text box. Also note that this isn't the only way to call this primitive. Check Window::text() for more details.
+		When you have all these things, you can call the Window::text() method. Note that depending on the text alignment you choose, the point given to the primitive will represent a different point relative to the text box. Also note that that's not the only way to call this primitive. Check Window::text() for more details.
 		<br><br>
 		As a result of the previous code, we get this output:
 		@image html text.png

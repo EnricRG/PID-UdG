@@ -1,7 +1,7 @@
 /**	@page images Drawing and storing an Image
 	And what if you want to load and draw a pre-existing image? Or what if you want to export your current drawing as a file? Well, you can do both things without any problem. 
 	<br><br>
-	As with the fonts, you can instantiate and load an Image directly to your program with its constructor Image::Image(), without interacting with the Window at all. This is useful if you want to reuse it, but very impractical if you only want to draw this image once. You can also load an image through the Window with Window::loadImage(). This method returns the loaded Image if all went OK, and an invalid Image if not (see Image::isValid() for more details). And last but not least, you can draw directly an image to the Window, without having to explicitly load it. Let's see how this three alternatives work.
+	As with the fonts, you can instantiate and load an Image directly to your program with its constructor Image::Image(), without interacting with the Window at all. This is useful if you want to reuse it, but very impractical if you only want to draw this image once. You can also load an image through the Window with Window::loadImage(). This method returns the loaded Image if all went OK, and an invalid Image if not (see Image::isValid() for more details). And last but not least, you can draw directly an image to the Window, without having to explicitly load it. Let's see how those three alternatives work.
 	
 	One thing that these alternatives have in common is that they require the path of an image file, and if the Image cannot be loaded correctly, will generate an invalid Image and throw an exception if used.
 	
@@ -15,7 +15,7 @@
 			@subsection load_image_window Loading an Image using the Window method
 			Another way of loading the Image explicitly is using Window::loadImage() method. Given an image path and some optional parameters, it loads and returns us the Image object. Let's see an example:
 			@include load_image_window_method.cpp
-			Both ways are equivalent, so choose the one you prefer. Note that in these examples we're also drawing the image. Obviously, Window::image() is not part of loading an Image to your program.
+			Both ways are equivalent, choose the one you prefer. Note that in these examples we're also drawing the image. Obviously, Window::image() is not part of loading an Image to your program.
 			
 		@section draw_image Drawing an Image
 		Now that we've seen how to load images, let's see how to draw them. There's two basic ways of drawing any Image: explicitly and implicitly. If you load an Image explicitly (as shown on @ref load_image), you will have somewhere on your program a variable of type Image that stores the information about it. Doing it this way has a very obvious advantage: you can check whether the Image has been loaded correctly or not. You can do it with Image::isValid() or Image::isInvalid(). 
@@ -27,7 +27,7 @@
 			@subsection window_draw_image Drawing an Image with a Window primitive
 			First step before drawing and Image is to check that you have the correct path of its file. Remember that if an invalid Image is drawn, an exception will be thrown. I've downloaded a city icon and moved it to the main directory of my program. I recommend you use the built-in resources folder to store your assets, or maybe creating a new directory to put them.
 			<br><br>
-			So once this is done, we can test the following code:
+			Once this is done, we can test the following code:
 			@include load_image_explicit.cpp
 			This example loads the Image explicitly. You can also do something like:
 			@include draw_image_implicit.cpp

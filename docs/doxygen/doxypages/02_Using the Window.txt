@@ -8,7 +8,7 @@
 	You maybe didn't think of it, but if you declare a Window, execute some code and then finish the program (or the scope where the Window was declared), the Window will be destroyed and removed from your screen. You can try it. Create a simple program like this:
 	<br>
 	@include window_1.cpp
-	If you run this code you can see that the Window pops up and then disappears in an instant. This is because the scope of the Window object has finished and the Window has been destroyed. This is how C++ works, but you can do something to avoid finishing like that. What you must do is to pause the program somehow. The library gives you two different ways of doing it: pausing the Window or using the Event mechanism. The second one is for advanced users so I'll introduce you the first one: pausing the Window.
+	If you run this code you can see that the Window pops up and then disappears in an instant. That happens because the scope of the Window object has finished and the Window has been destroyed. This is how C++ works, but you can do something to avoid finishing like that. What you must do is to pause the program somehow. The library gives you two different ways of doing it: pausing the Window or using the Event mechanism. The second one is for advanced users so I'll introduce you the first one: pausing the Window.
 	<br><br>
 	You can call a method named @ref Window::rest() to pause the program for an amount of time determined in the single parameter of this function. Now try that:
 	@include window_2.cpp
@@ -28,7 +28,7 @@
 	<br>
 	The last line is something new. Does the same effect as @ref Window::rest() but instead of waiting for a period of time and then continue, it waits indefinitely until the close button of the window is pressed. This is very useful when trying to show some code results.
 	<br><br>
-	As I commented before, this isn't the only way to draw the exact same figure on the window. In fact, every primitive can be called using 4 different methods that are named the same but have different parameters (method overloading). Here's a simple description of them:
+	As I commented before, that's not the only way to draw the exact same figure on the window. In fact, every primitive can be called using 4 different methods that are named the same but have different parameters (method overloading). Here's a simple description of them:
 	<ul>
 	<li> <strong>Raw call</strong>: All parameters are passed as Allegro (core library) would use them. It's usually the function with more parameters of the four.</li>
 	<li> <strong>Point call</strong>: Floating point coordinates of the points are replaced with an struct that holds both coordinates of a point. This struct is called Point2D (click to see more). This makes easier to store and move them in your programs and also to understand how the primitives work. </li>
@@ -58,12 +58,12 @@
 	@include rectangle_4.cpp
 	Result:
 	@image html rectangle.png
-	Again, see @ref change_color to learn on how to modify this Window parameters.
+	Again, see @ref change_color to learn on how to modify these Window parameters.
 	<h3> Important </h3>
 	Obviously, Window is capable of drawing a lot more things than a rectangle. Check @ref window_primitives "Window primitives" to see which figures you can draw with a single call.
 	
 		@subsection change_color Change drawing color and thickness of the Window
-		To change the color and thickness of the Window pencil, you can use this functions:
+		To change the color and thickness of the Window pencil, you can use these functions:
 		<ul>
 		<li> Window::changeDrawingColor() - Changes the drawing color of the PaintBrush</li>
 		<li> Window::changeDrawingThickness() - Changes the drawing thickness of the PaintBrush</li>
@@ -74,7 +74,7 @@
 	Normally when you are using graphic routines you're the one that has to tell the screen to update it's state in order to show the draw calls. With the Window, this can be different. Enabled by default, this functionality allows you to simply call the drawing methods and they will be printed on the screen with no need to call Window::update(). However, if you want more flexibility, and more important; <strong>speed</strong>, you'll want to disable this feature and update the screen when you want. This feature can be disabled and re-enabled with Window::disableAutoUpdate() and Window::enableAutoUpdate(), respectively.
 	
 	@section autolog Logging functionality
-	So you would expect that when you change a global window drawing setting like the background color, all your drawings remain intact. Well, that's impossible. When the background color is changed, you're basically painting the whole screen with the same background color you have chosen. So, now what? 
+	You would expect that when you change a global window drawing setting like the background color, all your drawings remain intact. Well, that's impossible. When the background color is changed, you're basically painting the whole screen with the same background color you have chosen. So, now what? 
 	<br><br>
-	The Window has a functionality built-in called <i>auto logging</i> that allows your drawings to be restored every time you change the background color. It is enabled by default on every Window you create, but can be disabled and enabled freely with the methods Window::disableLogging() and Window::enableLogging() respectively. Maybe you are interested in this functionality or not, so you can choose when and where you use it. All the drawings that you have made with this feature enabled will remain logged and will be redrawn if you change the drawing color. If you want to delete them use the Window::clear() function. The drawings that you made when the feature was disabled will not be logged anywhere, so they're only in your screen state before you erase them. You can redraw all logged draw calls whenever you want with Window::redraw(), but bear in mind that the previously drawn content will not be cleaned. Maybe you'll have to reset to background color before if you want a clean screen.
+	The Window has a functionality built-in called <i>auto logging</i> that allows your drawings to be restored every time you change the background color. It is enabled by default on every Window you create, but can be disabled and enabled freely with the methods Window::disableLogging() and Window::enableLogging() respectively. Maybe you are interested in this functionality or not, so you can choose when and where you use it. All the drawings that you have made with this feature enabled will remain logged and will be redrawn if you change the drawing color. If you want to delete them use the Window::clear() function. The drawings that you made when the feature was disabled will not be logged anywhere, and they're only in your screen state before you erase them. You can redraw all logged draw calls whenever you want with Window::redraw(), but bear in mind that the previously drawn content will not be cleaned. Maybe you'll have to reset to background color before if you want a clean screen.
 */

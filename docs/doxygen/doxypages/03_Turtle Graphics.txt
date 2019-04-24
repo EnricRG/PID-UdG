@@ -3,11 +3,11 @@
 	<br> <br>
 	Sometimes you'll feel that drawing to absolute coordinates is not the most comfortable way of achieving your goal. You'll think that something like a cursor to move around the screen would be useful to find the exact point where you want to draw, or maybe something that draws while it's moving around the screen would be an easier method to draw some figures. It's your lucky day, because you've thought about a Turtle.
 	<br><br>
-	The Turtles are cursors that can move freely on the screen and paint along its path or not (you choose it). A Turtle has essentially two variables or factors: its position (X and Y coordinates) and its direction (an Angle). This Angle is represented in the units of the Window (degrees by default). The angles are as if they were represented in the trigonometric circle, so for example 0&deg; would be a Turtle pointing to the right &rarr, and 90&deg; would be one that points up &uarr. You can check this Turtle's parameters with Window::t_getPos() and Window::t_heading().
+	The Turtles are cursors that can move freely on the screen and paint along its path or not (you choose it). A Turtle has essentially two variables or factors: its position (X and Y coordinates) and its direction (an Angle). This angle is represented in the units of the Window (degrees by default). The angles are as if they were represented in the trigonometric circle, so for example 0&deg; would be a Turtle pointing to the right &rarr, and 90&deg; would be one that points up &uarr. You can check these Turtle's parameters with Window::t_getPos() and Window::t_heading().
 	<br><br>
 	As the Window, Turtles have some implicit parameters that are set when they're created, and can be changed over time. One of these parameters is the PaintBrush (a color and a line thickness) that they use to draw its path, and 2 flags: one that indicates if the Turtle is showing its cursor (at Turtle's position) and another that indicates if the Turtle paints its path when it moves. All these parameters can be modified wherever you want. But before talking about this, let's see how Turtles are created.
 	<br><br>
-	Window Add-on supports multiple Turtles at once. You can have multiple cursors moving around on the screen at the same time and they're all unique, their parameters are different based on how you set them up. So, for example you can have a code that has 3 Turtles, one with red drawing color, another with black color and the other with yellow drawing color. As you can imagine, all parameters mentioned before can be different for each Turtle.
+	Window Add-on supports multiple Turtles at once. You can have multiple cursors moving around on the screen at the same time and they're all unique, their parameters are different based on how you set them up. For example you can have a code that has 3 Turtles, one with red drawing color, another with black color and the other with yellow drawing color. As you can imagine, all parameters mentioned before can be different for each Turtle.
 	<br><br>
 	When a Window object is created, it also creates a default Turtle for this Window that cannot be deleted (but it can be modified). Her name is Donatello. In other words, you'll always have at least one Turtle. All Turtles are created at Window::TURTLE_HOME position, so you'll find them there at first. However, you can change its position whenever you want with Window::t_setPos() function. All Turtle function names start with <em>t_</em>, so they are easy to identify and remember.
 	<br><br>
@@ -43,13 +43,13 @@
 	@section move_turtle How to move the Turtle
 	Once you have your Turtle set up, your next step is moving it. You can move your Turtles absolutely by setting its position with Window::t_setPos() or its orientation with Window::t_setHeading(). But there's a funnier way of doing it. You can also move the Turtles relative to its positions. If a Turtle is headed to a direction, you can tell her to move forward a number of distance units (in this case, pixels). 
 	<br><br>
-	So, for example, you can position your Turtle at the center of the screen and then move it 50 pixels upwards changing its absolute position.
+	For example, you can position your Turtle at the center of the screen and then move it 50 pixels upwards changing its absolute position.
 	@include turtle_absolute.cpp
 	And get this output:
 	@image html turtle_absolute.png
 	But doing it like that you are only teleporting the Turtle. If you want to paint the path of the Turtle you will not be able to do it like that.
 	<br><br>
-	So, let's explore the other way: tell the Turtle to move itself.
+	So let's explore the other way: tell the Turtle to move itself.
 	<br><br>
 	This way of moving the Turtle can be useful if your Turtle has to perform some operations sequentially on the screen, taking into account previous position and states.
 	For example, let's do the same as before but with relative movement:
@@ -81,7 +81,7 @@
 	<li><strong>Wrap Mode</strong>: When the Turtle hits an edge gets teleported to the opposite edge.</li>
 	</ul>
 	<br>
-	By <strong>default</strong>, every Turtle created is spawned in Window Mode. Let's provide a detailed description of how this three modes work.
+	By <strong>default</strong>, every Turtle created is spawned in Window Mode. Let's provide a detailed description of how these three modes work.
 	
 		@subsection turtle_motion_window Window Mode
 		In this mode you can move the Turtle freely in the 2D space of your Window, also in the part that is not visible. Yes, this region of the screen also exists and you can draw to it (but it's pretty useless). Let's see an example of how this mode works.

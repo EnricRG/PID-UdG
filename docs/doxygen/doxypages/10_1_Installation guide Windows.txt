@@ -30,7 +30,7 @@
 	<br><br>
 	The objective of this tutorial is to teach you how to create both <i>windowAddon.dll</i> and <i>windowAddon.a</i> files needed to install the add-on into your MinGW installation. We will be using <a href="http://www.codeblocks.org/">Code::Blocks</a> to generate them.
 	<br><br>
-	Follow this steps in order to compile them from the source code:
+	Follow these steps in order to compile them from the source code:
 	<ol>
 		<li>
 			Download the source code from the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a>. The source code is located inside <i>src</i> folder.
@@ -52,7 +52,7 @@
 		</li>
 		
 		<li>
-			Replace your main.h and main.cpp with this samples:
+			Replace your main.h and main.cpp with these samples:
 			<br><br>
 			<i>main.h</i>
 			@include dll_main.h
@@ -80,12 +80,12 @@
 	
 	@subsection install_windows_files Install the files
 	
-	Whether you have downloaded or compiled the files, now what you have to do is to install them on your MinGW setup. It's as simple as <b>drag and drop</b> this files into MinGW's root directory. This process should not override any file, so if a window pops up warning that you'll are going to do that is because you had an older installation of Allegro or Window Add-on and you should delete this files first.
+	Whether you have downloaded or compiled the files, now what you have to do is to install them on your MinGW setup. It's as simple as <b>drag and drop</b> these files into MinGW's root directory. This process should not override any file, so if a window pops up warning that you'll are going to do that is because you had an older installation of Allegro or Window Add-on and you should delete those files first.
 	@image html mingw_files.png
 	
 	@section windows_codeblocks How to use the Window Add-on in your Code::Blocks project
 	
-	And how do you use both Allegro and the add-on? First what you have to do is to say to your compiler how to link to this libraries. This can be done by going to <i>Settings &rarr; Compiler &rarr; Linker Settings</i> and adding the flags <i>-lallegro_monolith-debug</i> and <i>-lWindowAddon</i>.
+	And how do you use both Allegro and the add-on? First what you have to do is to say to your compiler how to link to these libraries. This can be done by going to <i>Settings &rarr; Compiler &rarr; Linker Settings</i> and adding the flags <i>-lallegro_monolith-debug</i> and <i>-lWindowAddon</i>.
 	@image html linker_settings.png
 	
 	And now you can start including the library and compile your own projects with it. Have fun.
