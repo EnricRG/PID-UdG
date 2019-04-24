@@ -16,7 +16,7 @@
 	<br><br>
 	Let's see some examples of WindowEvent handling below.
 	
-	@section generic_event_handling Generic Event Handling
+	@section generic_event_handling General Event Handling
 	
 	
 	
@@ -24,22 +24,22 @@
 	
 	The section above has shown how powerful the event concept is, but why should you care about handling other events that you don't want to?
 	<br><br>
-	Because of this, Window has some functions that allow you to abstract from this concept of event and retrieve only some relevant information form them. You can also find this calls in @ref event_handling. 
+	Because of this, Window has some functions that allow you to abstract from this concept of event and retrieve only some relevant information from them. You can also find this calls in @ref event_handling. 
 	<br><br>
-	One feature that is missing in all this concrete event handlers is the possibility to set a timeout. If you don't want your program to hang forever, you must use generic event handlers.
+	One feature that is missing in all this concrete event handlers is the possibility to set a timeout. If you don't want your program to hang forever, you must use general event handlers.
 	
 	@subsection close_button_event_handling Close Button Event handling
-	If you did not notice, almost all the examples you will find in this documentation contain a line calling the method Window::waitWindowCloseButton(). As it sounds, this method stops the thread that called it until Window's close button is pressed. You will almost always want to call it just at the end of your code to make the Window persist, but this is not the only use case.
+	If you did not notice it, almost all the examples you will find in this documentation contain a line calling the method Window::waitWindowCloseButton(). As its name suggests, this method stops the thread that called it until Window's close button is pressed. You will almost always want to call it just at the end of your program to make the Window persist, but this is not the only use case.
 	<br><br>
 	For example if you run the following code:
 	@include wait_window_close_button.cpp
-	You'll not see the text printed on the screen until the button is pressed. Then, if you press it again, the main function will return and the program should finish. This could be useful if you want to prompt a warning before closing the Window, for example.
+	You'll not see the text printed on the screen until the button is pressed. Then, if you press it again, the main function will return and the program will finish. This could be useful if you want to prompt a warning before closing the Window, for example.
 	<br><br>
 	As simple as it is, you'll probably want to use this line in all your projects since it comes very handy when you want to print something to the screen and make it rest there until the user wants to close the program.
 	
 	@subsection mouse_event_handling Mouse Event Handling
 	
-	It's a common thing to want something as simple as knowing where the user clicks with the mouse. Why should you build a complex event handling structure if you only want to know the coordinates of that point? It's your lucky day, because you don't have to. With mouse event handling methods like Window::waitMouseClick() you'll not have to worry about anything (except for the fact that your program will stop waiting for the mouse click). Once the user clicks on the screen and the function returns, you'll get the coordinates where the mouse was. Easy right?
+	It's a common thing to want something as simple as knowing where the user clicks with the mouse. Why should you build an event handling structure if you only want to know the coordinates of that point? It's your lucky day, because you don't have to. With mouse event handling methods like Window::waitMouseClick() you'll not have to worry about anything (except for the fact that your program will stop waiting for the mouse click). Once the user clicks on the screen and the function returns, you'll get the coordinates where the cursor was pointing at. Easy right?
 	<br>
 	
 	Let's start with the <b>basic</b>: what can you expect from a mouse's behavior? You could expect the buttons to be pressed or released. All mouse event handling functions have a parameter in common: @a onRelease. This is a boolean parameter that tells the method to wait for a pressing button event when @a onRelease = <i>false</i>, or for a releasing button event when @a onRelease = <i>true</i>. By default this parameter is <i>false</i> so the method will wait for pressing events.
@@ -48,10 +48,10 @@
 	For example this code will wait for a pressing left click with Window::waitMouseLeftClick() before showing the text:
 	@include wait_mouse_left_click.cpp
 	<br>
-	You could do the same but using Window::waitMouseRightClick() instead. The program would wait for a pressing right click event. If you don't want to wait for a specific button but for any button instead, you can use Window::waitMouseAnyClick().
+	You could do the same but using Window::waitMouseRightClick() instead. The program would wait for a pressing right click event. If you don't want to wait for a specific button but for any button instead, you can use Window::waitMouseAnyClick(). In this example the return value of the Window::waitMouseLeftClick() was not used, but you would get the point where the cursor was when the user clicked.
 	<br>
 	
-	But what if you want to be able to use more buttons than the typical left and right ones? Then you can use Window::waitMouseClick() that has an integer parameter @a mouse_button referencing to the <i>id</i> of the button you want to listen. Generally, <i>id 0</i> refers to the left button and <i>id 1</i> to the right one, but you cannot ensure what <i>id</i> will have the programmable buttons in some mice. And some mice maybe don't have that buttons, be careful.
+	And what if you want to be able to use more buttons than the typical left and right ones? Then you can use Window::waitMouseClick() that has an integer parameter @a mouse_button referencing to the <i>id</i> of the button you want to listen. Generally, <i>id 0</i> refers to the left button and <i>id 1</i> to the right one, but you cannot ensure what <i>id</i> will have the programmable buttons in some mice. And some mice maybe don't have that buttons, be careful.
 	
 	For example, <i>Window::waitMouseClick(1)</i> would be equivalent to Window::waitMouseRightClick().
 	
@@ -59,7 +59,7 @@
 	
 	@subsection keyboard_event_handling Keyboard Event Handling
 	
-	And what about the keyboard? As you have thought, you can also get information about what keys are being pressed or released. Having a function for every key is a bad idea, so here you only have two options: Window::waitAnyKeypress() to wait until any key is pressed or Window::waitKeypress() that receives a <i>key id</i> as a parameter, and waits until that key is pressed. You can check key ids on Event.h. Both methods return the <i>id</i> of the key that was pressed. As mouse events, you can specify with the boolean parameter @a onRelease if you want to wait for the key to be pressed or to be released.
+	You can also get information about what keys are being pressed or released. Having a function for every key is a bad idea, so here you only have two options: Window::waitAnyKeypress() to wait until any key is pressed or Window::waitKeypress() that receives a <i>key id</i> as a parameter, and waits until that key is pressed. You can check key ids on Event.h. Both methods return the <i>id</i> of the pressed key. As mouse events, you can specify with the boolean parameter @a onRelease if you want to wait for the key to be pressed or to be released.
 	
 	For example, this code will wait until the <i>Space Bar</i> is released, then the text will be shown.
 	@include wait_keypress.cpp
