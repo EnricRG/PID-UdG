@@ -1876,6 +1876,8 @@
 	{
 		if (!al_init()) throw AllegroException("Error initializing Allegro"); //initializing Allegro
 
+		al_set_new_display_option(ALLEGRO_SINGLE_BUFFER, 1, ALLEGRO_REQUIRE);
+
 		_display = al_create_display(width, height);
 
 		if (!_display) throw AllegroException("Error while creating Display"); //initializing display
