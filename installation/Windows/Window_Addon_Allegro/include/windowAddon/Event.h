@@ -165,131 +165,149 @@ enum
 	KEYBOARD_KEY_MAX = ALLEGRO_KEY_MAX
 };
 
-//#define _WINDOW_EVENT_HEADER(srctype)		\
-//   WindowEventType type;		            \
-//   srctype *source;						\
-//   double timestamp;
-//
-//
-//struct WindowEventSource{
-//	int pad[32];
-//};
+/*
+#define _WINDOW_EVENT_HEADER(srctype)		
+   WindowEventType type;		            
+   srctype *source;						
+   double timestamp;
+
+
+struct WindowEventSource{
+	int pad[32];
+};
+*/
 
 typedef struct ALLEGRO_ANY_EVENT WindowAnyEvent;
 
-//struct WindowAnyEvent {
-//	_WINDOW_EVENT_HEADER(struct WindowEventSource);
-//};
+/*
+struct WindowAnyEvent {
+	_WINDOW_EVENT_HEADER(struct WindowEventSource);
+};
+*/
 
 typedef struct ALLEGRO_DISPLAY_EVENT WindowDisplayEvent;
 
-//struct WindowDisplayEvent {
-//	_WINDOW_EVENT_HEADER(struct ALLEGRO_DISPLAY)
-//	int x, y;
-//	int width, height;
-//	int orientation;
-//};
+/*
+struct WindowDisplayEvent {
+	_WINDOW_EVENT_HEADER(struct ALLEGRO_DISPLAY)
+	int x, y;
+	int width, height;
+	int orientation;
+};
+*/
 
 typedef struct ALLEGRO_JOYSTICK_EVENT WindowJoystickEvent;
 
-//struct WindowJoystickEvent{
-//	_WINDOW_EVENT_HEADER(struct ALLEGRO_JOYSTICK)
-//	struct ALLEGRO_JOYSTICK *id;
-//	int stick;
-//	int axis;
-//	float pos;
-//	int button;
-//};
+/*
+struct WindowJoystickEvent{
+	_WINDOW_EVENT_HEADER(struct ALLEGRO_JOYSTICK)
+	struct ALLEGRO_JOYSTICK *id;
+	int stick;
+	int axis;
+	float pos;
+	int button;
+};
+*/
 
 typedef struct ALLEGRO_KEYBOARD_EVENT WindowKeyboardEvent;
 
-//struct WindowKeyboardEvent
-//{
-//	_WINDOW_EVENT_HEADER(struct ALLEGRO_KEYBOARD)
-//	struct ALLEGRO_DISPLAY *display; /* the window the key was pressed in */
-//	int keycode;					 /* the physical key pressed */
-//	int unichar;					 /* unicode character or negative */
-//	unsigned int modifiers;			 /* bitfield */
-//	bool repeat;					 /* auto-repeated or not */
-//};
+/*
+struct WindowKeyboardEvent
+{
+	_WINDOW_EVENT_HEADER(struct ALLEGRO_KEYBOARD)
+	struct ALLEGRO_DISPLAY *display; // the window the key was pressed in //
+	int keycode;					 // the physical key pressed //
+	int unichar;					 // unicode character or negative //
+	unsigned int modifiers;			 // bitfield //
+	bool repeat;					 // auto-repeated or not //
+};
+*/
 
 typedef struct ALLEGRO_MOUSE_EVENT WindowMouseEvent;
 
-//struct WindowMouseEvent
-//{
-//	_WINDOW_EVENT_HEADER(struct ALLEGRO_MOUSE)
-//	struct ALLEGRO_DISPLAY *display;
-//	/* (display) Window the event originate from
-//	 * (x, y) Primary mouse position
-//	 * (z) Mouse wheel position (1D 'wheel'), or,
-//	 * (w, z) Mouse wheel position (2D 'ball')
-//	 * (pressure) The pressure applied, for stylus (0 or 1 for normal mouse)
-//	 */
-//	int x, y, z, w;
-//	int dx, dy, dz, dw;
-//	unsigned int button;
-//	float pressure;
-//
-//	WindowMouseEvent& operator=(const ALLEGRO_MOUSE_EVENT & ev) {
-//		copy(ev);
-//		return *this;
-//	}
-//
-//	void copy(const ALLEGRO_MOUSE_EVENT & ev) {
-//		type = ev.type;
-//		source = ev.source;
-//		timestamp = ev.timestamp;
-//		display = ev.display;
-//		x = ev.x;
-//		y = ev.y;
-//		z = ev.z;
-//		w = ev.w;
-//		dx = ev.dx;
-//		dy = ev.dy;
-//		dz = ev.dz;
-//		dw = ev.dw;
-//		button = ev.button;
-//		pressure = ev.pressure;
-//	}
-//};
+/*
+struct WindowMouseEvent
+{
+	_WINDOW_EVENT_HEADER(struct ALLEGRO_MOUSE)
+	struct ALLEGRO_DISPLAY *display;
+	\* (display) Window the event originate from
+	 * (x, y) Primary mouse position
+	 * (z) Mouse wheel position (1D 'wheel'), or,
+	 * (w, z) Mouse wheel position (2D 'ball')
+	 * (pressure) The pressure applied, for stylus (0 or 1 for normal mouse)
+	 *\ this bars should be inverted
+	int x, y, z, w;
+	int dx, dy, dz, dw;
+	unsigned int button;
+	float pressure;
+
+	WindowMouseEvent& operator=(const ALLEGRO_MOUSE_EVENT & ev) {
+		copy(ev);
+		return *this;
+	}
+
+	void copy(const ALLEGRO_MOUSE_EVENT & ev) {
+		type = ev.type;
+		source = ev.source;
+		timestamp = ev.timestamp;
+		display = ev.display;
+		x = ev.x;
+		y = ev.y;
+		z = ev.z;
+		w = ev.w;
+		dx = ev.dx;
+		dy = ev.dy;
+		dz = ev.dz;
+		dw = ev.dw;
+		button = ev.button;
+		pressure = ev.pressure;
+	}
+};
+*/
 
 typedef struct ALLEGRO_TIMER_EVENT WindowTimerEvent;
 
-//struct WindowTimerEvent
-//{
-//	_WINDOW_EVENT_HEADER(struct ALLEGRO_TIMER)
-//	int64_t count;
-//	double error;
-//};
+/*
+struct WindowTimerEvent
+{
+	_WINDOW_EVENT_HEADER(struct ALLEGRO_TIMER)
+	int64_t count;
+	double error;
+};
+*/
 
 typedef struct ALLEGRO_TOUCH_EVENT WindowTouchEvent;
 
-//struct WindowTouchEvent
-//{
-//	_WINDOW_EVENT_HEADER(struct ALLEGRO_TOUCH_INPUT)
-//	struct ALLEGRO_DISPLAY *display;
-//	/* (id) Identifier of the event, always positive number.
-//	 * (x, y) Touch position on the screen in 1:1 resolution.
-//	 * (dx, dy) Relative touch position.
-//	 * (primary) True, if touch is a primary one (usually first one).
-//	 */
-//	int id;
-//	float x, y;
-//	float dx, dy;
-//	bool primary;
-//};
+/*
+struct WindowTouchEvent
+{
+	_WINDOW_EVENT_HEADER(struct ALLEGRO_TOUCH_INPUT)
+	struct ALLEGRO_DISPLAY *display;
+	\* (id) Identifier of the event, always positive number.
+	 * (x, y) Touch position on the screen in 1:1 resolution.
+	 * (dx, dy) Relative touch position.
+	 * (primary) True, if touch is a primary one (usually first one).
+	 *\ this bars should be inverted
+	int id;
+	float x, y;
+	float dx, dy;
+	bool primary;
+};
+*/
 
 typedef struct ALLEGRO_USER_EVENT WindowUserEvent;
 
-//struct WindowUserEvent
-//{
-//	_WINDOW_EVENT_HEADER(struct ALLEGRO_EVENT_SOURCE)
-//	struct ALLEGRO_USER_EVENT_DESCRIPTOR *__internal__descr;
-//	intptr_t data1;
-//	intptr_t data2;
-//	intptr_t data3;
-//	intptr_t data4;
-//};
+/*
+struct WindowUserEvent
+{
+	_WINDOW_EVENT_HEADER(struct ALLEGRO_EVENT_SOURCE)
+	struct ALLEGRO_USER_EVENT_DESCRIPTOR *__internal__descr;
+	intptr_t data1;
+	intptr_t data2;
+	intptr_t data3;
+	intptr_t data4;
+};
+*/
 
 /// @brief Data structure that contains all the information about a Window event.
 /**
