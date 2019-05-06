@@ -19,4 +19,33 @@
 	@image html test_compile.png
 	<br>
 	If it compiles, run it. You should see a thin black circle on a white screen with a little text on it.
+	
+	@section linux_codeblocks Linux and Code::Blocks
+	
+	It would be a wise decision to use and IDE if you're starting on programming or if you want a more user-friendly interface to develop your projects. I'll show here how to set-up Code::Blocks to be able to compile and link both Allegro and the Window Add-on. This can be extrapolated to more IDEs.
+	
+	It's simple, you only have to show the compiler where to find the library files and how to use them:
+	<ol>
+	
+	<li>
+	Open Code::Blocks. Go to <b><i>Compiler...</i></b> settings under the <b><i>Settings</i></b> tab.
+	@image html settings_cropped.png
+	</li>
+	
+	<li>
+	Go to <b><i>Linker Settings</i></b> and add all these files and compilation flags (<i>-lallegro -lallegro_primitives -lallegro_image -lallegro_font -lallegro_ttf -lWindowAddon</i>):<br>
+	<b>Attention</b>: Depending on the source of your Allegro package, the path to the files could be different. To check where they are, you can use the command 
+	@code whereis liballegro.so @endcode
+	and so on.
+	@image html linux_linker_settings.png
+	</li>
+	
+	<li>
+	Go to <b><i>Search directories</i></b> tab and add the folders that contain the headers of both libraries:
+	@image html search_directories.png
+	</li>
+	
+	And it's done. Now you can compile your own code using Allegro or WindowAddon with Code::Blocks.
+	
+	</ol>
 */
