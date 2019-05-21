@@ -3,8 +3,8 @@
 	
 	First, you want to install Allegro. You can use the package manager bundled with your distribution and search for "Allegro", but in some distributions you'll have troubles with outdated repositories. I recommend the version 5.2.4, so if your package manager allows you to download that version or similar (5.2.x), do it. If you don't want to miss the bullet, check <a href="https://wiki.allegro.cc/index.php?title=Install_Allegro5_From_Git/Linux/Debian">this tutorial</a> to find out how to compile it from sources. You'll need <i>git</i> and <i>cmake</i>. 
 	
-	Once Allegro is installed in your system, clone the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a> with 
-	@code git clone https://github.com/EnricRG/PID-UdG @endcode
+	Once Allegro is installed in your system, clone the <a href="https://github.com/profeIMA/PID-UdG">GitHub repository</a> with 
+	@code git clone https://github.com/profeIMA/PID-UdG @endcode
 	@image html git_clone.png
 	And run <i>make</i> on <i>/PID-UdG/installation/Linux/</i>. 
 	@image html make.png

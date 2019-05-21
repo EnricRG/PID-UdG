@@ -33,7 +33,7 @@
 	Follow these steps in order to compile them from the source code:
 	<ol>
 		<li>
-			Download the source code from the <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a>. The source code is located inside <i>src</i> folder.
+			Download the source code from the <a href="https://github.com/profeIMA/PID-UdG">GitHub repository</a>. The source code is located inside <i>src</i> folder.
 		</li>
 	
 		<li>

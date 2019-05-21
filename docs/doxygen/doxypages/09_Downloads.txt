@@ -17,5 +17,5 @@
 	
 	@section linux_downloads Linux Downloads
 	
-	You'll find all Linux installation files inside <i>installation/Linux</i> folder in our <a href="https://github.com/EnricRG/PID-UdG">GitHub repository</a>. Use @code git clone https://github.com/EnricRG/PID-UdG @endcode and follow the instructions in the <i>readme.txt</i> on that folder, or follow the @ref linux_installation.
+	You'll find all Linux installation files inside <i>installation/Linux</i> folder in our <a href="https://github.com/profeIMA/PID-UdG">GitHub repository</a>. Use @code git clone https://github.com/profeIMA/PID-UdG @endcode and follow the instructions in the <i>readme.txt</i> on that folder, or follow the @ref linux_installation.
 */
