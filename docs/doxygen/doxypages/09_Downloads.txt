@@ -1,9 +1,11 @@
 /**
 	@page downloads Downloads
 	
+	You can check Allegro 5 GitHub repository here: https://github.com/liballeg/allegro5
+	
 	@section common_downloads Common downloads
 	
-	Allegro 5 GitHub repository: https://github.com/liballeg/allegro5
+	Download <a href="http://imae.udg.edu/programacio/Contingut/WindowAddon/downloads/resources.zip"><i>resources</i></a> folder in order to get your projects running: <a href="http://imae.udg.edu/programacio/Contingut/WindowAddon/downloads/resources.zip">Resources Folder</a>
 	
 	@section windows_downloads Windows Downloads
 	

@@ -62,13 +62,13 @@
 	<h3> Important </h3>
 	Obviously, Window is capable of drawing a lot more things than a rectangle. Check @ref window_primitives "Window primitives" to see which figures you can draw with a single call.
 	
-		@subsection change_color Change drawing color and thickness of the Window
-		To change the color and thickness of the Window pencil, you can use these functions:
-		<ul>
-		<li> Window::changeDrawingColor() - Changes the drawing color of the PaintBrush</li>
-		<li> Window::changeDrawingThickness() - Changes the drawing thickness of the PaintBrush</li>
-		</ul>
-		Once changed, this configuration persists until you change it again, or if the Window is destroyed (its scope finishes).
+	@subsection change_color Change drawing color and thickness of the Window
+	To change the color and thickness of the Window pencil, you can use these functions:
+	<ul>
+	<li> Window::changeDrawingColor() - Changes the drawing color of the PaintBrush</li>
+	<li> Window::changeDrawingThickness() - Changes the drawing thickness of the PaintBrush</li>
+	</ul>
+	Once changed, this configuration persists until you change it again, or if the Window is destroyed (its scope finishes).
 	
 	@section autoupdate Auto Update functionality
 	Normally when you are using graphic routines you're the one that has to tell the screen to update it's state in order to show the draw calls. With the Window, this can be different. Enabled by default, this functionality allows you to simply call the drawing methods and they will be printed on the screen with no need to call Window::update(). However, if you want more flexibility, and more important; <strong>speed</strong>, you'll want to disable this feature and update the screen when you want. This feature can be disabled and re-enabled with Window::disableAutoUpdate() and Window::enableAutoUpdate(), respectively.
